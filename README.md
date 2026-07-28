@@ -18,28 +18,28 @@ Project/
 ├── 多模态智能医疗家庭助手_前端大屏设计文档.md
 │
 ├── dashboard/                 # Flask 大屏应用
-│   ├── app.py                        # 主程序，7 条路由
+│   ├── app.py                        # 主程序，9 条路由
 │   ├── config.py                     # 全局配置
 │   ├── requirements.txt
 │   ├── models/                       # 模型封装层
 │   │   ├── detector.py               # YOLO11-OBB 药品检测 (18类)
-│   │   ├── emotion.py                # CNN 情绪识别 (7类)
+│   │   ├── emotion.py                # ResNet-18 情绪识别 (7类)
 │   │   ├── llm_client.py             # 健康问答 (Qwen+LoRA > Ollama)
 │   │   └── fusion.py                 # YOLO+OCR+LLM 融合纠错
 │   ├── services/                     # 业务逻辑层
-│   │   ├── video_service.py          # 异步视频流 + 推理
-│   │   ├── stats_service.py          # 概览/图表数据
+│   │   ├── video_service.py          # 异步视频流 + 推理 + 入库
+│   │   ├── stats_service.py          # 概览/图表数据 (DB实时查询)
 │   │   ├── alert_service.py          # 告警查询 + 规则引擎
-│   │   └── medicine_service.py       # 药品管理
-│   ├── database/                     # SQLite 数据库
+│   │   └── medicine_service.py       # 药品管理 (CRUD)
+│   ├── database/                     # SQLite 数据库 (含索引)
 │   ├── templates/index.html          # 大屏页面
 │   ├── static/css/dashboard.css      # 样式
 │   ├── static/js/dashboard.js        # ECharts + 轮询
 │   └── ocr_output/                   # OCR 检测 JSON 输出
 │
-├── models/                           # 所有模型权重 & 向量库
+├── models/                           # 模型权重 & 向量库 (需自行下载)
 │   ├── yolo/best.pt                  # YOLO 药品检测权重 (19MB, 18类)
-│   ├── emotion/emotion_torch.pt      # 表情识别 CNN 权重 (1.4MB, 7类)
+│   ├── emotion/emotion_torch.pt      # 情绪识别 ResNet-18 (1.4MB, 7类)
 │   ├── lora/                         # LLM 医疗微调 LoRA 适配器 (4.3MB)
 │   ├── rag/                          # 医疗百科向量库 ChromaDB (9.5MB, 500条)
 │   ├── Qwen2.5-0.5B-Instruct/        # LLM 基座 (988MB)
@@ -66,7 +66,7 @@ Project/
                       ↓ 高置信度
                  视频标注输出 (药名 + 边框)
 
-情绪识别: 人脸检测 → CNN 情绪分类 → 视频叠加
+情绪识别: 人脸检测 → ResNet-18 情绪分类 → 视频叠加
 
 健康问答: 用户问题 → RAG 医疗知识检索 → Qwen+LoRA (优先) / Ollama (降级)
 ```
@@ -76,7 +76,7 @@ Project/
 ```
 检测 → detection_record 表 (SQLite, 每5秒入库)
 告警 → alert_record 表
-问答 → chat_record 表
+问答 → chat_record 表 (持久化)
 OCR 结构化输出 → ocr_output/*.json
 ```
 
