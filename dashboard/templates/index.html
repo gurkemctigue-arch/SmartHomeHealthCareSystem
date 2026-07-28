@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多模态智能医疗家庭助手·成果大屏</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- ═══ 左侧导航栏 ═══ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo-area">
+            <div class="logo">🏠</div>
+            <span class="logo-text">MedPro</span>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="menu active" data-page="overview">
+                <span class="menu-icon">📊</span>
+                <span>首页概览</span>
+            </div>
+            <div class="menu" data-page="detection">
+                <span class="menu-icon">📷</span>
+                <span>实时检测</span>
+            </div>
+            <div class="menu" data-page="medicine">
+                <span class="menu-icon">💊</span>
+                <span>药品管理</span>
+            </div>
+            <div class="menu" data-page="emotion">
+                <span class="menu-icon">😊</span>
+                <span>情绪分析</span>
+            </div>
+            <div class="menu" data-page="stats">
+                <span class="menu-icon">📈</span>
+                <span>数据统计</span>
+            </div>
+            <div class="menu" data-page="alerts">
+                <span class="menu-icon">🔔</span>
+                <span>告警记录</span>
+            </div>
+            <div class="menu" data-page="chat">
+                <span class="menu-icon">💬</span>
+                <span>问答对话</span>
+            </div>
+            <div class="menu" data-page="settings">
+                <span class="menu-icon">⚙️</span>
+                <span>系统设置</span>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="version">v1.0.0</div>
+        </div>
+    </aside>
+
+    <!-- ═══ 主内容区 ═══ -->
+    <main class="main" id="mainContent">
+        <!-- 顶部标题栏 -->
+        <header class="header">
+            <h1>多模态智能医疗家庭助手·成果大屏</h1>
+            <p>摄像头检测药盒与情绪 · 数据入库 · 本地大模型问答 · 一张屏看懂全貌</p>
+        </header>
+
+        <!-- 状态卡片 -->
+        <section class="cards" id="statusCards">
+            <div class="card card-blue">
+                <div class="card-icon">📋</div>
+                <div class="card-body">
+                    <p class="card-label">今日检测次数</p>
+                    <h2 class="card-value"><span id="todayCount">--</span><small>次</small></h2>
+                    <small class="card-change up">较昨日 ↑ <span id="todayRate">--</span>%</small>
+                </div>
+                <div class="card-spark" id="sparkToday"></div>
+            </div>
+
+            <div class="card card-orange">
+                <div class="card-icon">🔔</div>
+                <div class="card-body">
+                    <p class="card-label">告警数</p>
+                    <h2 class="card-value"><span id="alertCount">--</span><small>条</small></h2>
+                    <small class="card-change up">较昨日 ↑ <span id="alertRate">--</span>%</small>
+                </div>
+            </div>
+
+            <div class="card card-green">
+                <div class="card-icon">🧠</div>
+                <div class="card-body">
+                    <p class="card-label">本地模型状态</p>
+                    <h2 class="card-value" id="llmStatus">--</h2>
+                    <small class="card-change" id="llmDesc">--</small>
+                </div>
+                <div class="status-indicator" id="llmIndicator"></div>
+            </div>
+
+            <div class="card card-time">
+                <div class="time-main">
+                    <p id="dateTime" class="time-datetime">--</p>
+                </div>
+                <div class="weather-info" id="weatherInfo">--</div>
+            </div>
+        </section>
+
+        <!-- 内容区域 -->
+        <section class="content">
+            <!-- 左侧视频面板 -->
+            <div class="left-panel">
+                <div class="panel video-panel">
+                    <div class="panel-header">
+                        <span class="panel-title-text" id="videoTitle">📹 实时视频检测</span>
+                        <div class="mode-toggles">
+                            <button class="mode-btn active" data-mode="medicine" id="btnMedicine">💊 药盒</button>
+                            <button class="mode-btn" data-mode="emotion" id="btnEmotion">😊 表情</button>
+                            <button class="mode-btn" data-mode="both" id="btnBoth">📹 全部</button>
+                        </div>
+                        <span class="status-dot" id="cameraStatus">● 摄像头已连接</span>
+                    </div>
+                    <div class="video-box">
+                        <img id="videoFeed" src="/video_feed" alt="实时检测视频流" onerror="this.style.display='none';document.getElementById('videoPlaceholder').style.display='flex'">
+                        <div id="videoPlaceholder" class="video-placeholder" style="display:none;">
+                            <div class="placeholder-icon">📷</div>
+                            <p>摄像头未连接</p>
+                            <small>请检查摄像头设备</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧面板 -->
+            <div class="right-panel">
+                <!-- 上方图表 -->
+                <div class="top-charts">
+                    <div class="panel chart-panel">
+                        <div class="panel-header">
+                            <span class="panel-title-text">🥧 药品类别统计（今日）</span>
+                            <span class="panel-badge">实时</span>
+                        </div>
+                        <div id="pieChart" class="chart-container"></div>
+                    </div>
+
+                    <div class="panel chart-panel">
+                        <div class="panel-header">
+                            <span class="panel-title-text">📊 近7日检测趋势</span>
+                            <span class="panel-badge">每日更新</span>
+                        </div>
+                        <div id="barChart" class="chart-container"></div>
+                    </div>
+                </div>
+
+                <!-- 下方告警+问答 -->
+                <div class="bottom-area">
+                    <div class="panel alert-panel">
+                        <div class="panel-header">
+                            <span class="panel-title-text">🚨 最新告警</span>
+                            <a class="panel-link" id="refreshAlerts">刷新</a>
+                        </div>
+                        <div id="alertList" class="alert-list">
+                            <div class="alert-empty">加载中...</div>
+                        </div>
+                    </div>
+
+                    <div class="panel chat-panel">
+                        <div class="panel-header">
+                            <span class="panel-title-text">💬 健康科普问答</span>
+                            <a class="panel-link" id="clearChat">清空对话</a>
+                        </div>
+                        <div id="chatMessages" class="chat-messages">
+                            <div class="chat-msg bot-msg">
+                                <div class="msg-avatar">🤖</div>
+                                <div class="msg-bubble">
+                                    您好，我是家庭医疗健康科普助手。<br>
+                                    可以询问药品用法、注意事项和健康科普问题。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input
+                                id="questionInput"
+                                class="chat-input"
+                                placeholder="请输入您的问题，如：布洛芬的用法用量..."
+                                autocomplete="off"
+                            >
+                            <button id="sendBtn" class="chat-send-btn" title="发送">➤</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

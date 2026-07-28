@@ -1,0 +1,15 @@
+flask
+opencv-python
+requests
+numpy
+# YOLO 药品检测
+ultralytics
+torch
+# 情绪识别
+# torch (已包含)
+# 本地 LLM + LoRA + RAG
+transformers
+peft
+accelerate
+chromadb
+sentence-transformers

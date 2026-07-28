@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda info *)",
+      "Bash(cp -r D:/PracticalProgram/Project/medpro_dashboard D:/PracticalProgram/Project/dashboard)",
+      "Bash(rm -rf D:/PracticalProgram/Project/medpro_dashboard)"
+    ]
+  }
+}
