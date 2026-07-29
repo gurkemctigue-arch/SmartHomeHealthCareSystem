@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-28T09:56:34.165834+00:00",
+  "total_ocr_samples": 241,
+  "unmatched_samples": 46,
+  "statuses": {
+    "needs_review": 17,
+    "medicine_name_missing": 9,
+    "curated_rejected": 19,
+    "curated_approved": 1
+  },
+  "decisions": {
+    "blank": 26,
+    "reject": 19,
+    "approve": 1
+  },
+  "report": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\output\\unmatched_medicine_review\\unmatched_medicine_review.csv",
+  "review_image_dir": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\output\\unmatched_medicine_review\\images",
+  "curated_decisions": 58,
+  "apply_command": "python day4/review_unmatched_medicines.py --apply \"C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\output\\unmatched_medicine_review\\unmatched_medicine_review.csv\""
+}

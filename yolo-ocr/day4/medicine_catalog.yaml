@@ -1,0 +1,476 @@
+version: 1
+source: "类别(2).pdf + 已有药盒 OCR/人工复核结果"
+
+categories:
+  - id: 0
+    name: 感冒药
+    efficacy: 缓解感冒引起的发热、头痛、鼻塞、流涕、咽痛等症状，具体以药品说明书为准。
+    guidance: 感冒总称；包装以感冒、鼻塞、流涕等为主。
+  - id: 1
+    name: 止咳化痰
+    efficacy: 镇咳、祛痰或缓解喘息，适用于咳嗽、咳痰等症状，具体以药品说明书为准。
+    guidance: 与感冒药边界不清时，以咳嗽、咳痰为主则归本类。
+  - id: 2
+    name: 消炎药
+    efficacy: 用于对应敏感病原体引起的感染，不同抗菌、抗病毒或抗真菌药的适应症不同，须遵医嘱使用。
+    guidance: 抗感染、抗菌类，如阿莫西林、头孢、罗红霉素。
+  - id: 3
+    name: 止痛药
+    efficacy: 缓解轻至中度疼痛或炎症相关疼痛，具体适应症以药品说明书为准。
+    guidance: 以止痛为主；对乙酰氨基酚等未强调退热时归本类。
+  - id: 4
+    name: 退烧药
+    efficacy: 降低发热体温并缓解发热伴随的不适，具体用法及适用人群以药品说明书为准。
+    guidance: 包装明确强调退热、退烧时归本类。
+  - id: 5
+    name: 肠胃药
+    efficacy: 缓解胃痛、胃酸、消化不良、腹泻等胃肠道症状，具体以药品说明书为准。
+    guidance: 胃痛、胃酸、消化不良、止泻等肠胃用药。
+  - id: 6
+    name: 泻药通便
+    efficacy: 软化粪便、促进排便或缓解便秘，具体以药品说明书为准。
+    guidance: 开塞露、乳果糖等通便用药。
+  - id: 7
+    name: 维生素
+    efficacy: 补充相应维生素、矿物质或微量元素，用于预防和改善相关营养缺乏。
+    guidance: 维生素、钙、锌等营养补充制剂。
+  - id: 8
+    name: 抗过敏药
+    efficacy: 缓解过敏性鼻炎、荨麻疹或皮肤过敏引起的喷嚏、流涕、瘙痒等症状。
+    guidance: 氯雷他定、西替利嗪等抗过敏用药。
+  - id: 9
+    name: 外用药
+    efficacy: 用于局部皮肤、黏膜或眼部症状，具体作用及使用部位以药品说明书为准。
+    guidance: 皮肤药膏、消毒液、眼药水等外用制剂。
+  - id: 10
+    name: 创可贴绷带
+    efficacy: 覆盖、保护或固定浅表创口，辅助止血并减少外界污染。
+    guidance: 创可贴、纱布、绷带和敷料。
+  - id: 11
+    name: 慢性病药
+    efficacy: 用于糖尿病、甲状腺疾病等慢性病的长期控制，必须依据医嘱和具体说明书使用。
+    guidance: 降糖、降脂等长期用药；明确心血管相关时优先归心血管药。
+  - id: 12
+    name: 心血管药
+    efficacy: 用于高血压、冠心病、心绞痛或脑血管循环相关疾病，必须遵医嘱使用。
+    guidance: 明确用于高血压、冠心病、心绞痛等心脑血管疾病。
+  - id: 13
+    name: 中成药
+    efficacy: 不同品种可具有清热解毒、理气和中、活血化瘀或补益等作用，具体以该药说明书为准。
+    guidance: 明确为中成药且不能优先归入其他功效类时使用。
+  - id: 14
+    name: 妇科用药
+    efficacy: 用于月经不调、痛经、阴道炎或其他妇科相关症状，具体以药品说明书为准。
+    guidance: 妇科相关盒装药。
+  - id: 15
+    name: 肛肠用药
+    efficacy: 缓解痔疮引起的肿痛、出血、瘙痒等肛肠症状，具体以药品说明书为准。
+    guidance: 痔疮等肛肠疾病用药；仅给药途径为栓剂不代表本类。
+  - id: 16
+    name: 保健品
+    efficacy: 用于相应营养补充或保健功能，不用于替代药物治疗。
+    guidance: 非治疗为主的保健食品。
+  - id: 17
+    name: 其它
+    efficacy: 数据库暂无该品种的明确功效信息，请查阅包装说明书或咨询医生、药师。
+    guidance: 无法归入前述类别或尚未收录的特殊药品。
+
+medicines:
+  - name: 感冒灵颗粒
+    category_id: 0
+    aliases: [感冒灵, 复方感冒灵颗粒]
+  - name: 连花清瘟胶囊
+    category_id: 0
+    aliases: [连花清瘟]
+  - name: 感冒清热颗粒
+    category_id: 0
+  - name: 感冒清片
+    category_id: 0
+  - name: 复方氨酚烷胺片
+    category_id: 0
+  - name: 小儿氨酚黄那敏颗粒
+    category_id: 0
+  - name: 小儿氨酚烷胺颗粒
+    category_id: 0
+  - name: 复方锌布颗粒
+    category_id: 0
+    efficacy: 用于治疗非细菌感染引起的普通感冒及流行性感冒。
+    efficacy_source: https://ypk.39.net/583897/manual/
+  - name: 小柴胡颗粒
+    category_id: 0
+  - name: 小儿宝泰康颗粒
+    category_id: 0
+  - name: 美羧伪麻颗粒
+    category_id: 0
+  - name: 维C银翘片
+    category_id: 0
+    aliases: [维C银期片]
+  - name: 小儿豉翘清热颗粒
+    category_id: 0
+  - name: 复方板蓝根颗粒
+    category_id: 0
+    aliases: [复方板蓝根, 复方板兰根颗粒, 复方板兰根, 方板蓝根颗粒, 复方板蓝根粒]
+    efficacy: 清热解毒，凉血。用于风热感冒、咽喉肿痛。
+    efficacy_source: https://ypk.39.net/749529/
+
+  - name: 麻苏止咳颗粒
+    category_id: 1
+  - name: 小儿咳喘灵颗粒
+    category_id: 1
+  - name: 咳克平胶囊
+    category_id: 1
+  - name: 痰咳净片
+    category_id: 1
+  - name: 海珠喘息定片
+    category_id: 1
+  - name: 强力止咳宁片
+    category_id: 1
+  - name: 消炎止咳片
+    category_id: 1
+  - name: 小儿麻甘颗粒
+    category_id: 1
+  - name: 橘红颗粒
+    category_id: 1
+  - name: 复方氢溴酸右美沙芬糖浆
+    category_id: 1
+    aliases: [右美沙芬糖浆, 复方右美沙芬糖浆]
+    efficacy: 用于上呼吸道感染、支气管炎等引起的咳嗽、咳痰。
+    efficacy_source: https://www.yao86.com/西药/复方氢溴酸右美沙芬糖浆
+  - name: 小儿肺热咳喘颗粒
+    category_id: 1
+  - name: 盐酸氨溴索口服溶液
+    category_id: 1
+
+  - name: 阿莫西林颗粒
+    category_id: 2
+    aliases: [阿莫西林]
+  - name: 阿莫西林克拉维酸钾片
+    category_id: 2
+  - name: 头孢氨苄颗粒
+    category_id: 2
+  - name: 头孢拉定颗粒
+    category_id: 2
+  - name: 头孢呋辛酯片
+    category_id: 2
+  - name: 头孢克肟颗粒
+    category_id: 2
+  - name: 头孢克肟分散片
+    category_id: 2
+  - name: 头孢克洛胶囊
+    category_id: 2
+  - name: 罗红霉素分散片
+    category_id: 2
+    aliases: [罗红霉素]
+  - name: 盐酸克林霉素胶囊
+    category_id: 2
+  - name: 乙酰螺旋霉素片
+    category_id: 2
+  - name: 克拉霉素片
+    category_id: 2
+  - name: 克拉霉素分散片
+    category_id: 2
+  - name: 阿昔洛韦片
+    category_id: 2
+  - name: 氟康唑胶囊
+    category_id: 2
+
+  - name: 布洛芬片
+    category_id: 3
+    aliases: [布洛芬, 芬必得]
+  - name: 双氯芬酸钠缓释胶囊
+    category_id: 3
+    aliases: [双氯芬酸]
+  - name: 吲哚美辛栓
+    category_id: 3
+  - name: 活血止痛胶囊
+    category_id: 3
+  - name: 正清风痛宁缓释片
+    category_id: 3
+  - name: 万通筋骨片
+    category_id: 3
+  - name: 对乙酰氨基酚片
+    category_id: 3
+    aliases: [对乙酰氨基酚]
+  - name: 醋氯芬酸肠溶片
+    category_id: 3
+    aliases: [维朴芬]
+
+  - name: 消炎退热颗粒
+    category_id: 4
+  - name: 对乙酰氨基酚颗粒
+    category_id: 4
+  - name: 布洛芬混悬液
+    category_id: 4
+
+  - name: 蒙脱石散
+    category_id: 5
+    aliases: [蒙脱石混悬液, 蒙脱石]
+  - name: 健胃消食片
+    category_id: 5
+  - name: 盐酸小檗碱片
+    category_id: 5
+    aliases: [黄连素片, 黄连素]
+    efficacy: 用于治疗肠道感染、细菌性痢疾等引起的腹泻。
+    efficacy_source: https://www.yao86.com/西药/盐酸小檗碱片
+  - name: 荜铃胃痛颗粒
+    category_id: 5
+  - name: 复方仙鹤草肠炎片
+    category_id: 5
+  - name: 小儿健脾化积口服液
+    category_id: 5
+  - name: 速效止泻胶囊
+    category_id: 5
+  - name: 泮托拉唑钠肠溶片
+    category_id: 5
+  - name: 藿香清胃片
+    category_id: 5
+  - name: 铝碳酸镁片
+    category_id: 5
+  - name: 健儿消食口服液
+    category_id: 5
+  - name: 温胃舒片
+    category_id: 5
+  - name: 藿香正气水
+    category_id: 13
+    aliases: [蕾香正气水]
+    efficacy: 解表化湿，理气和中。用于外感风寒、内伤湿滞或夏伤暑湿所致的感冒及胃肠型感冒。
+    efficacy_source: https://ypk.39.net/509801/
+
+  - name: 开塞露
+    category_id: 6
+  - name: 乳果糖口服溶液
+    category_id: 6
+    aliases: [乳果糖]
+    efficacy: 用于慢性功能性便秘，也可用于高血氨症及由血氨升高引起的疾病。
+    efficacy_source: https://ypk.39.net/505306/manual/
+  - name: 通便灵胶囊
+    category_id: 6
+
+  - name: 维生素C
+    category_id: 7
+    aliases: [维生素C片, VitaminC]
+    efficacy: 用于预防和治疗维生素C缺乏症，具体剂型和用量以包装说明书为准。
+    efficacy_source: curated:local-ocr-review
+  - name: 复合维生素片
+    category_id: 7
+    aliases: [复合维生素]
+  - name: 碳酸钙D3颗粒
+    category_id: 7
+  - name: 骨化三醇注射液
+    category_id: 7
+  - name: 赖氨酸磷酸氢钙颗粒
+    category_id: 7
+  - name: 葡萄糖酸钙锌口服溶液
+    category_id: 7
+    aliases: [葡萄糖酸钙锌]
+  - name: 维生素C软胶囊
+    category_id: 7
+    aliases: [维生素软胶囊, 天然VC软胶囊]
+    efficacy: 用于补充维生素C，预防和改善维生素C缺乏，具体用量以包装说明书为准。
+    efficacy_source: curated:local-ocr-review
+  - name: 叶酸片
+    category_id: 7
+    aliases: [叶酸]
+
+  - name: 氯雷他定片
+    category_id: 8
+    aliases: [氯雷他定]
+  - name: 盐酸西替利嗪片
+    category_id: 8
+    aliases: [西替利嗪]
+  - name: 盐酸奥洛他定片
+    category_id: 8
+    aliases: [盐酸奥络他定片, 奥洛他定]
+  - name: 马来酸氯苯那敏片
+    category_id: 8
+    aliases: [扑尔敏]
+
+  - name: 碘伏消毒液
+    category_id: 9
+    aliases: [碘伏]
+    efficacy: 用于皮肤和黏膜消毒，具体使用部位、浓度和方法以产品说明书为准。
+    efficacy_source: curated:catalog-review
+  - name: 维胺酯维E乳膏
+    category_id: 9
+    efficacy: 用于痤疮的辅助治疗。
+    efficacy_source: curated:catalog-review
+  - name: 水杨酸苯酚贴膏
+    category_id: 9
+    efficacy: 用于鸡眼。
+    efficacy_source: curated:catalog-review
+  - name: 复方氯己定含漱液
+    category_id: 9
+  - name: 美宝维肤膏
+    category_id: 9
+    efficacy: 用于婴幼儿皮肤日常护理和保湿；该条来自包装样本，具体用途以产品标签为准。
+    efficacy_source: curated:local-ocr-review
+  - name: 伤湿止痛膏
+    category_id: 9
+  - name: 玻璃酸钠滴眼液
+    category_id: 9
+  - name: 硫软膏
+    category_id: 9
+  - name: 硝酸咪康唑乳膏
+    category_id: 9
+
+  - name: 创可贴
+    category_id: 10
+    aliases: [创口贴]
+    efficacy: 用于小创口、擦伤等浅表创面的覆盖和保护。
+    efficacy_source: curated:catalog-review
+  - name: 医用纱布
+    category_id: 10
+    aliases: [纱布]
+    efficacy: 用于创面清洁、吸收渗液、覆盖保护或辅助包扎，具体用途以产品说明书为准。
+    efficacy_source: curated:catalog-review
+  - name: 医用绷带
+    category_id: 10
+    aliases: [绷带]
+    efficacy: 用于敷料固定、肢体包扎或提供适度支撑，具体用途以产品说明书为准。
+    efficacy_source: curated:catalog-review
+
+  - name: 格列齐特片
+    category_id: 11
+    efficacy: 用于经饮食控制和运动治疗仍不能满意控制血糖的2型糖尿病。
+    efficacy_source: https://ypk.39.net/500174/manual/
+  - name: 二甲双胍片
+    category_id: 11
+    aliases: [二甲双胍]
+    efficacy: 用于单纯饮食控制和运动治疗效果不佳的2型糖尿病，也可按医嘱与胰岛素或其他降糖药合用。
+    efficacy_source: https://ypk.39.net/507707/manual/
+  - name: 伏格列波糖片
+    category_id: 11
+  - name: 那格列奈片
+    category_id: 11
+  - name: 胰岛素注射液
+    category_id: 11
+    aliases: [胰岛素]
+  - name: 别嘌醇片
+    category_id: 11
+    aliases: [別嘌醇片]
+
+  - name: 舒血宁注射液
+    category_id: 12
+  - name: 脑心通胶囊
+    category_id: 12
+  - name: 硝苯地平缓释片
+    category_id: 12
+    aliases: [硝苯地平缓释片I, 硝苯地平]
+  - name: 非洛地平缓释片
+    category_id: 12
+  - name: 珍菊降压片
+    category_id: 12
+  - name: 缬沙坦胶囊
+    category_id: 12
+    aliases: [缬沙坦]
+  - name: 坎地沙坦酯片
+    category_id: 12
+  - name: 苯磺酸氨氯地平片
+    category_id: 12
+  - name: 马来酸依那普利片
+    category_id: 12
+  - name: 速效救心丸
+    category_id: 12
+  - name: 血塞通片
+    category_id: 12
+    aliases: [血塞通分散片]
+  - name: 银丹心脑通软胶囊
+    category_id: 12
+  - name: 银杏叶片
+    category_id: 12
+  - name: 盐酸艾司洛尔注射液
+    category_id: 12
+
+  - name: 天麻胶囊
+    category_id: 13
+  - name: 生脉饮
+    category_id: 13
+    aliases: [生脉饮党参方]
+  - name: 桂枝茯苓丸
+    category_id: 13
+  - name: 仙灵骨葆片
+    category_id: 13
+  - name: 益血生胶囊
+    category_id: 13
+  - name: 消银颗粒
+    category_id: 13
+  - name: 伸筋丹胶囊
+    category_id: 13
+  - name: 健身全鹿丸
+    category_id: 13
+  - name: 五子衍宗丸
+    category_id: 13
+  - name: 鼻舒适片
+    category_id: 13
+  - name: 清喉利咽颗粒
+    category_id: 13
+  - name: 十全大补膏
+    category_id: 13
+  - name: 蛇胆川贝液
+    category_id: 13
+  - name: 九味羌活丸
+    category_id: 13
+  - name: 舒肝和胃丸
+    category_id: 13
+  - name: 稳心颗粒
+    category_id: 13
+  - name: 参苓白术颗粒
+    category_id: 13
+  - name: 复方珍珠暗疮片
+    category_id: 13
+  - name: 鼻渊通窍颗粒
+    category_id: 13
+  - name: 三黄珍珠膏
+    category_id: 13
+  - name: 脉血康胶囊
+    category_id: 13
+  - name: 壮腰健肾丸
+    category_id: 13
+
+  - name: 益母草颗粒
+    category_id: 14
+  - name: 达那唑胶囊
+    category_id: 14
+  - name: 经带宁胶囊
+    category_id: 14
+  - name: 加味逍遥丸
+    category_id: 14
+  - name: 逍遥丸
+    category_id: 14
+  - name: 聚甲酚磺醛栓
+    category_id: 14
+  - name: 百草妇炎清栓
+    category_id: 14
+  - name: 硝酸咪康唑栓
+    category_id: 14
+  - name: 暖宫孕子丸
+    category_id: 14
+
+  - name: 痔疮片
+    category_id: 15
+  - name: 痔疮栓
+    category_id: 15
+  - name: 六味消痔片
+    category_id: 15
+  - name: 熊胆痔灵栓
+    category_id: 15
+  - name: 马应龙麝香痔疮膏
+    category_id: 15
+    aliases: [马应龙痔疮膏]
+
+  - name: 红参黄精枸杞饮品
+    category_id: 16
+    efficacy: 用于日常营养补充；该条来自包装样本，不用于替代药物治疗，具体配料和适宜人群以产品标签为准。
+    efficacy_source: curated:local-ocr-review
+  - name: 灵芝胶囊
+    category_id: 16
+    aliases: [康维他灵芝胶囊, 康維他靈芝膠囊]
+
+  - name: 枸橼酸西地那非片
+    category_id: 17
+  - name: 阿立哌唑片
+    category_id: 17
+  - name: 氟哌噻吨美利曲辛片
+    category_id: 17
+  - name: 奥利司他胶囊
+    category_id: 17

@@ -1,0 +1,75 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\179.jpg",
+  "text": "SCLAREBOX\nMOCKUP\nSOEE HIT INGUIGES",
+  "line_count": 3,
+  "average_confidence": 0.85858,
+  "elapsed_seconds": 0.2174,
+  "lines": [
+    {
+      "text": "SCLAREBOX",
+      "confidence": 0.85216,
+      "box": [
+        [
+          189.0,
+          227.0
+        ],
+        [
+          228.0,
+          217.0
+        ],
+        [
+          231.0,
+          228.0
+        ],
+        [
+          192.0,
+          238.0
+        ]
+      ]
+    },
+    {
+      "text": "MOCKUP",
+      "confidence": 0.99314,
+      "box": [
+        [
+          189.0,
+          234.0
+        ],
+        [
+          218.0,
+          227.0
+        ],
+        [
+          221.0,
+          239.0
+        ],
+        [
+          192.0,
+          246.0
+        ]
+      ]
+    },
+    {
+      "text": "SOEE HIT INGUIGES",
+      "confidence": 0.73044,
+      "box": [
+        [
+          39.0,
+          328.0
+        ],
+        [
+          82.0,
+          328.0
+        ],
+        [
+          82.0,
+          337.0
+        ],
+        [
+          39.0,
+          337.0
+        ]
+      ]
+    }
+  ]
+}

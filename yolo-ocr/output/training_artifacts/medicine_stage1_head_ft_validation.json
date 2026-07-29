@@ -1,0 +1,9 @@
+{
+  "metrics/precision(B)": 0.6559070012841964,
+  "metrics/recall(B)": 0.4824052146422481,
+  "metrics/mAP50(B)": 0.48880571743022405,
+  "metrics/mAP50-95(B)": 0.39205776132702397,
+  "fitness": 0.39205776132702397,
+  "evaluated_classes": 15,
+  "configured_classes": 18
+}

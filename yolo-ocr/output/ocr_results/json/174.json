@@ -1,0 +1,53 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\174.jpg",
+  "text": "乙酰螺旋霉素片\nonadr",
+  "line_count": 2,
+  "average_confidence": 0.80532,
+  "elapsed_seconds": 0.1426,
+  "lines": [
+    {
+      "text": "乙酰螺旋霉素片",
+      "confidence": 0.99364,
+      "box": [
+        [
+          252.0,
+          427.0
+        ],
+        [
+          340.0,
+          441.0
+        ],
+        [
+          338.0,
+          457.0
+        ],
+        [
+          250.0,
+          443.0
+        ]
+      ]
+    },
+    {
+      "text": "onadr",
+      "confidence": 0.61699,
+      "box": [
+        [
+          238.0,
+          463.0
+        ],
+        [
+          301.0,
+          472.0
+        ],
+        [
+          299.0,
+          486.0
+        ],
+        [
+          236.0,
+          476.0
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "保健品",
+      "points": [
+        [
+          8.205128205128204,
+          99.23076923076923
+        ],
+        [
+          494.64893550689976,
+          101.30737032917563
+        ],
+        [
+          493.33333333333326,
+          409.4871794871795
+        ],
+        [
+          6.889526031561694,
+          407.4105783887731
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "282.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

@@ -1,0 +1,54 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "慢性病药",
+      "points": [
+        [
+          120.49180327868851,
+          399.9590163934426
+        ],
+        [
+          453.27868852459017,
+          555.6967213114754
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "慢性病药",
+      "points": [
+        [
+          30.327868852459005,
+          331.10655737704917
+        ],
+        [
+          389.34426229508205,
+          331.10655737704934
+        ],
+        [
+          389.344262295082,
+          496.68032786885243
+        ],
+        [
+          30.327868852458952,
+          496.6803278688523
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "6.jpg",
+  "imageData": null,
+  "imageHeight": 595,
+  "imageWidth": 500
+}

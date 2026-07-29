@@ -2,9 +2,14 @@ flask
 opencv-python
 requests
 numpy
+Pillow
+PyYAML
 # YOLO 药品检测
 ultralytics
 torch
+# 药盒透视矫正 OCR + SQLite 药名匹配
+rapidocr-onnxruntime
+beautifulsoup4
 # 情绪识别
 # torch (已包含)
 # 本地 LLM + LoRA + RAG

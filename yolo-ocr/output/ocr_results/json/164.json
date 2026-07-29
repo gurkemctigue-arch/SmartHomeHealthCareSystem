@@ -1,0 +1,141 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\164.jpg",
+  "text": "choar gml bon ank\nCURIOSIN_\nCURIOSIN\nthow pl 3in al\nCURIOSIN.\nCUROSIN.",
+  "line_count": 6,
+  "average_confidence": 0.83365,
+  "elapsed_seconds": 0.2558,
+  "lines": [
+    {
+      "text": "choar gml bon ank",
+      "confidence": 0.56421,
+      "box": [
+        [
+          391.0,
+          116.0
+        ],
+        [
+          400.0,
+          116.0
+        ],
+        [
+          400.0,
+          166.0
+        ],
+        [
+          391.0,
+          166.0
+        ]
+      ]
+    },
+    {
+      "text": "CURIOSIN_",
+      "confidence": 0.98864,
+      "box": [
+        [
+          461.0,
+          111.0
+        ],
+        [
+          482.0,
+          111.0
+        ],
+        [
+          482.0,
+          214.0
+        ],
+        [
+          461.0,
+          214.0
+        ]
+      ]
+    },
+    {
+      "text": "CURIOSIN",
+      "confidence": 0.99891,
+      "box": [
+        [
+          339.0,
+          171.0
+        ],
+        [
+          355.0,
+          171.0
+        ],
+        [
+          355.0,
+          240.0
+        ],
+        [
+          339.0,
+          240.0
+        ]
+      ]
+    },
+    {
+      "text": "thow pl 3in al",
+      "confidence": 0.52801,
+      "box": [
+        [
+          661.0,
+          210.0
+        ],
+        [
+          674.0,
+          210.0
+        ],
+        [
+          674.0,
+          252.0
+        ],
+        [
+          661.0,
+          252.0
+        ]
+      ]
+    },
+    {
+      "text": "CURIOSIN.",
+      "confidence": 0.93368,
+      "box": [
+        [
+          722.0,
+          209.0
+        ],
+        [
+          741.0,
+          209.0
+        ],
+        [
+          739.0,
+          273.0
+        ],
+        [
+          720.0,
+          273.0
+        ]
+      ]
+    },
+    {
+      "text": "CUROSIN.",
+      "confidence": 0.98844,
+      "box": [
+        [
+          118.0,
+          294.0
+        ],
+        [
+          134.0,
+          294.0
+        ],
+        [
+          134.0,
+          346.0
+        ],
+        [
+          118.0,
+          346.0
+        ]
+      ]
+    }
+  ]
+}

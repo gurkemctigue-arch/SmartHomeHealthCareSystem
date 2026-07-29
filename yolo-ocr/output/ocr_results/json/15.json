@@ -1,0 +1,53 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\15.jpg",
+  "text": "HA\nKUS",
+  "line_count": 2,
+  "average_confidence": 0.96819,
+  "elapsed_seconds": 0.2199,
+  "lines": [
+    {
+      "text": "HA",
+      "confidence": 0.99998,
+      "box": [
+        [
+          278.0,
+          262.0
+        ],
+        [
+          383.0,
+          211.0
+        ],
+        [
+          409.0,
+          265.0
+        ],
+        [
+          304.0,
+          316.0
+        ]
+      ]
+    },
+    {
+      "text": "KUS",
+      "confidence": 0.93641,
+      "box": [
+        [
+          218.0,
+          330.0
+        ],
+        [
+          354.0,
+          266.0
+        ],
+        [
+          377.0,
+          316.0
+        ],
+        [
+          241.0,
+          379.0
+        ]
+      ]
+    }
+  ]
+}

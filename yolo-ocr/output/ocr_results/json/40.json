@@ -1,0 +1,119 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\40.jpg",
+  "text": "教尔佳\nFUERJIA\nCENTELLA ASHATICA SOQTHING AND REPAIR MASK\n敷尔佳积雪草舒缓修护贴\n净含量：2g×5%",
+  "line_count": 5,
+  "average_confidence": 0.94758,
+  "elapsed_seconds": 0.2526,
+  "lines": [
+    {
+      "text": "教尔佳",
+      "confidence": 0.9532,
+      "box": [
+        [
+          160.0,
+          28.0
+        ],
+        [
+          210.0,
+          26.0
+        ],
+        [
+          211.0,
+          48.0
+        ],
+        [
+          161.0,
+          50.0
+        ]
+      ]
+    },
+    {
+      "text": "FUERJIA",
+      "confidence": 0.99749,
+      "box": [
+        [
+          62.0,
+          164.0
+        ],
+        [
+          95.0,
+          165.0
+        ],
+        [
+          95.0,
+          179.0
+        ],
+        [
+          61.0,
+          178.0
+        ]
+      ]
+    },
+    {
+      "text": "CENTELLA ASHATICA SOQTHING AND REPAIR MASK",
+      "confidence": 0.91776,
+      "box": [
+        [
+          63.0,
+          178.0
+        ],
+        [
+          195.0,
+          183.0
+        ],
+        [
+          194.0,
+          194.0
+        ],
+        [
+          62.0,
+          189.0
+        ]
+      ]
+    },
+    {
+      "text": "敷尔佳积雪草舒缓修护贴",
+      "confidence": 0.98828,
+      "box": [
+        [
+          63.0,
+          190.0
+        ],
+        [
+          177.0,
+          195.0
+        ],
+        [
+          176.0,
+          211.0
+        ],
+        [
+          62.0,
+          205.0
+        ]
+      ]
+    },
+    {
+      "text": "净含量：2g×5%",
+      "confidence": 0.88119,
+      "box": [
+        [
+          161.0,
+          249.0
+        ],
+        [
+          212.0,
+          252.0
+        ],
+        [
+          211.0,
+          266.0
+        ],
+        [
+          160.0,
+          262.0
+        ]
+      ]
+    }
+  ]
+}

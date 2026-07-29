@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" id="vp">
+    <meta name="google" content="notranslate"/>
+    <meta name="keywords" content="全部拼音字母开头的西药名称"/>
+    <meta name="description" content=""/>
+    <meta name="baidu-site-verification" content="codeva-4IZ0fIWLDB" />
+    <meta name="msvalidate.01" content="5D8080CFE7619A18A486CD68C6A586E2" />
+    <title>全部拼音字母开头的西药名称-药物百科</title>
+
+      
+        <link rel="icon" href="https://www.yao86.com/drug.ico">
+
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/base.css">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/quill.snow.css">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/wangeditor.css">
+
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/swiper-bundle.css">
+
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/index.css">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/errors.css">
+
+        <!-- 引入 jQuery -->
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/jquery.pjax-2.0.1.min.js"></script>
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/jquery.cookie.js"></script>
+
+        <!-- 引入 echarts -->
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/echarts-5.4.3.min.js"></script>
+
+        <!-- 引入 swiper -->
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/swiper-bundle.min.js"></script>
+
+        <!-- 公共js -->
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/common/APIconfig.js"></script>
+        <script type="text/javascript" src="https://www.yao86.com/assets/js/common/function.js"></script>
+      <link rel="stylesheet" href="https://www.yao86.com/assets/css/pages/western-drug/list.css">
+
+
+</head>
+<body>
+<div id="drug">
+    <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/topAd.css">
+
+<div class="header-imgs">
+    <div class="images">
+        
+        <a target="_blank" rel="nofollow" href="https://vip.pharnexcloud.com/?from=yao86"><img src="https://oss-personal-public.bcpmdata.com/images/ad_images/202506/06/fdb79e17ca65a04e4abeb4609df7a081.png" alt="覆盖药品全生命周期数据·涵盖药品研发、市场、临床等数据"></a>
+    </div>
+    <div class="close" onclick="closeImages()"></div>
+</div>
+<script type="text/javascript">
+    function closeImages() {
+        localStorage.setItem('notification', 'close')
+        $('.header-imgs').hide()
+        $('.i_cecream-content').css({'padding-top':'0'})
+    }
+    function showImages () {
+        localStorage.setItem('notification', 'open')
+        $('.header-imgs').show()
+        $('.i_cecream-content').css({'padding-top':'60px'})
+    }
+</script>    <div id="drug-search">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/search-bar.css">
+
+<div class="search">
+    <div class="search-content w">
+        <a href="/">
+            <div class="logo">
+                <img src="/assets/images/inlet/logo.png" alt="药物百科" title="药物百科" />
+            </div>
+        </a>
+        <div class="search-container">
+            <div id="search-input" class="search-input">
+                <input type="text" class="input" placeholder="请输入想要搜索的关键词" />
+                <div class="search-btn" onclick="handleSearch()">搜索</div>
+                <div class="close"></div>
+                <div class="history">
+                    <div class="history-container">
+                        <div class="history-item name">
+                            <span>历史搜索记录</span>
+                            <i class="close-btn" onmousedown="clearHistory()"></i>
+                        </div>
+                        <ul class="history-content">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div id="drug-header">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/header.css">
+
+<div class="header">
+  <ul class="header-list w">
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com">首页</a></li>
+      <li onclick="targetBlank(this)" class="item active "><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF">西药</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E4%B8%AD%E6%88%90%E8%8D%AF">中成药</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E4%B8%AD%E8%8D%AF%E6%9D%90">中药材</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E5%B0%91%E6%95%B0%E6%B0%91%E6%97%8F%E8%8D%AF">少数民族药</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E9%9D%B6%E7%82%B9">靶点</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E8%8D%AF%E5%93%81%E7%94%9F%E4%BA%A7%E4%BC%81%E4%B8%9A">药品生产企业</a></li>
+      <li onclick="targetBlank(this)" class="item "><a href="https://www.yao86.com/%E7%94%A8%E8%8D%AF%E6%A1%88%E4%BE%8B">用药案例</a></li>
+  </ul>
+</div>
+    </div>
+    <div id="drug-content">
+        
+  <div id="body" class="w">
+    <div class="content">
+      <div class="breadcrumb-bar">
+        <div class="breadcrumb">
+   <div class="breadcrumb-item index">
+       <a href="/"><span>首页</span></a>
+   </div>
+                            <div class="breadcrumb-item">
+                <a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF"><span>西药</span></a>
+            </div>
+                                <div class="breadcrumb-item">
+                <strong>全部</strong>
+            </div>
+                
+</div>
+      </div>
+
+      <!-- 按药理/ATC分类 -->
+        
+      <!-- 按字母分类 -->
+                    <ul class="category letter">
+                <li class="item all  active " >
+                    <span><a href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF">全部</a></span>
+                </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DA%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">A</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DB%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">B</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DC%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">C</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DD%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">D</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DE%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">E</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DF%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">F</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DG%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">G</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DH%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">H</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DJ%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">J</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DK%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">K</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DL%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">L</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DM%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">M</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DN%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">N</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DP%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">P</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DQ%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">Q</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DR%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">R</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DS%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">S</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DT%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">T</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DW%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">W</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DX%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">X</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DY%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">Y</a></span>
+                    </li>
+                                    <li class="item " >
+                        <span><a href="https://www.yao86.com/a/%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8DZ%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A5%BF%E8%8D%AF">Z</a></span>
+                    </li>
+                            </ul>
+                        <div class="desc">
+                <p class="desc-content">欢迎访问西药药物清单。本站点共收录3030种西药药物，清晰完整地展示了每个药物的各款药品通用名及其适应症，例如：关于ω-3脂肪酸乙酯90的药品包括ω-3脂肪酸乙酯90软胶囊，在控制饮食的基础上:本品用于降低重度高甘油三酯血症(≥500mg/dL )成年患者的甘油三酯(TG)水平。其他适应症详见说明书。
+        此外，您可以通过首字母快速定位所需药物，从而进一步了解该药物及相关药品信息。</p>
+            </div>
+                    
+        
+      <div class="container">
+
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E9%B2%81%E5%8D%A1%E5%9B%A0%E9%9D%92%E9%9C%89%E7%B4%A0">普鲁卡因青霉素</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E6%99%AE%E9%B2%81%E5%8D%A1%E5%9B%A0%E9%9D%92%E9%9C%89%E7%B4%A0">注射用普鲁卡因青霉素</a></p>
+                                                        <span class="text">由于本品血药浓度较低，故其应用仅限于青霉素高度敏感病原体所致的轻、中度感染，如A组链球菌所致的扁桃体炎、猩红热、丹毒、肺炎链球菌肺炎、青霉素敏感金葡菌所致疖、痈、以及奋森咽峡炎等。本品尚可用于治疗钩端螺旋体病、回归热和早期梅毒。</span>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BE%9D%E8%AF%BA%E6%B2%99%E6%98%9F">葡萄糖酸依诺沙星</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BE%9D%E8%AF%BA%E6%B2%99%E6%98%9F">葡萄糖酸依诺沙星</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A">葡萄糖酸氯己定</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A%E8%BD%AF%E8%86%8F">葡萄糖酸氯己定软膏</a></p>
+                                                        <span class="text">用于轻度小面积烧伤、烫伤、外伤感染，也可用于湿疹、痤疮、足癣等。用于程度较轻的烧伤(Ⅰ°或浅Ⅱ°)。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E7%A8%80%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A%E6%BA%B6%E6%B6%B2">稀葡萄糖酸氯己定溶液</a></p>
+                                                        <span class="text">本品可用于齿龈炎、咽峡炎和口腔溃疡等。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A%E5%90%AB%E6%BC%B1%E6%B6%B2">葡萄糖酸氯己定含漱液</a></p>
+                                                        <span class="text">用于口腔疾病(如牙龈炎、口腔溃疡、咽炎等)的防治。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A%E6%BA%B6%E6%B6%B2">葡萄糖酸氯己定溶液</a></p>
+                                                        <span class="text">本品可用于咽颊炎和口腔溃疡等。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E6%B0%AF%E5%B7%B1%E5%AE%9A%E8%B4%B4">葡萄糖酸氯己定贴</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E5%93%8C%E6%8B%89%E8%A5%BF%E6%9E%97%E9%92%A0%E8%88%92%E5%B7%B4%E5%9D%A6%E9%92%A0">哌拉西林钠舒巴坦钠</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E5%93%8C%E6%8B%89%E8%A5%BF%E6%9E%97%E9%92%A0%E8%88%92%E5%B7%B4%E5%9D%A6%E9%92%A0%284:1%29">注射用哌拉西林钠舒巴坦钠(4:1)</a></p>
+                                                        <span class="text">适用于由对哌拉西林耐药对本品敏感的产β-内酰胺酶致病菌引起的中重度感染，在用于治疗由对哌拉西林单药敏感菌与对哌拉西林单药耐药、对本品敏感的产β-内酰胺酶菌引起的混合感染时，不需要加其他抗生素。主要包括：1.呼吸系统感染，包括急性支气管炎、肺炎、慢性支气管炎急性发作、支气管扩张合并感染等；2.泌尿系统感染，包括单纯型泌尿系统感染和复杂型泌尿系统感染等。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E5%93%8C%E6%8B%89%E8%A5%BF%E6%9E%97%E9%92%A0%E8%88%92%E5%B7%B4%E5%9D%A6%E9%92%A0">注射用哌拉西林钠舒巴坦钠</a></p>
+                                                        <span class="text">适用于由对哌拉西林耐药对本品敏感的产β-内酰胺酶致病菌引起的下列感染。在用于治疗对哌拉西林单药敏感菌与对哌拉西林单药耐药、对本品敏感的产β-内酰胺酶菌引起的混合感染时，不需要加用其它抗生素。1.呼吸系统感染：包括急性支气管炎、肺炎、慢性支气管炎急性发作、支气管扩张合并感染等；2.泌尿系统感染：包括单纯型泌尿系统感染和复杂型泌尿系统感染等。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E5%93%8C%E6%8B%89%E8%A5%BF%E6%9E%97%E9%92%A0%E8%88%92%E5%B7%B4%E5%9D%A6%E9%92%A0%EF%BC%882:1%EF%BC%89">注射用哌拉西林钠舒巴坦钠（2:1）</a></p>
+                                                        <span class="text">适用于对哌拉西林耐药而对本品敏感的产β-内酰胺酶致病菌引起的下列感染。在用于治疗对哌拉西林单药敏感菌与对哌拉西林单药耐药、对本品敏感的产β-内酰胺酶菌引起的混合感染时，不需要加用其它抗生素。1.呼吸系统感染：包括急性支气管炎、慢性支气管炎急性发作、支气管扩张合并感染、肺炎和化脓性扁桃体炎等。2.泌尿系统感染：包括单纯型泌尿系统感染和复杂型泌尿系统感染。</span>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E5%B9%B3%E9%98%B3%E9%9C%89%E7%B4%A0">平阳霉素</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E7%9B%90%E9%85%B8%E5%B9%B3%E9%98%B3%E9%9C%89%E7%B4%A0">注射用盐酸平阳霉素</a></p>
+                                                        <span class="text">主治唇癌、舌癌、齿龈癌、鼻咽癌等头颈部鳞癌。亦可用于治疗皮肤癌、乳腺癌、宫颈癌、食管癌、阴茎癌、外阴癌、恶性淋巴癌和坏死性肉芽肿等。对肝癌也有一定的疗效。对翼状胬肉有显著疗效。</span>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E7%A1%BC%E9%85%B8">硼酸</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E7%A1%BC%E9%85%B8%E6%B4%97%E6%B6%B2">硼酸洗液</a></p>
+                                                        <span class="text">可用于皮肤、粘膜损害的清洁剂，及急性皮炎、湿疹渗出的湿敷液，也可用于口腔、咽喉漱液，外耳道、慢性溃疡面、褥疮洗液，及真菌、脓疱疮感染杀菌液。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E7%A1%BC%E9%85%B8%E8%BD%AF%E8%86%8F">硼酸软膏</a></p>
+                                                        <span class="text">用于轻度、小面积急性湿疹、急性皮炎、脓疱疮、褥疮。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E7%A1%BC%E9%85%B8">硼酸</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E6%8B%89%E6%B4%9B%E8%8A%AC">普拉洛芬</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E6%8B%89%E6%B4%9B%E8%8A%AC%E6%BB%B4%E7%9C%BC%E6%B6%B2">普拉洛芬滴眼液</a></p>
+                                                        <span class="text">外眼及眼前节炎症的对症治疗(眼睑炎、结膜炎、角膜炎、巩膜炎、浅层巩膜炎、虹膜睫状体炎、术后炎症)</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E6%8B%89%E6%B4%9B%E8%8A%AC">普拉洛芬</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BA%9A%E9%93%81">葡萄糖酸亚铁</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BA%9A%E9%93%81%E7%B3%96%E6%B5%86">葡萄糖酸亚铁糖浆</a></p>
+                                                        <span class="text">用于缺铁性贫血。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BA%9A%E9%93%81%E8%83%B6%E5%9B%8A">葡萄糖酸亚铁胶囊</a></p>
+                                                        <span class="text">用于预防和治疗各种原因引起的缺铁性贫血。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BA%9A%E9%93%81%E7%89%87">葡萄糖酸亚铁片</a></p>
+                                                        <span class="text">用于缺铁性贫血。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E8%91%A1%E8%90%84%E7%B3%96%E9%85%B8%E4%BA%9A%E9%93%81">葡萄糖酸亚铁</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E7%A2%98%E9%93%B5">普罗碘铵</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%B3%A8%E5%B0%84%E7%94%A8%E6%99%AE%E7%BD%97%E7%A2%98%E9%93%B5">注射用普罗碘铵</a></p>
+                                                        <span class="text">用于晚期肉芽肿或非肉芽肿性虹膜睫状体炎、视网膜脉络膜炎、眼底出血、玻璃体混浊、半陈旧性角膜白斑、斑翳，亦可作为视神经炎的辅助治疗。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E7%A2%98%E9%93%B5%E6%B3%A8%E5%B0%84%E6%B6%B2">普罗碘铵注射液</a></p>
+                                                        <span class="text">用于晚期肉芽肿或非肉芽肿性虹膜睫状体炎、视网膜脉络膜炎，眼底出血、玻璃体混浊、半陈旧性角膜白斑、斑翳，亦可作为视神经炎的辅助治疗。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E7%A2%98%E9%93%B5">普罗碘铵</a></p>
+                                                </dd>
+                                </dl>
+                        <dl class="container-item">
+                  <dt class="type-name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF">普罗雌烯</a></dt>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF%E9%98%B4%E9%81%93%E8%83%B6%E5%9B%8A">普罗雌烯阴道胶囊</a></p>
+                                                        <span class="text">因雌激素不足导致的阴道萎缩；宫颈、阴道和外阴的粘膜部分因分娩、局部手术或物理疗法（如激光、冷冻或烧灼等）等引起损伤的迁延不愈，结痂延迟。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF%E9%98%B4%E9%81%93%E8%83%B6%E4%B8%B8">普罗雌烯阴道胶丸</a></p>
+                                                        <span class="text">用于治疗因雌激素缺乏引起的阴道萎缩性病变。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF%E9%98%B4%E9%81%93%E7%94%A8%E8%BD%AF%E8%83%B6%E5%9B%8A">普罗雌烯阴道用软胶囊</a></p>
+                                                        <span class="text">因雌激素不足引起的阴道萎缩；宫颈、阴道和外阴的粘膜部分因分娩、局部手术或物理疗法(如激光、冷冻或烧灼等)等引起损伤的迁延不愈，结痂延迟。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF%E4%B9%B3%E8%86%8F">普罗雌烯乳膏</a></p>
+                                                        <span class="text">外阴、前庭部及阴道环部的萎缩性病变。</span>
+                                                </dd>
+                                        <dd class="type-content">
+                          <p class="name"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF/%E6%99%AE%E7%BD%97%E9%9B%8C%E7%83%AF">普罗雌烯</a></p>
+                                                </dd>
+                                </dl>
+                </div>
+
+        <div class="pagination">
+            <link rel="stylesheet" href="https://www.yao86.com/assets/css/bootstrap/bootstrap-1.css">
+
+<div id="bootstrap-1">
+            <div>
+            <ul class="pagination">
+                
+                                    <li class="page-item btn prev">
+                        <a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=288" rel="prev" aria-label="&laquo; Previous">&lt;上一页</a>
+                    </li>
+                
+                
+                                
+                                        
+                    
+                                                                                    <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=1">1</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=2">2</a></li>
+                                                                                                        
+                                                                        <li class="page-item three-dots backward">
+                                <a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=282">...</a>
+                            </li>
+                                                                
+                                                    
+                                        
+                    
+                                                                                    <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=286">286</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=287">287</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=288">288</a></li>
+                                                                                
+                                <li class="page-item active" aria-current="page"><span class="page-link">289</span></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=290">290</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=291">291</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=292">292</a></li>
+                                                                                                        
+                                                                        <li class="page-item three-dots forward">
+                                <a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=296">...</a>
+                            </li>
+                                                                
+                                                    
+                                        
+                    
+                                                                                    <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=455">455</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=456">456</a></li>
+                                                                                                        
+                
+                    <li class="page-item btn next">
+                        <a class="page-link" href="https://www.yao86.com/a/%E5%85%A8%E9%83%A8%E8%A5%BF%E8%8D%AF?page=290" rel="next" aria-label="Next &raquo;">下一页&gt;</a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+
+<script type="text/javascript" src="https://www.yao86.com/assets/js/bootstrap/bootstrap.js"></script>
+
+        </div>
+        
+        
+                <div class="images">
+            <a href="https://vip.pharnexcloud.com/?from=yao86" target="_blank" rel="nofollow">
+    <img src="https://oss-personal-public.bcpmdata.com/images/ads/202505/21/75fd2d2f8f5ef19b2d7915e1bbef93b2.jpg" alt="企业版数据查询">
+</a>
+
+<script>
+    new Swiper(".swiper-image", {
+        autoplay: true,
+        loop: true
+    })
+</script>
+        </div>
+        
+    </div>
+  </div>
+
+    </div>
+    <div class="footer">
+        <link rel="stylesheet" href="https://www.yao86.com/assets/css/common/footer.css">
+
+<div class="footer">
+    <div class="footer-contact w">
+        <div class="left">
+            <div class="logo">
+                <img src="/assets/images/inlet/logo.png" alt="药物百科">
+            </div>
+            <ul class="list">
+                <li class="item"><a href="https://www.yao86.com/%E8%A5%BF%E8%8D%AF">西药</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E4%B8%AD%E6%88%90%E8%8D%AF">中成药</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E4%B8%AD%E8%8D%AF%E6%9D%90">中药材</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E5%B0%91%E6%95%B0%E6%B0%91%E6%97%8F%E8%8D%AF">少数民族药</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E9%9D%B6%E7%82%B9">靶点</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E8%8D%AF%E5%93%81%E7%94%9F%E4%BA%A7%E4%BC%81%E4%B8%9A">药品生产企业</a></li>
+                <li class="item"><a href="https://www.yao86.com/%E7%94%A8%E8%8D%AF%E6%A1%88%E4%BE%8B">用药案例</a></li>
+            </ul>
+        </div>
+        <ul class="right">
+            <li class="item">
+                <p class="name">摩熵医药小程序</p>
+                <div class="qr-code">
+                    <img src="/assets/images/inlet/code-applet.png" alt="摩熵医药小程序">
+                </div>
+            </li>
+            <li class="item">
+                <p class="name">摩熵医药公众号</p>
+                <div class="qr-code">
+                    <img src="/assets/images/inlet/code-official-accounts.png" alt="摩熵医药公众号">
+                </div>
+            </li>
+            <li class="item">
+                <p class="name">摩熵医药DATA</p>
+                <div class="qr-code">
+                    <img src="/assets/images/inlet/code-database.png" alt="摩熵医药DATA">
+                </div>
+            </li>
+            <li class="item">
+                <p class="name">摩熵医药视频号</p>
+                <div class="qr-code">
+                    <img src="/assets/images/inlet/code-video.png" alt="摩熵医药视频号">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <div class="info w">
+            <span>《互联网药品信息服务资格证》 证书号：（川）-经营性-2020-0043</span>
+            <a target="_blank" href="https://beian.miit.gov.cn" rel="nofollow">&nbsp;ICP备案号：蜀ICP备2021004927号-1</a>
+            <img class="icon" src="https://oss-personal-public.bcpmdata.com/weapp/images/medical/c5a2d00b7aa8f9245f914a72c046415f.png" alt="">
+            <a target="_blank" href="https://beian.mps.gov.cn/#/query/webSearch?code=51019002008863" rel="noreferrer">川公网安备51019002008863号</a>
+            <p style="margin: 5px 0;">本网站未发布麻醉药品、精神药品、医疗用毒性药品、放射性药品、戒毒药品和医疗机构制剂的产品信息</p>
+            <p class="rights" style="margin-left: 16px;"></p>
+        </div>
+                <div class="line"></div>
+        <div class="link w">
+            <span>友情链接:</span>
+                        <a target="_blank" href="https://www.pharnexcloud.com/" >摩熵医药</a>
+                    </div>
+            </div>
+</div>
+
+<script>
+    $(function(){
+        var year = new Date().getFullYear()
+        $('.footer .rights').html(`© www.yao86.com ${year} 摩熵数科（成都）医药科技有限公司 All Rights Reserved.`)
+    })
+</script>
+    </div>
+
+    <!-- 公共组件 -->
+    <div class="return-top" onclick="returnToTop()"></div>
+
+<div class="cover-tips">
+    <div class="img"></div>
+    <p class="text"></p>
+</div>
+</div>
+
+        
+    <!-- 百度统计代码 -->
+    <script>
+        // var _hmt = _hmt || [];
+        // (function() {
+        //     var hm = document.createElement("script");
+        //         hm.src = "https://hm.baidu.com/hm.js?789aadd703eff3be38e2d3c6c453add7";
+        //     var s = document.getElementsByTagName("script")[0];
+        //     s.parentNode.insertBefore(hm, s);
+        // })();
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?db5b4c2706af5f082c4e50135c96c7f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+    <!-- 全局组件的js -->
+    <script type="text/javascript" src="https://www.yao86.com/assets/js/common/request/index.js"></script>
+    <script type="text/javascript" src="https://www.yao86.com/assets/js/common/notification.js"></script>
+
+    <script type="text/javascript" src="https://www.yao86.com/assets/js/components/search-bar.js"></script>
+
+
+</body>
+</html>

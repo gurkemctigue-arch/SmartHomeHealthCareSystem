@@ -1,0 +1,16 @@
+{
+  "data": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\medicine_obb.yaml",
+  "selected_images": 2718,
+  "reported_images": 251,
+  "new_ocr_images": 10,
+  "statuses": {
+    "supported": 51,
+    "review": 29,
+    "no_signal": 159,
+    "weak_signal": 11,
+    "ocr_failed": 1
+  },
+  "report": "D:\\ai-vision-training\\output\\ocr_label_audit.csv",
+  "review_dir": "D:\\ai-vision-training\\output\\ocr\\review",
+  "note": "OCR 结果仅用于人工质检，不会自动修改标签。"
+}

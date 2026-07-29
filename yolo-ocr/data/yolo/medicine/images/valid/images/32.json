@@ -1,0 +1,226 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "保健品",
+      "points": [
+        [
+          13.897260273972563,
+          278.0821917808219
+        ],
+        [
+          297.458904109589,
+          458.9041095890411
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          15.267123287671183,
+          282.1917808219178
+        ],
+        [
+          234.445205479452,
+          454.79452054794524
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          175.54109589041093,
+          347.94520547945206
+        ],
+        [
+          289.23972602739724,
+          431.5068493150685
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          328.9657534246575,
+          280.8219178082192
+        ],
+        [
+          556.3630136986301,
+          441.09589041095893
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          211.15753424657532,
+          428.76712328767127
+        ],
+        [
+          349.51369863013696,
+          498.6301369863014
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          485.13013698630135,
+          354.79452054794524
+        ],
+        [
+          573.0,
+          441.31253951527924
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          28.965753424657493,
+          34.24657534246575
+        ],
+        [
+          242.66438356164383,
+          201.36986301369865
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          27.595890410958873,
+          35.61643835616439
+        ],
+        [
+          290.6095890410959,
+          201.36986301369865
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          186.49999999999994,
+          102.73972602739727
+        ],
+        [
+          286.49999999999994,
+          182.1917808219178
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          322.11643835616434,
+          26.027397260273972
+        ],
+        [
+          561.8424657534247,
+          189.04109589041096
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          326.2260273972602,
+          32.87671232876713
+        ],
+        [
+          527.5958904109589,
+          186.3013698630137
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          471.431506849315,
+          102.73972602739727
+        ],
+        [
+          560.472602739726,
+          175.34246575342465
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "32.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 573
+}

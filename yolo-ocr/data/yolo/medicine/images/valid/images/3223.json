@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "抗过敏药",
+      "points": [
+        [
+          204.61538461538464,
+          299.4871794871795
+        ],
+        [
+          393.8295272065802,
+          179.69693094023336
+        ],
+        [
+          495.64102564102564,
+          340.51282051282055
+        ],
+        [
+          306.42688304983005,
+          460.30306905976664
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "3223.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

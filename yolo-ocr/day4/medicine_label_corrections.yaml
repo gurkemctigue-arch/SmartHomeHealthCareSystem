@@ -1,0 +1,135 @@
+version: 1
+policy: 只修正药名、活性成分或主要适应症能够明确支持的冲突；说明书中的次要功效和禁忌不作为改标依据。
+corrections:
+  - split: train
+    image: 14.jpg
+    from: 0
+    to: 4
+    evidence: 药名为消炎退热颗粒，主要功效明确包含退热。
+  - split: train
+    image: 29.jpg
+    from: 11
+    to: 12
+    evidence: 硝苯地平缓释片用于高血压和心绞痛，属于心血管用药。
+  - split: train
+    image: 36.jpg
+    from: 9
+    to: 15
+    evidence: 痔疮栓用于内痔和混合痔，属于肛肠用药而非普通外用药。
+  - split: train
+    image: 50.jpg
+    from: 11
+    to: 12
+    evidence: 非洛地平缓释片是钙通道阻滞剂，主要用于高血压。
+  - split: train
+    image: 53.jpg
+    from: 17
+    to: 7
+    evidence: 碳酸钙D3颗粒明确含维生素D3。
+  - split: train
+    image: 55.jpg
+    from: 11
+    to: 12
+    evidence: 药名为珍菊降压片，主要用途为降压。
+  - split: train
+    image: 89.jpg
+    from: 11
+    to: 12
+    evidence: 硝苯地平缓释片用于高血压和心绞痛。
+  - split: train
+    image: 119.jpg
+    from: 13
+    to: 1
+    evidence: 药名为消炎止咳片，主要功效为镇咳化痰。
+  - split: train
+    image: 129.jpg
+    from: 13
+    to: 1
+    evidence: 小儿麻甘颗粒主要功效为平喘止咳、利咽祛痰。
+  - split: train
+    image: 135.jpg
+    from: 11
+    to: 12
+    evidence: 缬沙坦是血管紧张素受体拮抗剂，主要用于高血压。
+  - split: train
+    image: 138.jpg
+    from: 13
+    to: 5
+    evidence: 藿香清胃片主要用于消化不良和腹胀。
+  - split: train
+    image: 153.jpg
+    from: 17
+    to: 3
+    evidence: 包装正反面均明确标注布洛芬片。
+  - split: train
+    image: 163.jpg
+    from: 17
+    to: 4
+    evidence: 布洛芬混悬液为儿童常用退热制剂，与同数据集样本177保持一致。
+  - split: train
+    image: 166.jpg
+    from: 13
+    to: 3
+    evidence: 药名为活血止痛胶囊，主要用途为止痛。
+  - split: train
+    image: 235.jpg
+    from: 9
+    to: 14
+    evidence: 硝酸咪康唑栓明确标注妇科用，用于外阴阴道感染。
+reviewed_keep:
+  - split: train
+    image: 10.jpg
+    label: 13
+    reason: 天麻胶囊为中成药，止痛只是功能描述之一。
+  - split: train
+    image: 100.jpg
+    label: 13
+    reason: 鼻舒适片为中成药，过敏性鼻炎是适应症，不能据此等同抗过敏药。
+  - split: train
+    image: 107.jpg
+    label: 9
+    reason: 维胺酯维E乳膏是局部涂抹制剂，Vitamin E 是成分而不是剂型类别。
+  - split: train
+    image: 111.jpg
+    label: 17
+    reason: 图中为宠物营养补充剂，不属于人用保健品类别。
+  - split: train
+    image: 140.jpg
+    label: 13
+    reason: 舒肝和胃丸为中成药，OCR 仅凭“止痛”不足以改为止痛药。
+  - split: train
+    image: 155.jpg
+    label: 13
+    reason: 三黄珍珠膏为中成药复方，“止痛”是次要功效，OCR 建议证据不足。
+  - split: train
+    image: 158.jpg
+    label: 13
+    reason: 清热化毒丸的主要功效不是通便，便秘只是适应症文字之一。
+  - split: train
+    image: 169.jpg
+    label: 2
+    reason: 清热散结片明确以消炎解毒为主要功效，止痛为伴随功效。
+  - split: train
+    image: 177.jpg
+    label: 4
+    reason: 布洛芬混悬液在该数据集按儿童退热制剂归类，维持一致。
+  - split: train
+    image: 200.jpg
+    label: 12
+    reason: 银丹心脑通软胶囊主要用于心脑血管，止痛只出现在功效描述中。
+  - split: train
+    image: 209.jpg
+    label: 17
+    reason: 图像主体是收纳用品广告，不是可用于药品分类的布洛芬包装。
+  - split: train
+    image: 224.jpg
+    label: 9
+    reason: 伤湿止痛膏为皮肤贴敷的外用制剂。
+  - split: train
+    image: 232.jpg
+    label: 5
+    reason: 温胃舒片主要用于胃炎和胃脘痛，属于肠胃药。
+  - split: train
+    image: 75.jpg
+    label: 3
+    reason: 吲哚美辛栓是镇痛制剂，肛门栓是给药途径而非肛肠疾病用途。

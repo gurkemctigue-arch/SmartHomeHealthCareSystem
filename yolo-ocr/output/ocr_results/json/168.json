@@ -1,0 +1,53 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\168.jpg",
+  "text": "收纳前\n收纳后",
+  "line_count": 2,
+  "average_confidence": 0.995,
+  "elapsed_seconds": 0.1383,
+  "lines": [
+    {
+      "text": "收纳前",
+      "confidence": 0.9922,
+      "box": [
+        [
+          39.0,
+          448.0
+        ],
+        [
+          175.0,
+          448.0
+        ],
+        [
+          175.0,
+          499.0
+        ],
+        [
+          39.0,
+          499.0
+        ]
+      ]
+    },
+    {
+      "text": "收纳后",
+      "confidence": 0.9978,
+      "box": [
+        [
+          311.0,
+          448.0
+        ],
+        [
+          444.0,
+          448.0
+        ],
+        [
+          444.0,
+          499.0
+        ],
+        [
+          311.0,
+          499.0
+        ]
+      ]
+    }
+  ]
+}

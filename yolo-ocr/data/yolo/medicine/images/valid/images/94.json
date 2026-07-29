@@ -1,0 +1,46 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "消炎药",
+      "points": [
+        [
+          336.44117647058823,
+          213.70588235294116
+        ],
+        [
+          546.2450980392157,
+          341.15686274509807
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "消炎药",
+      "points": [
+        [
+          8.990196078431387,
+          33.313725490196134
+        ],
+        [
+          481.53921568627453,
+          290.1764705882353
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "94.jpg",
+  "imageData": null,
+  "imageHeight": 398,
+  "imageWidth": 567
+}

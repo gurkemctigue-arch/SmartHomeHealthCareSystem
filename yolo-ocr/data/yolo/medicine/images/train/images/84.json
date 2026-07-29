@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "退烧药",
+      "points": [
+        [
+          81.2251461988304,
+          76.31578947368422
+        ],
+        [
+          82.97895693442229,
+          465.07716919573755
+        ],
+        [
+          702.8625730994153,
+          462.280701754386
+        ],
+        [
+          701.1087623638234,
+          73.51932203233257
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "84.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 749
+}

@@ -1,0 +1,185 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\203.jpg",
+  "text": "BLONEPRPLE\nKERATOECEB\nplease contact us in time. We\nproduct or refund it. Thank\nSITCER\nsatisfied with the product or\npur   onot\nThank you for your",
+  "line_count": 8,
+  "average_confidence": 0.81013,
+  "elapsed_seconds": 0.3678,
+  "lines": [
+    {
+      "text": "BLONEPRPLE",
+      "confidence": 0.67613,
+      "box": [
+        [
+          492.0,
+          75.0
+        ],
+        [
+          553.0,
+          75.0
+        ],
+        [
+          553.0,
+          92.0
+        ],
+        [
+          492.0,
+          92.0
+        ]
+      ]
+    },
+    {
+      "text": "KERATOECEB",
+      "confidence": 0.59302,
+      "box": [
+        [
+          485.0,
+          220.0
+        ],
+        [
+          557.0,
+          223.0
+        ],
+        [
+          556.0,
+          242.0
+        ],
+        [
+          484.0,
+          239.0
+        ]
+      ]
+    },
+    {
+      "text": "please contact us in time. We",
+      "confidence": 0.9603,
+      "box": [
+        [
+          210.0,
+          281.0
+        ],
+        [
+          313.0,
+          362.0
+        ],
+        [
+          302.0,
+          376.0
+        ],
+        [
+          200.0,
+          294.0
+        ]
+      ]
+    },
+    {
+      "text": "product or refund it. Thank",
+      "confidence": 0.98011,
+      "box": [
+        [
+          231.0,
+          272.0
+        ],
+        [
+          325.0,
+          348.0
+        ],
+        [
+          314.0,
+          361.0
+        ],
+        [
+          221.0,
+          286.0
+        ]
+      ]
+    },
+    {
+      "text": "SITCER",
+      "confidence": 0.7807,
+      "box": [
+        [
+          696.0,
+          266.0
+        ],
+        [
+          730.0,
+          238.0
+        ],
+        [
+          742.0,
+          252.0
+        ],
+        [
+          708.0,
+          281.0
+        ]
+      ]
+    },
+    {
+      "text": "satisfied with the product or",
+      "confidence": 0.98052,
+      "box": [
+        [
+          203.0,
+          299.0
+        ],
+        [
+          300.0,
+          379.0
+        ],
+        [
+          289.0,
+          392.0
+        ],
+        [
+          192.0,
+          313.0
+        ]
+      ]
+    },
+    {
+      "text": "pur   onot",
+      "confidence": 0.52953,
+      "box": [
+        [
+          208.0,
+          318.0
+        ],
+        [
+          294.0,
+          386.0
+        ],
+        [
+          284.0,
+          399.0
+        ],
+        [
+          198.0,
+          331.0
+        ]
+      ]
+    },
+    {
+      "text": "Thank you for your",
+      "confidence": 0.98076,
+      "box": [
+        [
+          219.0,
+          339.0
+        ],
+        [
+          287.0,
+          393.0
+        ],
+        [
+          277.0,
+          405.0
+        ],
+        [
+          209.0,
+          351.0
+        ]
+      ]
+    }
+  ]
+}

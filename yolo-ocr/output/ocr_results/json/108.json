@@ -1,0 +1,141 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\108.jpg",
+  "text": "丹表Londbeoky\n20 Tablets\n黛力新\n氟哌噻吨美利曲辛片\n Landteck AS-Copirhagon\nWanstictued in Denmarkby",
+  "line_count": 6,
+  "average_confidence": 0.83074,
+  "elapsed_seconds": 0.307,
+  "lines": [
+    {
+      "text": "丹表Londbeoky",
+      "confidence": 0.60435,
+      "box": [
+        [
+          211.0,
+          6.0
+        ],
+        [
+          330.0,
+          18.0
+        ],
+        [
+          326.0,
+          65.0
+        ],
+        [
+          206.0,
+          53.0
+        ]
+      ]
+    },
+    {
+      "text": "20 Tablets",
+      "confidence": 0.96827,
+      "box": [
+        [
+          30.0,
+          28.0
+        ],
+        [
+          76.0,
+          26.0
+        ],
+        [
+          76.0,
+          43.0
+        ],
+        [
+          31.0,
+          44.0
+        ]
+      ]
+    },
+    {
+      "text": "黛力新",
+      "confidence": 0.99889,
+      "box": [
+        [
+          110.0,
+          64.0
+        ],
+        [
+          170.0,
+          65.0
+        ],
+        [
+          170.0,
+          93.0
+        ],
+        [
+          110.0,
+          93.0
+        ]
+      ]
+    },
+    {
+      "text": "氟哌噻吨美利曲辛片",
+      "confidence": 0.95768,
+      "box": [
+        [
+          85.0,
+          99.0
+        ],
+        [
+          203.0,
+          104.0
+        ],
+        [
+          202.0,
+          125.0
+        ],
+        [
+          85.0,
+          120.0
+        ]
+      ]
+    },
+    {
+      "text": " Landteck AS-Copirhagon",
+      "confidence": 0.76163,
+      "box": [
+        [
+          36.0,
+          151.0
+        ],
+        [
+          141.0,
+          164.0
+        ],
+        [
+          140.0,
+          177.0
+        ],
+        [
+          34.0,
+          164.0
+        ]
+      ]
+    },
+    {
+      "text": "Wanstictued in Denmarkby",
+      "confidence": 0.69365,
+      "box": [
+        [
+          37.0,
+          142.0
+        ],
+        [
+          128.0,
+          152.0
+        ],
+        [
+          127.0,
+          165.0
+        ],
+        [
+          35.0,
+          155.0
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\417.jpg",
+  "label": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\labels\\417.txt",
+  "text": "santex'powdered\nCE\nM\n100\nMERCATORMEDICAL",
+  "line_count": 5,
+  "average_confidence": 0.96975,
+  "objects": [
+    {
+      "object_index": 0,
+      "class_id": 10,
+      "class_name": "创可贴绷带",
+      "selected_angle": 0,
+      "quality": 11.39679,
+      "crop_shape": [
+        213,
+        407
+      ],
+      "lines": [
+        {
+          "text": "santex'powdered",
+          "confidence": 0.95027,
+          "box": [
+            [
+              45.0,
+              5.0
+            ],
+            [
+              169.0,
+              6.0
+            ],
+            [
+              169.0,
+              21.0
+            ],
+            [
+              45.0,
+              20.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "CE",
+          "confidence": 0.96488,
+          "box": [
+            [
+              89.0,
+              32.0
+            ],
+            [
+              106.0,
+              32.0
+            ],
+            [
+              106.0,
+              43.0
+            ],
+            [
+              89.0,
+              43.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "M",
+          "confidence": 0.99614,
+          "box": [
+            [
+              294.0,
+              70.0
+            ],
+            [
+              313.0,
+              70.0
+            ],
+            [
+              313.0,
+              87.0
+            ],
+            [
+              294.0,
+              87.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "100",
+          "confidence": 0.94506,
+          "box": [
+            [
+              340.0,
+              133.0
+            ],
+            [
+              355.0,
+              133.0
+            ],
+            [
+              355.0,
+              143.0
+            ],
+            [
+              340.0,
+              143.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "MERCATORMEDICAL",
+          "confidence": 0.99242,
+          "box": [
+            [
+              67.0,
+              147.0
+            ],
+            [
+              158.0,
+              143.0
+            ],
+            [
+              158.0,
+              154.0
+            ],
+            [
+              68.0,
+              157.0
+            ]
+          ],
+          "object_index": 0
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "text": "santex'powdered",
+      "confidence": 0.95027,
+      "box": [
+        [
+          45.0,
+          5.0
+        ],
+        [
+          169.0,
+          6.0
+        ],
+        [
+          169.0,
+          21.0
+        ],
+        [
+          45.0,
+          20.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "CE",
+      "confidence": 0.96488,
+      "box": [
+        [
+          89.0,
+          32.0
+        ],
+        [
+          106.0,
+          32.0
+        ],
+        [
+          106.0,
+          43.0
+        ],
+        [
+          89.0,
+          43.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "M",
+      "confidence": 0.99614,
+      "box": [
+        [
+          294.0,
+          70.0
+        ],
+        [
+          313.0,
+          70.0
+        ],
+        [
+          313.0,
+          87.0
+        ],
+        [
+          294.0,
+          87.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "100",
+      "confidence": 0.94506,
+      "box": [
+        [
+          340.0,
+          133.0
+        ],
+        [
+          355.0,
+          133.0
+        ],
+        [
+          355.0,
+          143.0
+        ],
+        [
+          340.0,
+          143.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "MERCATORMEDICAL",
+      "confidence": 0.99242,
+      "box": [
+        [
+          67.0,
+          147.0
+        ],
+        [
+          158.0,
+          143.0
+        ],
+        [
+          158.0,
+          154.0
+        ],
+        [
+          68.0,
+          157.0
+        ]
+      ],
+      "object_index": 0
+    }
+  ],
+  "ocr_method": "rapidocr_obb_rectified"
+}

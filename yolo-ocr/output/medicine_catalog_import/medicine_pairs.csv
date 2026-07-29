@@ -1,0 +1,393 @@
+﻿status,medicine_id,canonical_name,raw_names,proposed_category_id,category_name,confidence,source_categories,source_pages,detail_urls,reason
+imported,1892,对乙酰氨基酚口服溶液,对乙酰氨基酚口服溶液,3,止痛药,0.92,感冒发热 | 病毒性感冒 | 解热镇痛 | 牙痛 | 肌肉关节痛 | 偏头痛,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/jierezhentong/ | https://ypk.39.net/yatong/ | https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/piantoutong/,https://ypk.39.net/497672/,解热镇痛页且药名含镇痛成分/特征; 疼痛页且药名含镇痛成分/特征
+already_present,,小儿氨酚烷胺颗粒,小儿氨酚烷胺颗粒,0,,0.92,感冒发热 | 病毒性感冒,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/507580/,感冒页且药名含感冒特征
+already_present,,复方氨酚烷胺片,复方氨酚烷胺片 | 复方氨酚烷胺片(感康),0,,0.92,感冒发热 | 病毒性感冒 | 解热镇痛 | 肌肉关节痛,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/jierezhentong/ | https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/507814/ | https://ypk.39.net/507831/,感冒页且药名含感冒特征; 解热镇痛页中出现明确感冒药名，改归感冒药
+already_present,,小儿感冒颗粒,小儿感冒颗粒,0,,0.92,感冒发热 | 病毒性感冒 | 止咳祛痰,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/zhikequtan/,https://ypk.39.net/508862/,感冒页且药名含感冒特征; 止咳页中出现明确感冒药名，改归感冒药
+already_present,,感冒清片,感冒清片,0,,0.92,感冒发热 | 病毒性感冒 | 止咳祛痰 | 肌肉关节痛,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/zhikequtan/ | https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/509170/,感冒页且药名含感冒特征; 止咳页中出现明确感冒药名，改归感冒药
+already_present,,感冒软胶囊,感冒软胶囊,0,,0.92,感冒发热 | 病毒性感冒,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/568500/,感冒页且药名含感冒特征
+already_present,,感冒清热颗粒,感冒清热颗粒(无蔗糖) | 感冒清热颗粒 | 感冒清热颗粒(无蔗糖)(同仁堂),0,,0.92,感冒发热 | 病毒性感冒 | 止咳祛痰,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/zhikequtan/,https://ypk.39.net/569633/ | https://ypk.39.net/659879/,感冒页且药名含感冒特征; 止咳页中出现明确感冒药名，改归感冒药
+already_present,,感冒疏风片,感冒疏风片,0,,0.92,感冒发热 | 病毒性感冒 | 肌肉关节痛,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/572137/,感冒页且药名含感冒特征
+already_present,,感冒灵胶囊,感冒灵胶囊,0,,0.92,感冒发热,https://ypk.39.net/ganmao/,https://ypk.39.net/572623/,感冒页且药名含感冒特征
+already_present,,感冒清热软胶囊,感冒清热软胶囊,0,,0.92,感冒发热 | 病毒性感冒,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/585966/,感冒页且药名含感冒特征
+review_unclassified,,氨咖黄敏胶囊,氨咖黄敏胶囊,,,0.0,感冒发热 | 病毒性感冒,https://ypk.39.net/ganmao/ | https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/587645/,感冒页药名缺少明确感冒特征
+review_unclassified,,板蓝根颗粒,板蓝根颗粒 | 板蓝根颗粒(白云山),,,0.0,病毒性感冒 | 扁桃体炎,https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/biantaotiyan/,https://ypk.39.net/551969/ | https://ypk.39.net/668672/,感冒页药名缺少明确感冒特征; 炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,夏桑菊颗粒,夏桑菊颗粒,,,0.0,病毒性感冒,https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/569614/,感冒页药名缺少明确感冒特征
+review_unclassified,,清开灵颗粒,清开灵颗粒 | 清开灵颗粒(白云山),,,0.0,病毒性感冒 | 扁桃体炎,https://ypk.39.net/bingduxingganmao/ | https://ypk.39.net/biantaotiyan/,https://ypk.39.net/623591/ | https://ypk.39.net/509591/,感冒页药名缺少明确感冒特征; 炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,复方金银花颗粒,复方金银花颗粒,,,0.0,病毒性感冒,https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/761367/,感冒页药名缺少明确感冒特征
+already_present,,复方感冒灵颗粒,复方感冒灵颗粒,0,,0.92,病毒性感冒,https://ypk.39.net/bingduxingganmao/,https://ypk.39.net/786890/,感冒页且药名含感冒特征
+already_present,,止咳宝片,止咳宝片(特一),1,,0.92,止咳祛痰,https://ypk.39.net/zhikequtan/,https://ypk.39.net/568722/,止咳页且药名含止咳/化痰特征
+already_present,,连花清瘟胶囊,连花清瘟胶囊(以岭),0,,0.92,止咳祛痰 | 解热镇痛 | 肌肉关节痛,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/jierezhentong/ | https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/563759/,止咳页中出现明确感冒药名，改归感冒药; 解热镇痛页中出现明确感冒药名，改归感冒药
+imported,1893,酚麻美敏片,酚麻美敏片(泰诺),0,感冒药,0.92,止咳祛痰 | 解热镇痛,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/jierezhentong/,https://ypk.39.net/500728/,止咳页中出现明确感冒药名，改归感冒药; 解热镇痛页中出现明确感冒药名，改归感冒药
+already_present,,氨溴特罗口服溶液,氨溴特罗口服溶液(易坦静),1,,0.92,止咳祛痰 | 小儿止咳化痰,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/507577/,止咳页且药名含止咳/化痰特征
+already_present,,王氏保赤丸,王氏保赤丸(南通),5,,0.92,止咳祛痰 | 助消化 | 止泻 | 痔疮便秘便血,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/zhuxiaohua/ | https://ypk.39.net/zhixie/ | https://ypk.39.net/zhichuang/,https://ypk.39.net/508793/,来源功效分类直接映射
+already_present,,一清颗粒,一清颗粒(绿雨),13,,0.0,止咳祛痰 | 扁桃体炎 | 牙痛 | 痔疮便秘便血,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/biantaotiyan/ | https://ypk.39.net/yatong/ | https://ypk.39.net/zhichuang/,https://ypk.39.net/659880/,人工审计按 PDF 类别边界修正
+already_present,,小儿肺热咳喘口服液,小儿肺热咳喘口服液(葵花),1,,0.92,止咳祛痰 | 小儿止咳化痰,https://ypk.39.net/zhikequtan/ | https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508806/,止咳页且药名含止咳/化痰特征
+review_unclassified,,百令胶囊,百令胶囊(百令),,,0.0,止咳祛痰,https://ypk.39.net/zhikequtan/,https://ypk.39.net/509345/,止咳页药名缺少止咳/化痰特征
+review_unclassified,,通宣理肺丸,通宣理肺丸(同仁堂),,,0.0,止咳祛痰,https://ypk.39.net/zhikequtan/,https://ypk.39.net/509304/,止咳页药名缺少止咳/化痰特征
+already_present,,小儿清肺止咳片,小儿清肺止咳片,1,,0.92,止咳祛痰,https://ypk.39.net/zhikequtan/,https://ypk.39.net/508815/,止咳页且药名含止咳/化痰特征
+already_present,,治咳川贝枇杷露,治咳川贝枇杷露,1,,0.92,止咳祛痰,https://ypk.39.net/zhikequtan/,https://ypk.39.net/509349/,止咳页且药名含止咳/化痰特征
+already_present,,小儿消积止咳口服液,小儿消积止咳口服液(鲁南/宁宝),1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508796/,止咳页且药名含止咳/化痰特征
+review_unclassified,,小儿咽扁颗粒,小儿咽扁颗粒(同仁堂),,,0.0,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508841/,止咳页药名缺少止咳/化痰特征
+already_present,,小儿止咳糖浆,小儿止咳糖浆(潘高寿),1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/509421/,止咳页且药名含止咳/化痰特征
+already_present,,小儿化痰止咳颗粒,小儿化痰止咳颗粒,1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508830/,止咳页且药名含止咳/化痰特征
+already_present,,小儿清肺化痰颗粒,小儿清肺化痰颗粒(神苗) | 小儿清肺化痰颗粒,1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/675944/ | https://ypk.39.net/508779/,止咳页且药名含止咳/化痰特征
+already_present,,小儿咳喘灵颗粒,小儿咳喘灵颗粒(龙牡),1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/590726/,止咳页且药名含止咳/化痰特征
+already_present,,小儿宣肺止咳颗粒,小儿宣肺止咳颗粒(健民),1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508795/,止咳页且药名含止咳/化痰特征
+review_unclassified,,健儿清解液,健儿清解液(杨济生),,,0.0,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/589811/,止咳页药名缺少止咳/化痰特征
+review_unclassified,,儿童清肺丸,儿童清肺丸,,,0.0,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508780/,止咳页药名缺少止咳/化痰特征
+review_unclassified,,儿童咳液,儿童咳液,,,0.0,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508804/,止咳页药名缺少止咳/化痰特征
+already_present,,小儿咳喘灵口服液,小儿咳喘灵口服液,1,,0.92,小儿止咳化痰,https://ypk.39.net/xiaoerkesou/,https://ypk.39.net/508820/,止咳页且药名含止咳/化痰特征
+review_category_conflict,,阿莫西林胶囊,阿莫西林胶囊(联邦/阿莫仙),2 | 5,,0.92,扁桃体炎 | 止泻,https://ypk.39.net/biantaotiyan/ | https://ypk.39.net/zhixie/,https://ypk.39.net/507857/,"来源给出多个类别：[2, 5]"
+already_present,,蒲地蓝消炎口服液,蒲地蓝消炎口服液(济川),2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/622325/,药名含明确抗感染成分
+already_present,,阿奇霉素干混悬剂,阿奇霉素干混悬剂(希舒美),2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/506968/,药名含明确抗感染成分
+already_present,,阿莫西林片,阿莫西林片,2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/498342/,药名含明确抗感染成分
+review_unclassified,,清喉利咽颗粒,清喉利咽颗粒(慢严舒柠),,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/508942/,炎症相关页面但药名不能确认是抗感染药
+already_present,,头孢克洛干混悬剂,头孢克洛干混悬剂(希刻劳/Ceclor),2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/505739/,药名含明确抗感染成分
+already_present,,阿莫西林克拉维酸钾片,阿莫西林克拉维酸钾片(7:1)(金力舒),2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/507964/,药名含明确抗感染成分
+review_unclassified,,匹多莫德颗粒剂,匹多莫德颗粒剂,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/504484/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,复方鱼腥草合剂,复方鱼腥草合剂,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/508959/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,冬凌草糖浆,冬凌草糖浆,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/509631/,炎症相关页面但药名不能确认是抗感染药
+already_present,,蒲地蓝消炎片,蒲地蓝消炎片,2,,0.88,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/509642/,药名含明确抗感染成分
+review_unclassified,,清开灵滴丸,清开灵滴丸,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/509698/ | https://ypk.39.net/623320/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,金莲花分散片,金莲花分散片,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/509713/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,喉疾灵胶囊,喉疾灵胶囊,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/589194/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,玉合草含片,玉合草含片,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/625159/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,维C银翘片,维C银翘片,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/625419/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,银黄含化片,银黄含化片,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/667894/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,匹多莫德颗粒,匹多莫德颗粒,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/743862/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,聚甲酚磺醛栓,聚甲酚磺醛栓,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/763494/,炎症相关页面但药名不能确认是抗感染药
+review_unclassified,,银黄含化滴丸,银黄含化滴丸,,,0.0,扁桃体炎,https://ypk.39.net/biantaotiyan/,https://ypk.39.net/826370/,炎症相关页面但药名不能确认是抗感染药
+already_present,,氨酚伪麻那敏片,氨酚伪麻那敏片(II)(海王银得菲),0,,0.0,解热镇痛 | 肌肉关节痛,https://ypk.39.net/jierezhentong/ | https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/497542/,人工审计按 PDF 类别边界修正
+imported,1894,复方对乙酰氨基酚片,复方对乙酰氨基酚片(Ⅱ)(散列通) | 复方对乙酰氨基酚片(Ⅱ)(散利痛),3,止痛药,0.92,解热镇痛 | 牙痛 | 肌肉关节痛 | 风湿疼痛 | 偏头痛 | 痛经,https://ypk.39.net/jierezhentong/ | https://ypk.39.net/yatong/ | https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/ | https://ypk.39.net/piantoutong/ | https://ypk.39.net/tongjing/,https://ypk.39.net/507774/ | https://ypk.39.net/507808/,解热镇痛页且药名含镇痛成分/特征; 疼痛页且药名含镇痛成分/特征; 妇科页中的通用镇痛药，改归止痛药
+review_category_conflict,,布洛芬混悬液,布洛芬混悬液(美林) | 布洛芬混悬液,3 | 4,,0.92,解热镇痛 | 牙痛 | 肌肉关节痛 | 痛经,https://ypk.39.net/jierezhentong/ | https://ypk.39.net/yatong/ | https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/tongjing/,https://ypk.39.net/506348/ | https://ypk.39.net/499659/,"来源给出多个类别：[3, 4]"
+already_present,,小儿氨酚黄那敏颗粒,小儿氨酚黄那敏颗粒(护彤),0,,0.88,解热镇痛,https://ypk.39.net/jierezhentong/,https://ypk.39.net/507549/,解热镇痛页中出现明确感冒药名，改归感冒药
+already_present,,布洛芬缓释胶囊,布洛芬缓释胶囊(芬必得),3,,0.88,解热镇痛,https://ypk.39.net/jierezhentong/,https://ypk.39.net/712044/,解热镇痛页且药名含镇痛成分/特征
+imported,1895,尼美舒利颗粒,尼美舒利颗粒(瑞芝清),3,止痛药,0.92,解热镇痛 | 肌肉关节痛 | 风湿疼痛 | 痛经,https://ypk.39.net/jierezhentong/ | https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/ | https://ypk.39.net/tongjing/,https://ypk.39.net/505443/,解热镇痛页且药名含镇痛成分/特征; 疼痛页且药名含镇痛成分/特征; 妇科页中的通用镇痛药，改归止痛药
+already_present,,对乙酰氨基酚片,对乙酰氨基酚片(扑热息痛) | 对乙酰氨基酚片,3,,0.92,解热镇痛 | 牙痛 | 肌肉关节痛 | 偏头痛 | 痛经,https://ypk.39.net/jierezhentong/ | https://ypk.39.net/yatong/ | https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/piantoutong/ | https://ypk.39.net/tongjing/,https://ypk.39.net/666510/ | https://ypk.39.net/499030/,解热镇痛页且药名含镇痛成分/特征; 疼痛页且药名含镇痛成分/特征; 妇科页中的通用镇痛药，改归止痛药
+already_present,,正天丸,正天丸(999),3,,0.92,头痛头晕 | 偏头痛,https://ypk.39.net/toutongtouyun/ | https://ypk.39.net/piantoutong/,https://ypk.39.net/510016/,疼痛页且药名含镇痛成分/特征
+already_present,,黄连上清丸,黄连上清丸(同仁堂) | 黄连上清丸,13,,0.0,头痛头晕 | 痔疮便秘便血,https://ypk.39.net/toutongtouyun/ | https://ypk.39.net/zhichuang/,https://ypk.39.net/509623/ | https://ypk.39.net/589272/,人工审计按 PDF 类别边界修正
+already_present,,黄连上清片,黄连上清片,13,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/509632/,人工审计按 PDF 类别边界修正
+already_present,,牛黄上清丸,牛黄上清丸(同仁堂),13,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/508575/,人工审计按 PDF 类别边界修正
+already_present,,全天麻胶囊,全天麻胶囊(神奇) | 全天麻胶囊,3,,0.92,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/509577/ | https://ypk.39.net/623813/,疼痛页且药名含镇痛成分/特征
+already_present,,眩晕宁片,眩晕宁片(三金),13,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/589588/,人工审计按 PDF 类别边界修正
+already_present,,六经头痛片,六经头痛片(仁源堂),3,,0.92,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/624632/,疼痛页且药名含镇痛成分/特征
+already_present,,牛黄上清片,牛黄上清片,13,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/573052/,人工审计按 PDF 类别边界修正
+already_present,,通天口服液,通天口服液(太极),3,,0.92,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/509715/,疼痛页且药名含镇痛成分/特征
+already_present,,天舒胶囊,天舒胶囊,3,,0.92,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/627697/,疼痛页且药名含镇痛成分/特征
+review_unclassified,,益智康脑丸,益智康脑丸,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/510017/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,归元健脑片,归元健脑片,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/510141/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,复方双花片,复方双花片,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/667836/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,牛黄上清胶囊,牛黄上清胶囊,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/693991/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,孕妇金花胶囊,孕妇金花胶囊,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/696825/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,洞天长春膏,洞天长春膏,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/698611/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,复方海蛇胶囊,复方海蛇胶囊,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/809125/,疼痛相关页面但药名缺少镇痛成分/特征
+imported,1896,治偏痛胶囊,治偏痛胶囊,3,止痛药,0.92,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/817781/,疼痛页且药名含镇痛成分/特征
+review_unclassified,,血络通胶囊,血络通胶囊,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/863482/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,萘替芬酮康唑乳膏,萘替芬酮康唑乳膏,,,0.0,头痛头晕,https://ypk.39.net/toutongtouyun/,https://ypk.39.net/889041/,疼痛相关页面但药名缺少镇痛成分/特征
+already_present,,牛黄解毒片,牛黄解毒片(同仁堂),13,,0.0,牙痛 | 痔疮便秘便血,https://ypk.39.net/yatong/ | https://ypk.39.net/zhichuang/,https://ypk.39.net/568530/,人工审计按 PDF 类别边界修正
+already_present,,口腔溃疡散,口腔溃疡散(同仁堂),9,,0.0,牙痛,https://ypk.39.net/yatong/,https://ypk.39.net/509438/,人工审计按 PDF 类别边界修正
+already_present,,开喉剑喷雾剂,开喉剑喷雾剂(三力),9,,0.0,牙痛,https://ypk.39.net/yatong/,https://ypk.39.net/509439/,人工审计按 PDF 类别边界修正
+already_present,,独一味胶囊,独一味胶囊(独一味),3,,0.92,牙痛 | 风湿疼痛,https://ypk.39.net/yatong/ | https://ypk.39.net/fengshi/,https://ypk.39.net/509175/,疼痛页且药名含镇痛成分/特征
+already_present,,新癀片,新癀片(鼎炉),3,,0.92,牙痛,https://ypk.39.net/yatong/,https://ypk.39.net/509594/,疼痛页且药名含镇痛成分/特征
+already_present,,酚咖片,酚咖片(芬必得/中美史克) | 酚咖片 | 酚咖片(加合百服宁),3,,0.92,牙痛 | 偏头痛,https://ypk.39.net/yatong/ | https://ypk.39.net/piantoutong/,https://ypk.39.net/662632/ | https://ypk.39.net/501260/,疼痛页且药名含镇痛成分/特征
+imported,1897,布洛芬颗粒,布洛芬颗粒,3,止痛药,0.92,牙痛,https://ypk.39.net/yatong/,https://ypk.39.net/498741/,疼痛页且药名含镇痛成分/特征
+already_present,,麝香壮骨膏,麝香壮骨膏,9,,0.0,肌肉关节痛 | 风湿疼痛,https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/,https://ypk.39.net/509776/,人工审计按 PDF 类别边界修正
+review_unclassified,,颈复康颗粒,颈复康颗粒(山庄),,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/509570/,疼痛相关页面但药名缺少镇痛成分/特征
+imported,1898,薏辛除湿止痛胶囊,薏辛除湿止痛胶囊(曹清华胶囊),3,止痛药,0.92,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/666036/,疼痛页且药名含镇痛成分/特征
+imported,1899,消痛贴膏,消痛贴膏(奇正),3,止痛药,0.92,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/509184/,疼痛页且药名含镇痛成分/特征
+review_unclassified,,复方醋酸甲羟孕酮胶囊,复方醋酸甲羟孕酮胶囊,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/500080/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,壮骨药酒,壮骨药酒,,,0.0,肌肉关节痛 | 风湿疼痛,https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/,https://ypk.39.net/509730/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,通络开痹片,通络开痹片,,,0.0,肌肉关节痛 | 风湿疼痛,https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/,https://ypk.39.net/509731/,疼痛相关页面但药名缺少镇痛成分/特征
+imported,1900,骨痛灵酊,骨痛灵酊,3,止痛药,0.92,肌肉关节痛 | 风湿疼痛,https://ypk.39.net/jirouguanjietong/ | https://ypk.39.net/fengshi/,https://ypk.39.net/509736/,疼痛页且药名含镇痛成分/特征
+review_unclassified,,重感灵片,重感灵片,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/569620/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,盐酸多奈哌齐片,盐酸多奈哌齐片,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/586196/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,骨筋丸胶囊,骨筋丸胶囊,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/588249/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,洛索洛芬钠片,洛索洛芬钠片,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/628581/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,云南白药,云南白药,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/669060/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,瘀血痹片,瘀血痹片,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/821983/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,巴氯芬片,巴氯芬片,,,0.0,肌肉关节痛,https://ypk.39.net/jirouguanjietong/,https://ypk.39.net/973086/,疼痛相关页面但药名缺少镇痛成分/特征
+already_present,,腰痛宁胶囊,腰痛宁胶囊(山庄/郭晓庄),3,,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/509256/,疼痛页且药名含镇痛成分/特征
+already_present,,鸿茅药酒,鸿茅药酒(鸿茅),3,,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/579647/,疼痛页且药名含镇痛成分/特征
+already_present,,云南白药胶囊,云南白药胶囊(云南白药),13,,0.0,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/509191/,人工审计按 PDF 类别边界修正
+already_present,,蚁参蠲痹胶囊,蚁参蠲痹胶囊(颈复康),3,,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/758566/,疼痛页且药名含镇痛成分/特征
+already_present,,双氯芬酸钠肠溶片,双氯芬酸钠肠溶片(糖衣片),3,,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/507806/,疼痛页且药名含镇痛成分/特征
+already_present,,天麻丸,天麻丸(同仁堂),3,,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/509755/,疼痛页且药名含镇痛成分/特征
+review_unclassified,,萘普生缓释胶囊,萘普生缓释胶囊,,,0.0,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/503790/,疼痛相关页面但药名缺少镇痛成分/特征
+review_unclassified,,壮骨伸筋胶囊,壮骨伸筋胶囊,,,0.0,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/509257/,疼痛相关页面但药名缺少镇痛成分/特征
+imported,1901,益肾蠲痹丸,益肾蠲痹丸,3,止痛药,0.92,风湿疼痛,https://ypk.39.net/fengshi/,https://ypk.39.net/509580/,疼痛页且药名含镇痛成分/特征
+already_present,,盐酸氟桂利嗪胶囊,盐酸氟桂利嗪胶囊(西比灵),3,,0.92,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/496545/,疼痛页且药名含镇痛成分/特征
+already_present,,天麻素片,天麻素片(天眩清),3,,0.92,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/506517/,疼痛页且药名含镇痛成分/特征
+already_present,,天麻素胶囊,天麻素胶囊,3,,0.92,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/688513/,疼痛页且药名含镇痛成分/特征
+already_present,,对乙酰氨基酚混悬滴剂,对乙酰氨基酚混悬滴剂(泰诺林),4,,0.92,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/500730/,人工审计按 PDF 类别边界修正
+already_present,,安神胶囊,安神胶囊(刻康),13,,0.0,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/569763/,人工审计按 PDF 类别边界修正
+already_present,,复方羊角颗粒,复方羊角颗粒(秀江),3,,0.92,偏头痛,https://ypk.39.net/piantoutong/,https://ypk.39.net/510140/,疼痛页且药名含镇痛成分/特征
+already_present,,康复新液,康复新液(好医生),5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/509196/,来源功效分类直接映射
+already_present,,奥美拉唑肠溶胶囊,奥美拉唑肠溶胶囊(诺捷康) | 奥美拉唑肠溶胶囊(洛赛克),5,,0.92,胃肠溃疡 | 助消化,https://ypk.39.net/kuiyang/ | https://ypk.39.net/zhuxiaohua/,https://ypk.39.net/577350/ | https://ypk.39.net/508348/,来源功效分类直接映射
+already_present,,铝碳酸镁咀嚼片,铝碳酸镁咀嚼片(达喜/曾用名:铝碳酸镁片),5,,0.92,胃肠溃疡 | 助消化,https://ypk.39.net/kuiyang/ | https://ypk.39.net/zhuxiaohua/,https://ypk.39.net/508306/,来源功效分类直接映射
+already_present,,枸橼酸铋钾颗粒,枸橼酸铋钾颗粒（非处方）(丽珠得乐),5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/502020/,来源功效分类直接映射
+already_present,,附子理中丸,附子理中丸,5,,0.92,胃肠溃疡 | 胃脘疼痛,https://ypk.39.net/kuiyang/ | https://ypk.39.net/weiwantengtong/,https://ypk.39.net/508586/,来源功效分类直接映射
+already_present,,复方铝酸铋片,复方铝酸铋片(胃必治),5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/501677/,来源功效分类直接映射
+already_present,,吗丁啉混悬液,吗丁啉混悬液(吗丁啉),5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/500780/,来源功效分类直接映射
+already_present,,艾司奥美拉唑镁肠溶片,艾司奥美拉唑镁肠溶片(耐信),5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/498211/,来源功效分类直接映射
+already_present,,胶体果胶铋胶囊,胶体果胶铋胶囊,5,,0.92,胃肠溃疡,https://ypk.39.net/kuiyang/,https://ypk.39.net/586042/,来源功效分类直接映射
+already_present,,四磨汤口服液,四磨汤口服液(汉森) | 四磨汤口服液,5,,0.92,助消化 | 止泻 | 痔疮便秘便血 | 眼科用药,https://ypk.39.net/zhuxiaohua/ | https://ypk.39.net/zhixie/ | https://ypk.39.net/zhichuang/ | https://ypk.39.net/yanke/,https://ypk.39.net/509910/,来源功效分类直接映射
+review_curated_rejection,,吗丁啉片剂10mgOTC,吗丁啉片剂10mgOTC(吗丁啉),,,0.92,助消化,https://ypk.39.net/zhuxiaohua/,https://ypk.39.net/500781/,人工审计判定名称含包装规格、残缺括号或缺少有效商品名
+already_present,,胃康灵胶囊,胃康灵胶囊(葵花),5,,0.92,助消化 | 止泻 | 胃脘疼痛,https://ypk.39.net/zhuxiaohua/ | https://ypk.39.net/zhixie/ | https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509904/,来源功效分类直接映射
+already_present,,乳酸菌素片,乳酸菌素片(为消),5,,0.92,助消化 | 止泻,https://ypk.39.net/zhuxiaohua/ | https://ypk.39.net/zhixie/,https://ypk.39.net/508333/,来源功效分类直接映射
+already_present,,归脾丸,归脾丸,13,,0.92,助消化,https://ypk.39.net/zhuxiaohua/,https://ypk.39.net/508645/,人工审计按 PDF 类别边界修正
+already_present,,醒脾养儿颗粒,醒脾养儿颗粒(健兴),5,,0.92,助消化 | 止泻 | 小儿胃肠用药,https://ypk.39.net/zhuxiaohua/ | https://ypk.39.net/zhixie/ | https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508772/,来源功效分类直接映射
+already_present,,健胃消食片,健胃消食片(江中),5,,0.92,助消化,https://ypk.39.net/zhuxiaohua/,https://ypk.39.net/568675/,来源功效分类直接映射
+already_present,,蒙脱石散,蒙脱石散(思密达),5,,0.92,止泻 | 小儿胃肠用药,https://ypk.39.net/zhixie/ | https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/674770/,来源功效分类直接映射
+already_present,,丁桂儿脐贴,丁桂儿脐贴(亚宝/丁桂),5,,0.92,止泻,https://ypk.39.net/zhixie/,https://ypk.39.net/666123/,来源功效分类直接映射
+already_present,,补中益气丸,补中益气丸(九芝堂),13,,0.92,止泻,https://ypk.39.net/zhixie/,https://ypk.39.net/670065/,人工审计按 PDF 类别边界修正
+already_present,,藿香正气口服液,藿香正气口服液(太极),5,,0.92,止泻,https://ypk.39.net/zhixie/,https://ypk.39.net/509794/,来源功效分类直接映射
+already_present,,三九胃泰颗粒,三九胃泰颗粒(三九胃泰/999),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509921/,来源功效分类直接映射
+already_present,,木香顺气丸,木香顺气丸(同仁堂制药),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509907/,来源功效分类直接映射
+already_present,,胃炎宁颗粒,胃炎宁颗粒(远达),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509919/,来源功效分类直接映射
+review_database_conflict,,舒肝和胃丸,舒肝和胃丸,5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509863/,数据库类别 13 与抓取类别 5 冲突
+already_present,,三九胃泰胶囊,三九胃泰胶囊(三九999),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509871/,来源功效分类直接映射
+already_present,,摩罗丹,摩罗丹(华山牌),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509901/,来源功效分类直接映射
+already_present,,气滞胃痛颗粒,气滞胃痛颗粒(999/三九医药/曙光),5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/509841/,来源功效分类直接映射
+already_present,,香砂养胃丸,香砂养胃丸,5,,0.92,胃脘疼痛,https://ypk.39.net/weiwantengtong/,https://ypk.39.net/624772/,来源功效分类直接映射
+already_present,,龙牡壮骨颗粒,龙牡壮骨颗粒(龙牡),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508794/,来源功效分类直接映射
+already_present,,健儿消食口服液,健儿消食口服液(葵花),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/760767/,来源功效分类直接映射
+already_present,,山麦健脾口服液,山麦健脾口服液(好娃友),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/584062/,来源功效分类直接映射
+already_present,,启脾丸,启脾丸(同仁堂),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508784/,来源功效分类直接映射
+already_present,,婴儿健脾颗粒,婴儿健脾颗粒(脾可欣),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508783/,来源功效分类直接映射
+already_present,,化积口服液,化积口服液(鹿迪),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508819/,来源功效分类直接映射
+already_present,,健脾消食丸,健脾消食丸(同仁堂),5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/508785/,来源功效分类直接映射
+already_present,,小儿腹泻贴,小儿腹泻贴,5,,0.92,小儿胃肠用药,https://ypk.39.net/xiaoerweichang/,https://ypk.39.net/682173/,来源功效分类直接映射
+already_present,,马应龙麝香痔疮膏,马应龙麝香痔疮膏(马应龙),15,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/510169/,药名明确是肛肠用药
+review_unclassified,,天王补心丸,天王补心丸(同仁堂),,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/508631/,痔疮/便秘混合页面，药名无法确定边界
+already_present,,化痔栓,化痔栓(白云山/敬修堂),15,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/510172/,药名明确是肛肠用药
+review_unclassified,,补脾益肠丸,补脾益肠丸,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/509874/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,牛黄清胃丸,牛黄清胃丸(同仁堂),,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/573048/,痔疮/便秘混合页面，药名无法确定边界
+already_present,,糖脉康颗粒,糖脉康颗粒(升和),11,,0.92,痔疮便秘便血 | 糖尿病,https://ypk.39.net/zhichuang/ | https://ypk.39.net/tangniaobing/,https://ypk.39.net/509824/,来源功效分类直接映射
+already_present,,乳果糖口服溶液,乳果糖口服溶液,6,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/505308/,药名明确是通便药
+review_unclassified,,复方角菜酸酯栓,复方角菜酸酯栓,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/508555/,痔疮/便秘混合页面，药名无法确定边界
+already_present,,麻仁软胶囊,麻仁软胶囊,6,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/508584/,药名明确是通便药
+review_unclassified,,余麦口咽合剂,余麦口咽合剂,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/509443/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,木香槟榔丸,木香槟榔丸,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/509974/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,清心明目上清丸,清心明目上清丸,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/510166/,痔疮/便秘混合页面，药名无法确定边界
+already_present,,痔根断片,痔根断片,15,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/510182/,药名明确是肛肠用药
+review_unclassified,,固本益肠片,固本益肠片,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/568607/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,达立通颗粒,达立通颗粒,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/580410/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,胆宁片,胆宁片,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/588701/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,复方聚乙二醇电解质散,复方聚乙二醇电解质散(Ⅳ),,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/591454/,痔疮/便秘混合页面，药名无法确定边界
+already_present,,肛泰栓,肛泰栓,15,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/680359/,药名明确是肛肠用药
+already_present,,京万红痔疮膏,京万红痔疮膏,15,,0.9,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/853752/,药名明确是肛肠用药
+review_unclassified,,润肠通秘茶,润肠通秘茶,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/863333/,痔疮/便秘混合页面，药名无法确定边界
+review_unclassified,,小麦纤维素颗粒,小麦纤维素颗粒,,,0.0,痔疮便秘便血,https://ypk.39.net/zhichuang/,https://ypk.39.net/2002518/,痔疮/便秘混合页面，药名无法确定边界
+review_category_conflict,,多维元素片,多维元素片(29)(善存) | 多维元素片(29-II)(银善存) | 多维元素片（金施尔康）(金施尔康) | 多维元素片（金施尔康） | 多维元素片(29) | 多维元素片(21),7 | 16,,0.92,补钙补锌-药品 | 补铁补硒-药品 | 维生素-药品 | 叶酸-药品 | 微量元素-药品 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/butie/c1 | https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/yesuan/c1 | https://ypk.39.net/weiliangyuansu/c1 | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/505630/ | https://ypk.39.net/505631/ | https://ypk.39.net/505695/ | https://ypk.39.net/590277/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,仙灵骨葆胶囊,仙灵骨葆胶囊(同济堂/中国药材),7 | 16,,0.92,补钙补锌-药品 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/509177/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,碳酸钙D3片,碳酸钙D3片(钙尔奇) | 碳酸钙D3片(Ⅰ)(钙尔奇D),7 | 16,,0.92,补钙补锌-药品 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/630305/ | https://ypk.39.net/630303/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,驴胶补血颗粒,驴胶补血颗粒(九芝堂),7 | 14 | 16,,0.92,补钙补锌-药品 | 月经不调 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/yuejingbutiao/ | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/563887/,"来源给出多个类别：[7, 14, 16]"
+review_category_conflict,,多维元素胶囊,多维元素胶囊(13)(康耐得) | 多维元素胶囊(13),7 | 16,,0.92,补钙补锌-药品 | 补铁补硒-药品 | 维生素-药品 | 叶酸-药品 | 微量元素-药品 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/butie/c1 | https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/yesuan/c1 | https://ypk.39.net/weiliangyuansu/c1 | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/505718/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,葡萄糖酸钙注射液,葡萄糖酸钙注射液,7 | 11 | 16,,0.92,补钙补锌-药品 | 甲状腺功能减退 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/jzxjt/ | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/701649/ | https://ypk.39.net/701699/,"来源给出多个类别：[7, 11, 16]"
+review_category_conflict,,葡萄糖酸钙锌口服溶液,葡萄糖酸钙锌口服溶液(扶娃/新盖金典) | 葡萄糖酸钙锌口服溶液(锌钙特) | 葡萄糖酸钙锌口服溶液,7 | 16,,0.92,补钙补锌-药品 | 维生素-药品 | 补钙补锌-保健品,https://ypk.39.net/bugaibuxin/c1 | https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/bugaibuxin/c3,https://ypk.39.net/701771/ | https://ypk.39.net/504566/,"来源给出多个类别：[7, 16]"
+already_present,,健脾生血颗粒,健脾生血颗粒(健民),7,,0.92,补铁补硒-药品,https://ypk.39.net/butie/c1,https://ypk.39.net/590283/,来源功效分类直接映射
+already_present,,硒酵母片,硒酵母片(西维尔),7,,0.92,补铁补硒-药品,https://ypk.39.net/butie/c1,https://ypk.39.net/507353/,来源功效分类直接映射
+already_present,,多糖铁复合物胶囊,多糖铁复合物胶囊(红源达),7,,0.92,补铁补硒-药品,https://ypk.39.net/butie/c1,https://ypk.39.net/500802/,来源功效分类直接映射
+already_present,,福乃得维铁缓释片,福乃得维铁缓释片(福乃得) | 福乃得维铁缓释片,7,,0.92,补铁补硒-药品 | 维生素-药品,https://ypk.39.net/butie/c1 | https://ypk.39.net/weishengsu/c1,https://ypk.39.net/501535/,来源功效分类直接映射
+already_present,,硫酸亚铁片,硫酸亚铁片(双海),7,,0.92,补铁补硒-药品,https://ypk.39.net/butie/c1,https://ypk.39.net/505700/,来源功效分类直接映射
+already_present,,富马酸亚铁咀嚼片,富马酸亚铁咀嚼片,7,,0.92,补铁补硒-药品,https://ypk.39.net/butie/c1,https://ypk.39.net/588823/,来源功效分类直接映射
+review_category_conflict,,小儿多维生素咀嚼片,小儿多维生素咀嚼片(10)(小施尔康),7 | 16,,0.92,维生素-药品 | 维生素-保健品,https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/weishengsu/c3,https://ypk.39.net/630256/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,小儿九维片,小儿九维片,7 | 16,,0.92,维生素-药品 | 维生素-保健品,https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/weishengsu/c3,https://ypk.39.net/590806/,"来源给出多个类别：[7, 16]"
+review_category_conflict,,小儿维生素颗粒,小儿维生素颗粒,7 | 16,,0.92,维生素-药品 | 维生素-保健品,https://ypk.39.net/weishengsu/c1 | https://ypk.39.net/weishengsu/c3,https://ypk.39.net/773113/,"来源给出多个类别：[7, 16]"
+already_present,,维生素AD滴剂,维生素AD滴剂,7,,0.92,维生素-药品,https://ypk.39.net/weishengsu/c1,https://ypk.39.net/497169/,来源功效分类直接映射
+already_present,,异维A酸软胶囊,异维A酸软胶囊,17,,0.92,维生素-药品,https://ypk.39.net/weishengsu/c1,https://ypk.39.net/497512/,人工审计按 PDF 类别边界修正
+already_present,,左卡尼汀口服溶液,左卡尼汀口服溶液,7,,0.92,维生素-药品,https://ypk.39.net/weishengsu/c1,https://ypk.39.net/500634/,来源功效分类直接映射
+already_present,,叶酸片,叶酸片(斯利安) | 叶酸片 | 叶酸片(联环) | 叶酸片(信谊) | 叶酸片(蕴安),7,,0.92,叶酸-药品,https://ypk.39.net/yesuan/c1,https://ypk.39.net/508503/ | https://ypk.39.net/508214/ | https://ypk.39.net/507022/ | https://ypk.39.net/508499/ | https://ypk.39.net/888418/,来源功效分类直接映射
+already_present,,五维葡钙口服溶液,五维葡钙口服溶液(贝友),7,,0.92,叶酸-药品,https://ypk.39.net/yesuan/c1,https://ypk.39.net/856494/,来源功效分类直接映射
+already_present,,维生素B1注射液,维生素B1注射液,7,,0.92,叶酸-药品,https://ypk.39.net/yesuan/c1,https://ypk.39.net/885056/,来源功效分类直接映射
+already_present,,烟酰胺片,烟酰胺片(力生),7,,0.92,叶酸-药品,https://ypk.39.net/yesuan/c1,https://ypk.39.net/764594/,来源功效分类直接映射
+already_present,,维生素C泡腾片,维生素C泡腾片,7,,0.92,微量元素-药品,https://ypk.39.net/weiliangyuansu/c1,https://ypk.39.net/506953/,来源功效分类直接映射
+already_present,,维生素E软胶囊,维生素E软胶囊,7,,0.92,微量元素-药品,https://ypk.39.net/weiliangyuansu/c1,https://ypk.39.net/508210/,来源功效分类直接映射
+already_present,,维生素B6片,维生素B6片,7,,0.92,微量元素-药品,https://ypk.39.net/weiliangyuansu/c1,https://ypk.39.net/508239/,来源功效分类直接映射
+already_present,,亚硒酸钠片,亚硒酸钠片,7,,0.92,微量元素-药品,https://ypk.39.net/weiliangyuansu/c1,https://ypk.39.net/576567/,来源功效分类直接映射
+review_category_conflict,,维生素C片,维生素C片,7 | 16,,0.92,微量元素-药品 | 维生素-保健品,https://ypk.39.net/weiliangyuansu/c1 | https://ypk.39.net/weishengsu/c3,https://ypk.39.net/621508/ | https://ypk.39.net/621512/ | https://ypk.39.net/514606/,"来源给出多个类别：[7, 16]"
+already_present,,丙酸倍氯米松鼻气雾剂,丙酸倍氯米松鼻气雾剂(伯克纳),8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/760268/,来源功效分类直接映射
+already_present,,氯雷他定片,氯雷他定片(息斯敏) | 氯雷他定片(开瑞坦),8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/498388/ | https://ypk.39.net/502873/,来源功效分类直接映射
+already_present,,马来酸氯苯那敏片,马来酸氯苯那敏片(力生) | 马来酸氯苯那敏片,8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/689361/ | https://ypk.39.net/504516/,来源功效分类直接映射
+already_present,,醋酸泼尼松片,醋酸泼尼松片(力生),8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/507704/,来源功效分类直接映射
+already_present,,乌蛇止痒丸,乌蛇止痒丸(中一牌),8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/509551/,来源功效分类直接映射
+already_present,,复方曲安奈德乳膏,复方曲安奈德乳膏(康纳乐),9,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/501661/,人工审计按 PDF 类别边界修正
+already_present,,鼻炎康片,鼻炎康片(德众/中国药材),8,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/508898/,来源功效分类直接映射
+already_present,,氟轻松维B6乳膏,氟轻松维B6乳膏(槐花维肤膏),9,,0.92,抗过敏,https://ypk.39.net/guomin/,https://ypk.39.net/508045/,人工审计按 PDF 类别边界修正
+already_present,,糠酸莫米松乳膏,糠酸莫米松乳膏(仙琚/芙美松),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/498221/,药名含明确外用剂型
+already_present,,硼酸洗液,硼酸洗液,9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/741403/,药名含明确外用剂型
+already_present,,复方樟脑乳膏,复方樟脑乳膏(宝树堂),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/508039/,药名含明确外用剂型
+already_present,,丁苯羟酸乳膏,丁苯羟酸乳膏(可润),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/500590/,药名含明确外用剂型
+review_unclassified,,复方醋酸曲安奈德溶液,复方醋酸曲安奈德溶液(新亚富龙),,,0.0,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/496149/,外用相关页面但剂型不能确认是外用药
+already_present,,乙氧苯柳胺软膏,乙氧苯柳胺软膏(艾迪特),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/741544/,药名含明确外用剂型
+already_present,,氧化锌硫软膏,氧化锌硫软膏,9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/741541/,药名含明确外用剂型
+already_present,,丙酸氯倍他索搽剂,丙酸氯倍他索搽剂(三益),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/736870/,药名含明确外用剂型
+already_present,,复方醋酸地塞米松凝胶,复方醋酸地塞米松凝胶(舒伕),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/740694/,药名含明确外用剂型
+already_present,,盐酸环丙沙星凝胶,盐酸环丙沙星凝胶(冯了性),9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/760605/,药名含明确外用剂型
+already_present,,氧化锌软膏,氧化锌软膏,9,,0.92,皮炎湿疹,https://ypk.39.net/piyan/,https://ypk.39.net/496917/,药名含明确外用剂型
+review_unclassified,,杞菊地黄丸,杞菊地黄丸(同仁堂)(水蜜丸),,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/508719/,外用相关页面但剂型不能确认是外用药
+already_present,,苄达赖氨酸滴眼液,苄达赖氨酸滴眼液(莎普爱思),9,,0.92,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/508508/ | https://ypk.39.net/584860/,药名含明确外用剂型
+already_present,,四味珍层冰硼滴眼液,四味珍层冰硼滴眼液(珍视明),9,,0.92,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/510155/,药名含明确外用剂型
+already_present,,氯霉素滴眼液,氯霉素滴眼液(润舒),9,,0.92,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/507591/,药名含明确外用剂型
+review_unclassified,,复方血栓通胶囊,复方血栓通胶囊(众生),,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/760149/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,血栓通注射液,血栓通注射液,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/757560/,外用相关页面但剂型不能确认是外用药
+already_present,,珍珠明目滴眼液,珍珠明目滴眼液,9,,0.92,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/508603/,药名含明确外用剂型
+review_unclassified,,明目地黄丸,明目地黄丸(同仁堂),,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/568584/,外用相关页面但剂型不能确认是外用药
+already_present,,复方硫酸软骨素滴眼液,复方硫酸软骨素滴眼液(润洁),9,,0.92,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/563855/,药名含明确外用剂型
+review_unclassified,,地衣芽孢杆菌活菌胶囊,地衣芽孢杆菌活菌胶囊,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/500413/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,枯草杆菌二联活菌颗粒,枯草杆菌二联活菌颗粒,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/500803/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,双歧杆菌三联活菌肠溶胶囊,双歧杆菌三联活菌肠溶胶囊,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/508283/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,小儿七星茶颗粒,小儿七星茶颗粒,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/508863/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,同仁堂牌益生菌颗粒,同仁堂牌益生菌颗粒(甜橙口味),,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/510944/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,川奇牌川奇消食片,川奇牌川奇消食片,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/514677/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,神黄钠铝胶囊,神黄钠铝胶囊,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/630834/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,腹可安片,腹可安片,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/637063/ | https://ypk.39.net/637064/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,藿香清胃胶囊,藿香清胃胶囊,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/637125/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,消食养胃片,消食养胃片,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/637469/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,香砂六君丸,香砂六君丸,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/638984/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,正胃片,正胃片,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/638986/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,神曲胃痛胶囊,神曲胃痛胶囊,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/638988/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,亿方拔罐器,亿方拔罐器（手宁式）,,,0.0,眼科用药,https://ypk.39.net/yanke/,https://ypk.39.net/2026523/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,伊曲康唑胶囊,伊曲康唑胶囊(斯皮仁诺),,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/497064/,外用相关页面但剂型不能确认是外用药
+already_present,,盐酸特比萘芬乳膏,盐酸特比萘芬乳膏(兰美抒),9,,0.92,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/507843/,药名含明确外用剂型
+review_unclassified,,盐酸特比萘芬片,盐酸特比萘芬片(丁克) | 盐酸特比萘芬片,,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/584204/ | https://ypk.39.net/889080/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,氟康唑胶囊,氟康唑胶囊(环球),,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/760935/,外用相关页面但剂型不能确认是外用药
+already_present,,盐酸特比萘芬凝胶,盐酸特比萘芬凝胶(唯达宁),9,,0.92,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/496774/,药名含明确外用剂型
+already_present,,复方土荆皮凝胶,复方土荆皮凝胶(立方),9,,0.92,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/810546/,药名含明确外用剂型
+review_unclassified,,盐酸特比萘芬溶液,盐酸特比萘芬溶液(顺峰康宁),,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/496776/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,十八味降香丸,十八味降香丸,,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/510085/ | https://ypk.39.net/815088/ | https://ypk.39.net/1000004402/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,灰黄霉素片,灰黄霉素片,,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/585083/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,头孢克洛缓释胶囊,头孢克洛缓释胶囊,,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/589091/ | https://ypk.39.net/708820/,外用相关页面但剂型不能确认是外用药
+review_unclassified,,聚甲酚磺醛溶液,聚甲酚磺醛溶液,,,0.0,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/759891/,外用相关页面但剂型不能确认是外用药
+already_present,,复方珊瑚姜溶液尿素咪康唑软膏复合制剂,复方珊瑚姜溶液尿素咪康唑软膏复合制剂,9,,0.92,灰指甲,https://ypk.39.net/huizhijia/,https://ypk.39.net/834875/,药名含明确外用剂型
+review_unclassified,,注射用舒巴坦钠,注射用舒巴坦钠,,,0.0,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/691624/ | https://ypk.39.net/691627/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,重组人干扰素α2a凝胶,重组人干扰素α2a凝胶,,,0.0,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/739804/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,羟乙基淀粉200/0.5氯化钠注射液,羟乙基淀粉200/0.5氯化钠注射液 | 羟乙基淀粉(200/0.5)氯化钠注射液,,,0.0,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/769683/ | https://ypk.39.net/877439/ | https://ypk.39.net/2005976/ | https://ypk.39.net/2031005/ | https://ypk.39.net/1000004782/ | https://ypk.39.net/1000009263/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,羟乙基淀粉200/0.5,羟乙基淀粉200/0.5,,,0.0,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/883974/,搜索结果不含创可贴/纱布/绷带/敷料
+already_present,,云南白药创可贴,云南白药创可贴,10,,0.92,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/923825/,药名明确是创可贴绷带类
+already_present,,创可贴,创可贴,10,,0.92,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/2302578/,药名明确是创可贴绷带类
+review_unclassified,,盐酸氨酮戊酸外用散,盐酸氨酮戊酸外用散,,,0.0,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/2309603/,搜索结果不含创可贴/纱布/绷带/敷料
+already_present,,弹性创可贴,弹性创可贴,10,,0.92,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/1000020519/,药名明确是创可贴绷带类
+already_present,,防水创可贴,防水创可贴,10,,0.92,搜索-创可贴,https://ypk.39.net/search/%E5%88%9B%E5%8F%AF%E8%B4%B4,https://ypk.39.net/1000020768/ | https://ypk.39.net/1000021263/,药名明确是创可贴绷带类
+review_unclassified,,医用氧气机,医用氧气机,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2026964/ | https://ypk.39.net/2030344/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,医用红外测温仪,医用红外测温仪,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2027181/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,医用制氧机,医用制氧机,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2027222/ | https://ypk.39.net/2030351/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,医用压缩式雾化器,医用压缩式雾化器,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2030470/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,超声波医用雾化器,超声波医用雾化器,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2030471/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,I型医用硅酮凝胶喷雾剂,I型医用硅酮凝胶喷雾剂,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2030493/,搜索结果不含创可贴/纱布/绷带/敷料
+already_present,,医用重组人源胶原蛋白功能敷料,医用重组人源胶原蛋白功能敷料(喷雾型) | 医用重组人源胶原蛋白功能敷料(凝胶型),10,,0.92,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2266818/ | https://ypk.39.net/2267152/,药名明确是创可贴绷带类
+already_present,,医用几丁糖液体敷料,医用几丁糖液体敷料,10,,0.92,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2296028/,药名明确是创可贴绷带类
+already_present,,永益医用纱布块,永益医用纱布块,10,,0.92,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2302568/,药名明确是创可贴绷带类
+review_unclassified,,健合Keyhub医用制氧机K5B-3P带雾化型,健合Keyhub医用制氧机K5B-3P带雾化型,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2302610/,搜索结果不含创可贴/纱布/绷带/敷料
+review_unclassified,,冠昌GC医用红外额温计FI03,冠昌GC医用红外额温计FI03,,,0.0,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2302720/,搜索结果不含创可贴/纱布/绷带/敷料
+already_present,,医用硅酮凝胶敷料,医用硅酮凝胶敷料,10,,0.92,搜索-医用纱布,https://ypk.39.net/search/%E5%8C%BB%E7%94%A8%E7%BA%B1%E5%B8%83,https://ypk.39.net/2309216/ | https://ypk.39.net/2309522/,药名明确是创可贴绷带类
+already_present,,津力达颗粒,津力达颗粒(以岭),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/809741/,来源功效分类直接映射
+already_present,,阿卡波糖片,阿卡波糖片(拜唐苹),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/498311/,来源功效分类直接映射
+already_present,,格列齐特缓释片,格列齐特缓释片(达美康),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/501930/,来源功效分类直接映射
+already_present,,瑞格列奈片,瑞格列奈片(诺和龙),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/504369/,来源功效分类直接映射
+already_present,,盐酸二甲双胍片,盐酸二甲双胍片(格华止) | 盐酸二甲双胍片(格华止/Merck),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/507707/ | https://ypk.39.net/507701/,来源功效分类直接映射
+already_present,,注射用还原型谷胱甘肽,注射用还原型谷胱甘肽(双益健),17,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/497895/,人工审计按 PDF 类别边界修正
+already_present,,消渴丸,消渴丸(白云山),11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/509823/,来源功效分类直接映射
+already_present,,降糖宁胶囊,降糖宁胶囊,11,,0.92,糖尿病,https://ypk.39.net/tangniaobing/,https://ypk.39.net/509828/,来源功效分类直接映射
+already_present,,甲巯咪唑片,甲巯咪唑片 | 甲巯咪唑片(燕京药业) | 甲巯咪唑片(胰胆舒颗粒),11,,0.92,甲状腺功能亢进,https://ypk.39.net/jzxkj/,https://ypk.39.net/506279/ | https://ypk.39.net/507723/ | https://ypk.39.net/502470/ | https://ypk.39.net/502471/,来源功效分类直接映射
+review_category_conflict,,酒石酸美托洛尔片,酒石酸美托洛尔片(倍他乐克),11 | 12,,0.92,甲状腺功能亢进 | 高血压,https://ypk.39.net/jzxkj/ | https://ypk.39.net/gaoxueya/,https://ypk.39.net/499195/ | https://ypk.39.net/502450/ | https://ypk.39.net/508392/,"来源给出多个类别：[11, 12]"
+already_present,,甲亢灵片,甲亢灵片(薄膜衣片),11,,0.92,甲状腺功能亢进,https://ypk.39.net/jzxkj/,https://ypk.39.net/760566/,来源功效分类直接映射
+already_present,,丙硫氧嘧啶片,丙硫氧嘧啶片(万邦医药),11,,0.92,甲状腺功能亢进,https://ypk.39.net/jzxkj/,https://ypk.39.net/508156/,来源功效分类直接映射
+already_present,,酒石酸美托洛尔胶囊,酒石酸美托洛尔胶囊,12,,0.92,甲状腺功能亢进,https://ypk.39.net/jzxkj/,https://ypk.39.net/502603/,人工审计按 PDF 类别边界修正
+already_present,,注射用鲑降钙素,注射用鲑降钙素(盖瑞宁),11,,0.92,甲状腺功能亢进,https://ypk.39.net/jzxkj/,https://ypk.39.net/585971/,来源功效分类直接映射
+already_present,,阿法骨化醇软胶囊,阿法骨化醇软胶囊(法能) | 阿法骨化醇软胶囊(延迪诺) | 阿法骨化醇软胶囊(盖诺真),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/699876/ | https://ypk.39.net/503488/ | https://ypk.39.net/498306/,来源功效分类直接映射
+already_present,,甲状腺片,甲状腺片(宇宙),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/568492/,来源功效分类直接映射
+already_present,,骨化三醇软胶囊,骨化三醇软胶囊(盖三淳/海德威),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/588248/,来源功效分类直接映射
+already_present,,阿法骨化醇片,阿法骨化醇片(立庆),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/505877/,来源功效分类直接映射
+already_present,,左甲状腺素钠片,左甲状腺素钠片(加衡),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/497584/ | https://ypk.39.net/503023/,来源功效分类直接映射
+already_present,,醋酸奥曲肽注射液,醋酸奥曲肽注射液(生奥定),11,,0.92,甲状腺功能减退,https://ypk.39.net/jzxjt/,https://ypk.39.net/498885/,来源功效分类直接映射
+already_present,,西拉普利片,西拉普利片,12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/631726/,来源功效分类直接映射
+already_present,,盐酸特拉唑嗪片,盐酸特拉唑嗪片,12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/724910/,来源功效分类直接映射
+already_present,,硝苯地平缓释片,硝苯地平缓释片(Ⅰ)(扬子江) | 硝苯地平缓释片(Ⅰ)(天海力),12,,0.92,高血压 | 高血脂,https://ypk.39.net/gaoxueya/ | https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/508386/ | https://ypk.39.net/506509/,来源功效分类直接映射
+already_present,,山菊降压胶囊,山菊降压胶囊(山楂降压胶囊),12,,0.92,高血压 | 高血脂,https://ypk.39.net/gaoxueya/ | https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/637515/,来源功效分类直接映射
+already_present,,缬沙坦胶囊,缬沙坦胶囊(代文),12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/579430/,来源功效分类直接映射
+already_present,,硝酸甘油片,硝酸甘油片,12,,0.92,高血压 | 心脏及冠脉疾病,https://ypk.39.net/gaoxueya/ | https://ypk.39.net/guanxinbing/,https://ypk.39.net/499949/,来源功效分类直接映射
+already_present,,盐酸普萘洛尔片,盐酸普萘洛尔片,12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/578531/,来源功效分类直接映射
+already_present,,芪苈强心胶囊,芪苈强心胶囊(以岭),12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/632379/,来源功效分类直接映射
+already_present,,珍菊降压片,珍菊降压片(雷允上),12,,0.92,高血压,https://ypk.39.net/gaoxueya/,https://ypk.39.net/497820/,来源功效分类直接映射
+already_present,,血脂康胶囊,血脂康胶囊(北大维信),12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/496214/,来源功效分类直接映射
+already_present,,心脑清软胶囊,心脑清软胶囊(五福),12,,0.92,高血脂 | 中风偏瘫,https://ypk.39.net/gaoxuezhi/ | https://ypk.39.net/zhongfeng/,https://ypk.39.net/510070/,来源功效分类直接映射
+already_present,,十三味红花丸,十三味红花丸(神水藏药),12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/509483/,来源功效分类直接映射
+already_present,,强力定眩片,强力定眩片,12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/510136/,来源功效分类直接映射
+already_present,,松龄血脉康胶囊,松龄血脉康胶囊(康弘),12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/510055/,来源功效分类直接映射
+already_present,,脉络宁注射液,脉络宁注射液,12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/756976/,来源功效分类直接映射
+already_present,,阿托伐他汀钙片,阿托伐他汀钙片(嘉林/阿乐),12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/631782/,来源功效分类直接映射
+already_present,,绞股蓝总甙片,绞股蓝总甙片(强健),12,,0.92,高血脂,https://ypk.39.net/gaoxuezhi/,https://ypk.39.net/510007/,来源功效分类直接映射
+already_present,,前列地尔注射液,前列地尔注射液(凯时),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/504835/,来源功效分类直接映射
+already_present,,脑立清丸,脑立清丸,12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/510127/,来源功效分类直接映射
+already_present,,活血通脉片,活血通脉片(维和),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/510137/,来源功效分类直接映射
+already_present,,地奥司明片,地奥司明片(马应龙),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/757137/,来源功效分类直接映射
+already_present,,宁心宝胶囊,宁心宝胶囊,12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/578534/,来源功效分类直接映射
+already_present,,心可舒胶囊,心可舒胶囊(国金),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/510063/,来源功效分类直接映射
+already_present,,胰激肽原酶肠溶片,胰激肽原酶肠溶片(怡开),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/585706/,来源功效分类直接映射
+already_present,,西洛他唑片,西洛他唑片(培达),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/507256/,来源功效分类直接映射
+already_present,,吲哚布芬片,吲哚布芬片(辛贝),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/497745/,来源功效分类直接映射
+already_present,,丹王颗粒,丹王颗粒(哈药六),12,,0.92,周围血管疾病,https://ypk.39.net/zhouweixueguanjibing/,https://ypk.39.net/690445/,来源功效分类直接映射
+already_present,,通心络胶囊,通心络胶囊(以岭),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510024/,来源功效分类直接映射
+already_present,,冠心丹参滴丸,冠心丹参滴丸(业锐),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/509984/,来源功效分类直接映射
+already_present,,复方丹参片,复方丹参片(白云山),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510143/,来源功效分类直接映射
+already_present,,复方丹参滴丸,复方丹参滴丸(天士力),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510077/,来源功效分类直接映射
+already_present,,参松养心胶囊,参松养心胶囊(以岭),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/508664/,来源功效分类直接映射
+already_present,,速效救心丸,速效救心丸(达仁堂),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510025/,来源功效分类直接映射
+already_present,,麝香保心丸,麝香保心丸(上药牌),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510066/,来源功效分类直接映射
+already_present,,养血清脑颗粒,养血清脑颗粒(天士力),12,,0.92,心脏及冠脉疾病,https://ypk.39.net/guanxinbing/,https://ypk.39.net/510046/,来源功效分类直接映射
+already_present,,血塞通泡腾片,血塞通泡腾片,12,,0.92,心脏及冠脉疾病 | 中风偏瘫,https://ypk.39.net/guanxinbing/ | https://ypk.39.net/zhongfeng/,https://ypk.39.net/659820/,来源功效分类直接映射
+already_present,,安宫牛黄丸,安宫牛黄丸(同仁堂),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/510039/,来源功效分类直接映射
+already_present,,脑心通胶囊,脑心通胶囊(步长),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/674175/,来源功效分类直接映射
+already_present,,疏血通注射液,疏血通注射液(友搏),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/505872/,来源功效分类直接映射
+already_present,,硫酸氢氯吡格雷片,硫酸氢氯吡格雷片(波立维),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/505856/,来源功效分类直接映射
+already_present,,血塞通分散片,血塞通分散片,12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/659875/,来源功效分类直接映射
+already_present,,苦碟子注射液,苦碟子注射液(悦安欣),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/497711/,来源功效分类直接映射
+already_present,,华佗再造丸,华佗再造丸(白云山/奇星),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/510047/,来源功效分类直接映射
+already_present,,注射用七叶皂苷钠,注射用七叶皂苷钠(普叶通),12,,0.92,中风偏瘫,https://ypk.39.net/zhongfeng/,https://ypk.39.net/504799/,来源功效分类直接映射
+already_present,,保妇康栓,保妇康栓(碧凯),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/509025/,妇科功效分类直接映射
+already_present,,消糜阴道泡腾片,消糜阴道泡腾片(千缘草),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/509108/,妇科功效分类直接映射
+already_present,,高锰酸钾,高锰酸钾,9,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/502222/,人工审计按 PDF 类别边界修正
+already_present,,康妇炎胶囊,康妇炎胶囊(步长),14,,0.92,阴道炎 | 痛经,https://ypk.39.net/yindaoyan/ | https://ypk.39.net/tongjing/,https://ypk.39.net/509510/,妇科功效分类直接映射
+already_present,,洁尔阴洗液,洁尔阴洗液(恩威),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/508988/,妇科功效分类直接映射
+already_present,,替硝唑片,替硝唑片,2,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/502216/,人工审计按 PDF 类别边界修正
+already_present,,妇宁栓,妇宁栓(哈药),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/509011/,妇科功效分类直接映射
+already_present,,消糜栓,消糜栓(万通),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/508987/,妇科功效分类直接映射
+already_present,,抗妇炎胶囊,抗妇炎胶囊(远程),14,,0.92,阴道炎 | 痛经,https://ypk.39.net/yindaoyan/ | https://ypk.39.net/tongjing/,https://ypk.39.net/509030/,妇科功效分类直接映射
+already_present,,红核妇洁洗液,红核妇洁洗液(步长),14,,0.92,阴道炎,https://ypk.39.net/yindaoyan/,https://ypk.39.net/509106/,妇科功效分类直接映射
+already_present,,同仁乌鸡白凤丸,同仁乌鸡白凤丸(同仁堂),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/508981/,妇科功效分类直接映射
+already_present,,乌鸡白凤丸,乌鸡白凤丸(汇仁),14,,0.92,月经不调 | 白带异常,https://ypk.39.net/yuejingbutiao/ | https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509039/,妇科功效分类直接映射
+already_present,,加味逍遥丸,加味逍遥丸(同仁堂),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/509001/,妇科功效分类直接映射
+already_present,,八珍益母丸,八珍益母丸(同仁堂),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/508591/,妇科功效分类直接映射
+already_present,,艾附暖宫丸,艾附暖宫丸(同仁堂),14,,0.92,月经不调 | 痛经,https://ypk.39.net/yuejingbutiao/ | https://ypk.39.net/tongjing/,https://ypk.39.net/509007/,妇科功效分类直接映射
+already_present,,逍遥丸,逍遥丸(九芝堂),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/670024/,妇科功效分类直接映射
+already_present,,定坤丹,定坤丹(广誉远),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/509049/,妇科功效分类直接映射
+already_present,,加味益母草膏,加味益母草膏(今辰),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/646149/,妇科功效分类直接映射
+already_present,,鹿胎颗粒,鹿胎颗粒(敖东),14,,0.92,月经不调,https://ypk.39.net/yuejingbutiao/,https://ypk.39.net/509029/,妇科功效分类直接映射
+already_present,,桂枝茯苓胶囊,桂枝茯苓胶囊(康缘),14,,0.92,痛经,https://ypk.39.net/tongjing/,https://ypk.39.net/509041/,妇科功效分类直接映射
+already_present,,鹿胎膏,鹿胎膏(龙潭山),14,,0.92,痛经 | 白带异常,https://ypk.39.net/tongjing/ | https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509100/,妇科功效分类直接映射
+already_present,,妇炎净胶囊,妇炎净胶囊(中华),14,,0.92,痛经,https://ypk.39.net/tongjing/,https://ypk.39.net/625197/,妇科功效分类直接映射
+already_present,,妇科千金片,妇科千金片(千金),14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/508601/,妇科功效分类直接映射
+already_present,,金鸡胶囊,金鸡胶囊(金鸡),14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509033/,妇科功效分类直接映射
+already_present,,花红片,花红片,14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/508980/,妇科功效分类直接映射
+already_present,,洁尔阴泡腾片,洁尔阴泡腾片(恩威),14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509065/,妇科功效分类直接映射
+already_present,,妇科千金胶囊,妇科千金胶囊(千金),14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509090/,妇科功效分类直接映射
+already_present,,复方黄松洗液,复方黄松洗液(肤阴洁),14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/586022/,妇科功效分类直接映射
+already_present,,妇炎康复片,妇炎康复片,14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/760583/,妇科功效分类直接映射
+already_present,,妇乐颗粒,妇乐颗粒,14,,0.92,白带异常,https://ypk.39.net/baidaiyichang/,https://ypk.39.net/509066/,妇科功效分类直接映射
+already_present,,乳块消胶囊,乳块消胶囊(强健),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/623984/,妇科功效分类直接映射
+already_present,,乳块消片,乳块消片,14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/508993/,妇科功效分类直接映射
+already_present,,乳癖消片,乳癖消片(红药),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/637412/,妇科功效分类直接映射
+already_present,,乳增宁片,乳增宁片(大鹏),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/623947/,妇科功效分类直接映射
+already_present,,宫瘤宁片,宫瘤宁片,14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/589111/,妇科功效分类直接映射
+already_present,,乳癖散结胶囊,乳癖散结胶囊(宝嫩牌),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/624029/,妇科功效分类直接映射
+review_curated_rejection,,散结乳癖膏(散结乳癖贴膏,散结乳癖膏(散结乳癖贴膏(粉红丝秀),,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/684191/,人工审计判定名称含包装规格、残缺括号或缺少有效商品名
+already_present,,乳安片,乳安片(瑞龙),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/509072/,妇科功效分类直接映射
+already_present,,乳康片,乳康片(强健),14,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/623982/,妇科功效分类直接映射
+already_present,,了哥王片,了哥王片(新峰药业),13,,0.92,乳腺增生,https://ypk.39.net/ruxianzengsheng/,https://ypk.39.net/623274/,人工审计按 PDF 类别边界修正
+already_present,,新成长快乐牌复合维生素咀嚼片,新成长快乐牌复合维生素咀嚼片(含钙型),16,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/510285/,来源功效分类直接映射
+review_curated_rejection,,牌维生素C咀嚼片,牌维生素C咀嚼片（网络专供）,,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/510549/,人工审计判定名称含包装规格、残缺括号或缺少有效商品名
+already_present,,维生素B族片,维生素B族片,16,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/510799/,来源功效分类直接映射
+already_present,,天然维生素E软胶囊,天然维生素E软胶囊（金装）,16,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/513977/,来源功效分类直接映射
+review_curated_rejection,,VC90粒装,VC90粒装,,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/581399/,人工审计判定名称含包装规格、残缺括号或缺少有效商品名
+already_present,,百合康牌复合氨基酸维生素B片,百合康牌复合氨基酸维生素B片,16,,0.92,维生素-保健品,https://ypk.39.net/weishengsu/c3,https://ypk.39.net/695277/,来源功效分类直接映射

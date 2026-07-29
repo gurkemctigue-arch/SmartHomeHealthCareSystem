@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "泻药通便",
+      "points": [
+        [
+          11.538461538461533,
+          83.33333333333333
+        ],
+        [
+          468.15911455757674,
+          61.770691385207044
+        ],
+        [
+          484.6153846153846,
+          410.2564102564103
+        ],
+        [
+          27.994731596269414,
+          431.81905220453655
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "499.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

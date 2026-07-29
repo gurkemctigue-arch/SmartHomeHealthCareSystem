@@ -1,0 +1,62 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "中成药",
+      "points": [
+        [
+          18.0,
+          68.0
+        ],
+        [
+          288.9427818142267,
+          69.59848248857958
+        ],
+        [
+          286.79999999999995,
+          432.8
+        ],
+        [
+          15.857218185773236,
+          431.20151751142043
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "中成药",
+      "points": [
+        [
+          288.4,
+          96.8
+        ],
+        [
+          491.7637887764013,
+          99.32103870384134
+        ],
+        [
+          487.6,
+          435.2
+        ],
+        [
+          284.2362112235987,
+          432.67896129615866
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "116.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

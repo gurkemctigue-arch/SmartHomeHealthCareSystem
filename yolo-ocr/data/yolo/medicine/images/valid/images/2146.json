@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "外用药",
+      "points": [
+        [
+          123.804347826087,
+          266.7391304347826
+        ],
+        [
+          526.8181271595768,
+          268.9969107111603
+        ],
+        [
+          525.9782608695651,
+          418.9130434782609
+        ],
+        [
+          122.96448153607538,
+          416.6552632018832
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "2146.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

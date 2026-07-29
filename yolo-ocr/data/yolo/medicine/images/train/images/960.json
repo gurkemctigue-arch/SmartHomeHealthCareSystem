@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "慢性病药",
+      "points": [
+        [
+          139.9300699300699,
+          296.2237762237762
+        ],
+        [
+          426.9231610473675,
+          232.37439586052335
+        ],
+        [
+          480.4895104895104,
+          473.1468531468531
+        ],
+        [
+          193.49641937221276,
+          536.996233510106
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "960.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

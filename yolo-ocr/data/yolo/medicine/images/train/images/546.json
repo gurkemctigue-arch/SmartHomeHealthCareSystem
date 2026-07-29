@@ -1,0 +1,46 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          181.3186813186813,
+          93.27472527472527
+        ],
+        [
+          368.13186813186815,
+          241.62637362637363
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          81.86813186813187,
+          114.70329670329669
+        ],
+        [
+          196.70329670329667,
+          230.0879120879121
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "546.jpg",
+  "imageData": null,
+  "imageHeight": 336,
+  "imageWidth": 500
+}

@@ -22,6 +22,9 @@ env/
 
 # Database
 *.db
+*.db-shm
+*.db-wal
+!yolo-ocr/db/medicine.db
 *.sqlite3
 
 # Model caches

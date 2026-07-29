@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-07-29T04:03:10.760450+00:00",
+  "source": "https://www.yao86.com",
+  "robots_url": "https://www.yao86.com/robots.txt",
+  "request_delay_seconds": 0.2,
+  "network_requests": 2121,
+  "cache_hits": 1193,
+  "listing_pages": {
+    "allergy": 3,
+    "laxative_western": 4,
+    "laxative_tcm": 5,
+    "hemorrhoid_tcm": 8,
+    "western": 113,
+    "tcm": 112
+  },
+  "page_order": "balanced",
+  "targeted_items": 300,
+  "include_clinical": false,
+  "detail_candidates": 3000,
+  "parsed_details": 3000,
+  "existing_efficacy_found": 0,
+  "existing_efficacy_misses": 34,
+  "statuses": {
+    "aliases_added_existing": 4,
+    "already_present": 907,
+    "imported": 1558,
+    "reclassified_existing": 5,
+    "review_existing_alias": 3,
+    "review_missing_efficacy": 321,
+    "review_unclassified": 202
+  },
+  "brand_aliases": {
+    "added": 134,
+    "ambiguous": 33,
+    "conflicts": 1,
+    "removed_invalid": 53
+  },
+  "new_rows_by_category": {
+    "0": 54,
+    "1": 82,
+    "2": 123,
+    "3": 114,
+    "5": 219,
+    "6": 33,
+    "7": 39,
+    "8": 25,
+    "9": 149,
+    "11": 59,
+    "12": 153,
+    "13": 339,
+    "14": 123,
+    "15": 22,
+    "17": 24
+  },
+  "source_rows": 2691,
+  "source_rows_by_category": {
+    "0": 77,
+    "1": 177,
+    "2": 201,
+    "3": 193,
+    "5": 371,
+    "6": 102,
+    "7": 69,
+    "8": 73,
+    "9": 224,
+    "11": 75,
+    "12": 252,
+    "13": 577,
+    "14": 187,
+    "15": 68,
+    "17": 45
+  },
+  "failures": 0,
+  "dry_run": false,
+  "database": "D:\\work-medicine\\SmartHomeHealthCareSystem\\yolo-ocr\\db\\medicine.db",
+  "database_backup": "D:\\work-medicine\\SmartHomeHealthCareSystem\\yolo-ocr\\output\\yao86_catalog_import\\medicine_before_yao86_20260729_120310.db",
+  "postprocessing": {
+    "completed_at": "2026-07-29T04:23:35.375095+00:00",
+    "classification_corrections": 26,
+    "ocr_canonicalizations": 3,
+    "generic_efficacy_enriched": 41,
+    "efficacy_manifest": "../efficacy_enrichment/manifest.json"
+  },
+  "database_counts": {
+    "medicines": 3127,
+    "aliases": 3612,
+    "nonempty_efficacy": 3127,
+    "specific_efficacy": 3127,
+    "generic_efficacy": 0
+  }
+}

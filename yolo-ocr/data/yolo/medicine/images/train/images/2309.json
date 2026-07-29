@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "心血管药",
+      "points": [
+        [
+          142.68041237113397,
+          245.25773195876286
+        ],
+        [
+          372.11343575671395,
+          140.85281682262917
+        ],
+        [
+          504.53608247422676,
+          431.8556701030928
+        ],
+        [
+          275.10305908864683,
+          536.2605852392264
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "2309.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

@@ -62,9 +62,9 @@ def update_medicine(medicine_id, **kwargs):
     try:
         set_clause = ", ".join(f"{k} = ?" for k in updates)
         values = list(updates.values()) + [medicine_id]
-        db.execute(f"UPDATE medicine SET {set_clause} WHERE id = ?", values)
+        cursor = db.execute(f"UPDATE medicine SET {set_clause} WHERE id = ?", values)
         db.commit()
-        return True
+        return cursor.rowcount > 0
     except Exception as e:
         logger.warning("药品更新失败 (id=%s): %s", medicine_id, e)
         return False
@@ -74,9 +74,9 @@ def delete_medicine(medicine_id):
     """删除药品"""
     db = get_db()
     try:
-        db.execute("DELETE FROM medicine WHERE id = ?", (medicine_id,))
+        cursor = db.execute("DELETE FROM medicine WHERE id = ?", (medicine_id,))
         db.commit()
-        return True
+        return cursor.rowcount > 0
     except Exception as e:
         logger.warning("药品删除失败 (id=%s): %s", medicine_id, e)
         return False

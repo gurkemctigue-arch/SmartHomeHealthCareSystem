@@ -1,0 +1,255 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\395.jpg",
+  "label": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\labels\\395.txt",
+  "text": "OLYMPUSTERUMO\nBIOMATERIALS\nSS\n可吸收创口材料\n泰立普固/TERUPLUG",
+  "line_count": 5,
+  "average_confidence": 0.97149,
+  "objects": [
+    {
+      "object_index": 0,
+      "class_id": 10,
+      "class_name": "创可贴绷带",
+      "selected_angle": 0,
+      "quality": 14.17498,
+      "crop_shape": [
+        172,
+        265
+      ],
+      "lines": [
+        {
+          "text": "OLYMPUSTERUMO",
+          "confidence": 0.9267,
+          "box": [
+            [
+              143.0,
+              26.0
+            ],
+            [
+              207.0,
+              30.0
+            ],
+            [
+              206.0,
+              39.0
+            ],
+            [
+              142.0,
+              34.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "BIOMATERIALS",
+          "confidence": 0.9863,
+          "box": [
+            [
+              143.0,
+              34.0
+            ],
+            [
+              193.0,
+              38.0
+            ],
+            [
+              193.0,
+              46.0
+            ],
+            [
+              143.0,
+              42.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "SS",
+          "confidence": 0.95858,
+          "box": [
+            [
+              242.0,
+              32.0
+            ],
+            [
+              262.0,
+              33.0
+            ],
+            [
+              260.0,
+              53.0
+            ],
+            [
+              241.0,
+              52.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "可吸收创口材料",
+          "confidence": 0.9994,
+          "box": [
+            [
+              96.0,
+              54.0
+            ],
+            [
+              217.0,
+              57.0
+            ],
+            [
+              217.0,
+              78.0
+            ],
+            [
+              95.0,
+              74.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "泰立普固/TERUPLUG",
+          "confidence": 0.98648,
+          "box": [
+            [
+              96.0,
+              78.0
+            ],
+            [
+              204.0,
+              79.0
+            ],
+            [
+              204.0,
+              93.0
+            ],
+            [
+              96.0,
+              92.0
+            ]
+          ],
+          "object_index": 0
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "text": "OLYMPUSTERUMO",
+      "confidence": 0.9267,
+      "box": [
+        [
+          143.0,
+          26.0
+        ],
+        [
+          207.0,
+          30.0
+        ],
+        [
+          206.0,
+          39.0
+        ],
+        [
+          142.0,
+          34.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "BIOMATERIALS",
+      "confidence": 0.9863,
+      "box": [
+        [
+          143.0,
+          34.0
+        ],
+        [
+          193.0,
+          38.0
+        ],
+        [
+          193.0,
+          46.0
+        ],
+        [
+          143.0,
+          42.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "SS",
+      "confidence": 0.95858,
+      "box": [
+        [
+          242.0,
+          32.0
+        ],
+        [
+          262.0,
+          33.0
+        ],
+        [
+          260.0,
+          53.0
+        ],
+        [
+          241.0,
+          52.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "可吸收创口材料",
+      "confidence": 0.9994,
+      "box": [
+        [
+          96.0,
+          54.0
+        ],
+        [
+          217.0,
+          57.0
+        ],
+        [
+          217.0,
+          78.0
+        ],
+        [
+          95.0,
+          74.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "泰立普固/TERUPLUG",
+      "confidence": 0.98648,
+      "box": [
+        [
+          96.0,
+          78.0
+        ],
+        [
+          204.0,
+          79.0
+        ],
+        [
+          204.0,
+          93.0
+        ],
+        [
+          96.0,
+          92.0
+        ]
+      ],
+      "object_index": 0
+    }
+  ],
+  "ocr_method": "rapidocr_obb_rectified"
+}

@@ -1,0 +1,136 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          6.322033898305068,
+          16.135593220338933
+        ],
+        [
+          114.79661016949152,
+          151.72881355932196
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          119.88135593220338,
+          5.96610169491521
+        ],
+        [
+          245.30508474576268,
+          151.72881355932196
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          265.64406779661016,
+          9.355932203389784
+        ],
+        [
+          382.59322033898303,
+          151.72881355932196
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          389.3728813559322,
+          5.96610169491521
+        ],
+        [
+          491.06779661016947,
+          151.72881355932196
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          6.322033898305068,
+          185.62711864406776
+        ],
+        [
+          146.99999999999997,
+          278.8474576271186
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          2.9322033898304913,
+          300.8813559322034
+        ],
+        [
+          152.08474576271183,
+          355.1186440677966
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          175.81355932203388,
+          189.01694915254234
+        ],
+        [
+          480.89830508474574,
+          353.42372881355925
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "77.jpg",
+  "imageData": null,
+  "imageHeight": 356,
+  "imageWidth": 494
+}

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-07-28T09:31:05.075602+00:00",
+  "source": "https://ypk.39.net",
+  "robots_url": "https://ypk.39.net/robots.txt",
+  "request_delay_seconds": 10.0,
+  "source_pages": 43,
+  "raw_candidates": 551,
+  "unique_candidates": 392,
+  "imported_or_dry_run": 10,
+  "already_present": 264,
+  "database_conflicts": 1,
+  "failures": 0,
+  "imported_by_category": {
+    "0": 1,
+    "3": 9
+  },
+  "dry_run": false,
+  "database_backup": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\output\\medicine_catalog_import\\medicine_before_web_import.db",
+  "curated_corrections": {
+    "moved": 24,
+    "deleted": 4
+  }
+}

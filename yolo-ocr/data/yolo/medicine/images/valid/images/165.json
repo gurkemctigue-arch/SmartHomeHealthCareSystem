@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "维生素",
+      "points": [
+        [
+          78.73563218390805,
+          64.96743295019157
+        ],
+        [
+          390.8733219126368,
+          63.43921904698999
+        ],
+        [
+          391.7624521072797,
+          245.044061302682
+        ],
+        [
+          79.62476237855091,
+          246.57227520588356
+        ]
+      ],
+      "group_id": 7,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "165.jpg",
+  "imageData": null,
+  "imageHeight": 333,
+  "imageWidth": 500
+}

@@ -1,0 +1,385 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\343.jpg",
+  "label": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\labels\\343.txt",
+  "text": "HC\n吲哚美辛\n好\n吲哚美辛\nELE\n好\n吲哚美辛巴布膏",
+  "line_count": 7,
+  "average_confidence": 0.8484,
+  "objects": [
+    {
+      "object_index": 0,
+      "class_id": 4,
+      "class_name": "退烧药",
+      "selected_angle": 180,
+      "quality": 0.73272,
+      "crop_shape": [
+        109,
+        193
+      ],
+      "lines": [
+        {
+          "text": "HC",
+          "confidence": 0.51811,
+          "box": [
+            [
+              10.0,
+              5.0
+            ],
+            [
+              68.0,
+              7.0
+            ],
+            [
+              66.0,
+              66.0
+            ],
+            [
+              8.0,
+              65.0
+            ]
+          ],
+          "object_index": 0
+        }
+      ]
+    },
+    {
+      "object_index": 1,
+      "class_id": 4,
+      "class_name": "退烧药",
+      "selected_angle": 0,
+      "quality": 0,
+      "crop_shape": [
+        110,
+        195
+      ],
+      "lines": []
+    },
+    {
+      "object_index": 2,
+      "class_id": 9,
+      "class_name": "外用药",
+      "selected_angle": 180,
+      "quality": 6.01582,
+      "crop_shape": [
+        183,
+        147
+      ],
+      "lines": [
+        {
+          "text": "吲哚美辛",
+          "confidence": 0.98591,
+          "box": [
+            [
+              0.0,
+              104.0
+            ],
+            [
+              51.0,
+              104.0
+            ],
+            [
+              51.0,
+              118.0
+            ],
+            [
+              0.0,
+              118.0
+            ]
+          ],
+          "object_index": 2
+        },
+        {
+          "text": "好",
+          "confidence": 0.92514,
+          "box": [
+            [
+              39.0,
+              123.0
+            ],
+            [
+              57.0,
+              122.0
+            ],
+            [
+              57.0,
+              132.0
+            ],
+            [
+              39.0,
+              132.0
+            ]
+          ],
+          "object_index": 2
+        },
+        {
+          "text": "吲哚美辛",
+          "confidence": 0.98931,
+          "box": [
+            [
+              71.0,
+              133.0
+            ],
+            [
+              127.0,
+              133.0
+            ],
+            [
+              127.0,
+              148.0
+            ],
+            [
+              71.0,
+              148.0
+            ]
+          ],
+          "object_index": 2
+        },
+        {
+          "text": "ELE",
+          "confidence": 0.65832,
+          "box": [
+            [
+              23.0,
+              156.0
+            ],
+            [
+              33.0,
+              156.0
+            ],
+            [
+              33.0,
+              160.0
+            ],
+            [
+              23.0,
+              160.0
+            ]
+          ],
+          "object_index": 2
+        }
+      ]
+    },
+    {
+      "object_index": 3,
+      "class_id": 9,
+      "class_name": "外用药",
+      "selected_angle": 0,
+      "quality": 3.4714,
+      "crop_shape": [
+        180,
+        139
+      ],
+      "lines": [
+        {
+          "text": "好",
+          "confidence": 0.88407,
+          "box": [
+            [
+              15.0,
+              19.0
+            ],
+            [
+              32.0,
+              19.0
+            ],
+            [
+              32.0,
+              28.0
+            ],
+            [
+              15.0,
+              28.0
+            ]
+          ],
+          "object_index": 3
+        },
+        {
+          "text": "吲哚美辛巴布膏",
+          "confidence": 0.97792,
+          "box": [
+            [
+              20.0,
+              33.0
+            ],
+            [
+              113.0,
+              33.0
+            ],
+            [
+              113.0,
+              47.0
+            ],
+            [
+              20.0,
+              47.0
+            ]
+          ],
+          "object_index": 3
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "text": "HC",
+      "confidence": 0.51811,
+      "box": [
+        [
+          10.0,
+          5.0
+        ],
+        [
+          68.0,
+          7.0
+        ],
+        [
+          66.0,
+          66.0
+        ],
+        [
+          8.0,
+          65.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "吲哚美辛",
+      "confidence": 0.98591,
+      "box": [
+        [
+          0.0,
+          104.0
+        ],
+        [
+          51.0,
+          104.0
+        ],
+        [
+          51.0,
+          118.0
+        ],
+        [
+          0.0,
+          118.0
+        ]
+      ],
+      "object_index": 2
+    },
+    {
+      "text": "好",
+      "confidence": 0.92514,
+      "box": [
+        [
+          39.0,
+          123.0
+        ],
+        [
+          57.0,
+          122.0
+        ],
+        [
+          57.0,
+          132.0
+        ],
+        [
+          39.0,
+          132.0
+        ]
+      ],
+      "object_index": 2
+    },
+    {
+      "text": "吲哚美辛",
+      "confidence": 0.98931,
+      "box": [
+        [
+          71.0,
+          133.0
+        ],
+        [
+          127.0,
+          133.0
+        ],
+        [
+          127.0,
+          148.0
+        ],
+        [
+          71.0,
+          148.0
+        ]
+      ],
+      "object_index": 2
+    },
+    {
+      "text": "ELE",
+      "confidence": 0.65832,
+      "box": [
+        [
+          23.0,
+          156.0
+        ],
+        [
+          33.0,
+          156.0
+        ],
+        [
+          33.0,
+          160.0
+        ],
+        [
+          23.0,
+          160.0
+        ]
+      ],
+      "object_index": 2
+    },
+    {
+      "text": "好",
+      "confidence": 0.88407,
+      "box": [
+        [
+          15.0,
+          19.0
+        ],
+        [
+          32.0,
+          19.0
+        ],
+        [
+          32.0,
+          28.0
+        ],
+        [
+          15.0,
+          28.0
+        ]
+      ],
+      "object_index": 3
+    },
+    {
+      "text": "吲哚美辛巴布膏",
+      "confidence": 0.97792,
+      "box": [
+        [
+          20.0,
+          33.0
+        ],
+        [
+          113.0,
+          33.0
+        ],
+        [
+          113.0,
+          47.0
+        ],
+        [
+          20.0,
+          47.0
+        ]
+      ],
+      "object_index": 3
+    }
+  ],
+  "ocr_method": "rapidocr_obb_rectified"
+}

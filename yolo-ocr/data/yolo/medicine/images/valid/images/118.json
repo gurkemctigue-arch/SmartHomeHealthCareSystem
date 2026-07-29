@@ -1,0 +1,64 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "肠胃药",
+      "points": [
+        [
+          157.77777777777777,
+          9.999999999999943
+        ],
+        [
+          395.55555555555554,
+          165.5555555555556
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          442.2222222222222,
+          161.11111111111114
+        ],
+        [
+          640.0,
+          318.88888888888886
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          62.22222222222223,
+          136.66666666666669
+        ],
+        [
+          322.22222222222223,
+          316.6666666666667
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "118.jpg",
+  "imageData": null,
+  "imageHeight": 360,
+  "imageWidth": 640
+}

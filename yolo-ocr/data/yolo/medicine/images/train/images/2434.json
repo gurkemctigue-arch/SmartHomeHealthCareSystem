@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "止痛药",
+      "points": [
+        [
+          194.47552447552445,
+          408.8111888111888
+        ],
+        [
+          474.756568995462,
+          393.66086208038126
+        ],
+        [
+          462.30769230769226,
+          163.35664335664333
+        ],
+        [
+          182.0266477877548,
+          178.50697008745084
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "2434.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

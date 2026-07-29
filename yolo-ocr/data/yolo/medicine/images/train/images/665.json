@@ -1,0 +1,62 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "感冒药",
+      "points": [
+        [
+          5.200000000000017,
+          469.6
+        ],
+        [
+          497.42123993839084,
+          467.98880117859875
+        ],
+        [
+          496.4,
+          156.0
+        ],
+        [
+          4.178760061609194,
+          157.61119882140127
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "感冒药",
+      "points": [
+        [
+          45.20000000000002,
+          27.2
+        ],
+        [
+          488.93245931058544,
+          105.13150719074441
+        ],
+        [
+          474.79999999999995,
+          185.6
+        ],
+        [
+          31.067540689414557,
+          107.66849280925557
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "665.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

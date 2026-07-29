@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "感冒药",
+      "points": [
+        [
+          14.0,
+          192.0
+        ],
+        [
+          350.63119266055037,
+          189.62935779816496
+        ],
+        [
+          352.4,
+          440.8
+        ],
+        [
+          15.768807339449632,
+          443.170642201835
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "654.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

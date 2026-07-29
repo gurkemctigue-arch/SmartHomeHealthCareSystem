@@ -1,99 +1,147 @@
-"""告警服务"""
+"""Alert queries and acknowledgement workflow."""
 
 from datetime import datetime
 
+from database.db import get_db
 
-def get_latest_alerts(limit=5):
-    """获取最新告警列表
 
-    后续可从 alert_record 表查询。
+ALERT_LEVELS = {"danger", "warning", "info", "success"}
+ALERT_STATUSES = {"open", "acknowledged"}
 
-    Args:
-        limit: 返回条数上限
 
-    Returns:
-        list[dict]: 告警记录列表
-    """
-    now = datetime.now()
+def get_latest_alerts(limit=5, status="all", level="all"):
+    """Return persisted alerts, newest first, with optional filters."""
+    limit = max(1, min(int(limit), 100))
+    clauses = []
+    values = []
 
-    # 模拟告警数据（后续从数据库读取）
-    all_alerts = [
+    if status in ALERT_STATUSES:
+        clauses.append("status = ?")
+        values.append(status)
+    if level in ALERT_LEVELS:
+        clauses.append("level = ?")
+        values.append(level)
+
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    values.append(limit)
+    rows = get_db().execute(
+        "SELECT id, level, title, content, status, acknowledged_at, created_at "
+        f"FROM alert_record {where} ORDER BY created_at DESC, id DESC LIMIT ?",
+        values,
+    ).fetchall()
+
+    return [
         {
-            "level": "danger",
-            "title": "药品过期警告",
-            "content": "布洛芬片已过期，请勿继续服用",
-            "time": _format_time(now, -120)
-        },
-        {
-            "level": "warning",
-            "title": "药量库存不足",
-            "content": "阿莫西林胶囊剩余2盒",
-            "time": _format_time(now, -600)
-        },
-        {
-            "level": "warning",
-            "title": "情绪异常",
-            "content": "检测到低落情绪，建议关注",
-            "time": _format_time(now, -1800)
-        },
-        {
-            "level": "info",
-            "title": "检测到未知药品",
-            "content": "请确认后录入系统",
-            "time": _format_time(now, -3600)
-        },
-        {
-            "level": "success",
-            "title": "数据入库成功",
-            "content": "检测记录已保存",
-            "time": _format_time(now, -7200)
-        },
+            **dict(row),
+            "time": _display_time(row["created_at"]),
+        }
+        for row in rows
     ]
 
-    return all_alerts[:limit]
 
-
-def _format_time(base_time, offset_seconds):
-    """格式化时间"""
-    t = base_time if offset_seconds == 0 else datetime.fromtimestamp(
-        base_time.timestamp() + offset_seconds
+def acknowledge_alert(alert_id):
+    """Mark one open alert as acknowledged."""
+    db = get_db()
+    cursor = db.execute(
+        "UPDATE alert_record "
+        "SET status = 'acknowledged', acknowledged_at = datetime('now', 'localtime') "
+        "WHERE id = ? AND status = 'open'",
+        (alert_id,),
     )
-    return t.strftime("%H:%M:%S")
+    db.commit()
+    if cursor.rowcount:
+        return True
+    return db.execute("SELECT 1 FROM alert_record WHERE id = ?", (alert_id,)).fetchone() is not None
+
+
+def create_alert(level, title, content):
+    """Persist a de-duplicated open alert."""
+    normalized_level = level if level in ALERT_LEVELS else "info"
+    db = get_db()
+    existing = db.execute(
+        "SELECT id FROM alert_record "
+        "WHERE status = 'open' AND level = ? AND title = ? AND content = ? LIMIT 1",
+        (normalized_level, title, content),
+    ).fetchone()
+    if existing:
+        return existing["id"]
+
+    cursor = db.execute(
+        "INSERT INTO alert_record (level, title, content, status) VALUES (?, ?, ?, 'open')",
+        (normalized_level, title, content),
+    )
+    db.commit()
+    return cursor.lastrowid
 
 
 def check_alerts(medicine=None, emotion=None):
-    """根据药品和情绪状态生成告警规则
-
-    Args:
-        medicine: 药品信息字典
-        emotion: 情绪结果字典
-
-    Returns:
-        list[dict]: 触发的告警列表
-    """
+    """Build deterministic alert candidates from medicine and emotion data."""
     alerts = []
+    today = datetime.now().strftime("%Y-%m-%d")
 
     if medicine:
-        if medicine.get("expire_date", "2099-01-01") < datetime.now().strftime("%Y-%m-%d"):
+        expire_date = medicine.get("expire_date")
+        if expire_date and expire_date < today:
             alerts.append({
                 "level": "danger",
-                "title": "药品过期警告",
-                "content": f"{medicine.get('name', '未知药品')}已过期，请勿服用"
+                "title": "药品过期",
+                "content": f"{medicine.get('name', '未知药品')}已过期，请勿服用",
             })
-
-        if medicine.get("stock", 99) <= 2:
+        if int(medicine.get("stock") or 0) <= 2:
             alerts.append({
                 "level": "warning",
-                "title": "药量库存不足",
-                "content": f"{medicine.get('name', '未知药品')}库存不足"
+                "title": "库存不足",
+                "content": f"{medicine.get('name', '未知药品')}库存不足",
             })
 
-    if emotion:
-        if emotion.get("emotion") in ["悲伤", "焦虑", "愤怒"]:
-            alerts.append({
-                "level": "warning",
-                "title": "情绪异常提醒",
-                "content": "检测到异常情绪状态，建议家属关注"
-            })
+    if emotion and emotion.get("emotion") in {"悲伤", "焦虑", "愤怒"}:
+        alerts.append({
+            "level": "warning",
+            "title": "情绪趋势提醒",
+            "content": "检测到连续异常情绪，请家属关注",
+        })
 
     return alerts
+
+
+def sync_medicine_alerts(medicine):
+    """Synchronize open inventory alerts after a medicine is saved."""
+    alerts = check_alerts(medicine=medicine)
+    active_titles = {alert["title"] for alert in alerts}
+    db = get_db()
+    inventory_titles = {"药品过期", "库存不足"}
+    resolved_titles = inventory_titles - active_titles
+    if resolved_titles:
+        placeholders = ", ".join("?" for _ in resolved_titles)
+        db.execute(
+            "UPDATE alert_record "
+            "SET status = 'acknowledged', acknowledged_at = datetime('now', 'localtime') "
+            f"WHERE status = 'open' AND title IN ({placeholders}) AND content LIKE ?",
+            [*sorted(resolved_titles), f"{medicine['name']}%"],
+        )
+        db.commit()
+
+    for alert in alerts:
+        create_alert(alert["level"], alert["title"], alert["content"])
+
+
+def resolve_medicine_alerts(medicine_name):
+    """Close open inventory alerts when a medicine is deleted."""
+    db = get_db()
+    db.execute(
+        "UPDATE alert_record "
+        "SET status = 'acknowledged', acknowledged_at = datetime('now', 'localtime') "
+        "WHERE status = 'open' AND title IN ('药品过期', '库存不足') AND content LIKE ?",
+        (f"{medicine_name}%",),
+    )
+    db.commit()
+
+
+def _display_time(value):
+    if not value:
+        return "--"
+    try:
+        parsed = datetime.fromisoformat(value)
+        return parsed.strftime("%m-%d %H:%M")
+    except (TypeError, ValueError):
+        return str(value)

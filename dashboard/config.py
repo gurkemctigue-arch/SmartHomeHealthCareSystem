@@ -32,11 +32,43 @@ class Config:
     # ── YOLO 药品检测配置 ──
     YOLO_WEIGHTS = os.environ.get(
         "YOLO_WEIGHTS",
-        str(PROJECT_ROOT / "models" / "yolo" / "best.pt")
+        str(PROJECT_ROOT / "yolo-ocr" / "models" / "best_obb.pt")
     )
-    YOLO_CONF = float(os.environ.get("YOLO_CONF", 0.15))
+    YOLO_CONF = float(os.environ.get("YOLO_CONF", 0.08))
     YOLO_IOU = float(os.environ.get("YOLO_IOU", 0.5))
     YOLO_IMGSZ = int(os.environ.get("YOLO_IMGSZ", 416))
+    YOLO_CONFIRM_HITS = int(os.environ.get("YOLO_CONFIRM_HITS", 2))
+    YOLO_HOLD_FRAMES = int(os.environ.get("YOLO_HOLD_FRAMES", 8))
+    YOLO_BOX_SMOOTHING = float(os.environ.get("YOLO_BOX_SMOOTHING", 0.35))
+    YOLO_LOCKED_BOX_SMOOTHING = float(
+        os.environ.get("YOLO_LOCKED_BOX_SMOOTHING", 0.18)
+    )
+    YOLO_IMMEDIATE_CONF = float(os.environ.get("YOLO_IMMEDIATE_CONF", 0.22))
+    MEDICINE_DATABASE = os.environ.get(
+        "MEDICINE_DATABASE",
+        str(PROJECT_ROOT / "yolo-ocr" / "db" / "medicine.db")
+    )
+    MEDICINE_CATALOG = os.environ.get(
+        "MEDICINE_CATALOG",
+        str(PROJECT_ROOT / "yolo-ocr" / "day4" / "medicine_catalog.yaml")
+    )
+    OCR_INTERVAL = int(os.environ.get("OCR_INTERVAL", 8))
+    OCR_KNOWN_INTERVAL = int(os.environ.get("OCR_KNOWN_INTERVAL", 90))
+    OCR_SWITCH_CHECK_INTERVAL = int(
+        os.environ.get("OCR_SWITCH_CHECK_INTERVAL", 4)
+    )
+    OCR_SWITCH_THRESHOLD = float(os.environ.get("OCR_SWITCH_THRESHOLD", 0.28))
+    OCR_SWITCH_CONFIRM_HITS = int(
+        os.environ.get("OCR_SWITCH_CONFIRM_HITS", 2)
+    )
+    OCR_MAX_BOXES = int(os.environ.get("OCR_MAX_BOXES", 3))
+    OCR_MIN_AREA = float(os.environ.get("OCR_MIN_AREA", 1600))
+    OCR_FUZZY_THRESHOLD = float(os.environ.get("OCR_FUZZY_THRESHOLD", 0.78))
+    OCR_ANGLES = tuple(
+        int(value.strip())
+        for value in os.environ.get("OCR_ANGLES", "0,180").split(",")
+        if value.strip()
+    )
 
     # ── 情绪识别配置 ──
     EMOTION_MODEL = os.environ.get(

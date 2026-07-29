@@ -1,0 +1,64 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "抗过敏药",
+      "points": [
+        [
+          58.82352941176475,
+          214.3823529411765
+        ],
+        [
+          552.9411764705882,
+          676.1470588235294
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "抗过敏药",
+      "points": [
+        [
+          58.82352941176475,
+          258.50000000000006
+        ],
+        [
+          520.5882352941177,
+          461.4411764705883
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "抗过敏药",
+      "points": [
+        [
+          108.82352941176475,
+          458.50000000000006
+        ],
+        [
+          561.7647058823528,
+          655.5588235294117
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "45.jpg",
+  "imageData": null,
+  "imageHeight": 1067,
+  "imageWidth": 800
+}

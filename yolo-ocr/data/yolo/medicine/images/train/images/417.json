@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "创可贴绷带",
+      "points": [
+        [
+          107.86178861788619,
+          174.5650406504065
+        ],
+        [
+          490.3910153700075,
+          35.46350364963473
+        ],
+        [
+          563.1463414634147,
+          235.54065040650406
+        ],
+        [
+          180.61711471129345,
+          374.64218740727586
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "417.jpg",
+  "imageData": null,
+  "imageHeight": 441,
+  "imageWidth": 658
+}

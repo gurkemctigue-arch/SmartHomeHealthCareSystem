@@ -1,0 +1,119 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\127.jpg",
+  "text": "国药准字Z45020242\n蛇胆川贝液\nShedanCpuonbeije\n广西梧州制药(集团)股份有限公司\nGUANGXIWUZHCUPHARMACEUTICAUGROUPCO LTO",
+  "line_count": 5,
+  "average_confidence": 0.95869,
+  "elapsed_seconds": 0.2567,
+  "lines": [
+    {
+      "text": "国药准字Z45020242",
+      "confidence": 0.99547,
+      "box": [
+        [
+          300.0,
+          82.0
+        ],
+        [
+          402.0,
+          84.0
+        ],
+        [
+          401.0,
+          98.0
+        ],
+        [
+          300.0,
+          96.0
+        ]
+      ]
+    },
+    {
+      "text": "蛇胆川贝液",
+      "confidence": 0.99965,
+      "box": [
+        [
+          84.0,
+          119.0
+        ],
+        [
+          431.0,
+          119.0
+        ],
+        [
+          431.0,
+          207.0
+        ],
+        [
+          84.0,
+          207.0
+        ]
+      ]
+    },
+    {
+      "text": "ShedanCpuonbeije",
+      "confidence": 0.94673,
+      "box": [
+        [
+          101.0,
+          214.0
+        ],
+        [
+          423.0,
+          214.0
+        ],
+        [
+          423.0,
+          268.0
+        ],
+        [
+          101.0,
+          268.0
+        ]
+      ]
+    },
+    {
+      "text": "广西梧州制药(集团)股份有限公司",
+      "confidence": 0.94739,
+      "box": [
+        [
+          219.0,
+          406.0
+        ],
+        [
+          446.0,
+          406.0
+        ],
+        [
+          446.0,
+          423.0
+        ],
+        [
+          219.0,
+          423.0
+        ]
+      ]
+    },
+    {
+      "text": "GUANGXIWUZHCUPHARMACEUTICAUGROUPCO LTO",
+      "confidence": 0.90422,
+      "box": [
+        [
+          217.0,
+          419.0
+        ],
+        [
+          446.0,
+          417.0
+        ],
+        [
+          446.0,
+          433.0
+        ],
+        [
+          217.0,
+          435.0
+        ]
+      ]
+    }
+  ]
+}

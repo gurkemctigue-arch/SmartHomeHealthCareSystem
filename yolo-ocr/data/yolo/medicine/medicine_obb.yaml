@@ -1,0 +1,9 @@
+# 药盒检测 · Labelme 四点 / 多边形 → YOLO OBB（18 类）
+# 由 ch07/07_split_dataset_yaml_obb.py 或 write_medicine_obb_yaml 生成
+# 标签目录: train/labels、valid/labels（每行 class x1 y1 x2 y2 x3 y3 x4 y4）
+path: images
+train: train/images
+val: valid/images
+test: test/images
+nc: 18
+names: ['感冒药', '止咳化痰', '消炎药', '止痛药', '退烧药', '肠胃药', '泻药通便', '维生素', '抗过敏药', '外用药', '创可贴绷带', '慢性病药', '心血管药', '中成药', '妇科用药', '肛肠用药', '保健品', '其他']

@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          125.86206896551725,
+          123.70689655172413
+        ],
+        [
+          353.93282907400646,
+          46.67637492567741
+        ],
+        [
+          418.96551724137936,
+          239.22413793103453
+        ],
+        [
+          190.89475713289013,
+          316.25465955708125
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "46.jpg",
+  "imageData": null,
+  "imageHeight": 375,
+  "imageWidth": 500
+}

@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "妇科用药",
+      "points": [
+        [
+          475.5,
+          311.3333333333333
+        ],
+        [
+          820.0620463856009,
+          309.94955001451615
+        ],
+        [
+          820.8333333333334,
+          501.99999999999994
+        ],
+        [
+          476.2712869477326,
+          503.3837833188171
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "115.jpg",
+  "imageData": null,
+  "imageHeight": 800,
+  "imageWidth": 1239
+}

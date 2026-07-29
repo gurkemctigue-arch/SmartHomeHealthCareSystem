@@ -1,0 +1,11 @@
+numpy==2.2.6
+opencv-python==4.10.0.84
+Pillow==12.3.0
+PyYAML==6.0.3
+torch==2.5.1
+torchvision==0.20.1
+ultralytics==8.4.102
+rapidocr-onnxruntime==1.4.4
+onnxruntime==1.23.2
+requests==2.34.2
+beautifulsoup4==4.15.0

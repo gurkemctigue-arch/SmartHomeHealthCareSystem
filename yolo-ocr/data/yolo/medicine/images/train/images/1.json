@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          69.49152542372883,
+          252.77118644067798
+        ],
+        [
+          287.0439967217378,
+          72.32068699194633
+        ],
+        [
+          412.0689655172414,
+          223.051724137931
+        ],
+        [
+          194.51649421923238,
+          403.50222358666264
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "1.jpg",
+  "imageData": null,
+  "imageHeight": 553,
+  "imageWidth": 500
+}

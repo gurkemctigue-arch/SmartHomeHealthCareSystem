@@ -1,0 +1,97 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\19.jpg",
+  "text": "腔抑菌剂\nwang vi bon 3\n·ASOE\n arnbacterial agent",
+  "line_count": 4,
+  "average_confidence": 0.74601,
+  "elapsed_seconds": 0.251,
+  "lines": [
+    {
+      "text": "腔抑菌剂",
+      "confidence": 1.0,
+      "box": [
+        [
+          216.0,
+          83.0
+        ],
+        [
+          283.0,
+          108.0
+        ],
+        [
+          276.0,
+          129.0
+        ],
+        [
+          208.0,
+          105.0
+        ]
+      ]
+    },
+    {
+      "text": "wang vi bon 3",
+      "confidence": 0.55253,
+      "box": [
+        [
+          215.0,
+          101.0
+        ],
+        [
+          277.0,
+          125.0
+        ],
+        [
+          272.0,
+          136.0
+        ],
+        [
+          211.0,
+          112.0
+        ]
+      ]
+    },
+    {
+      "text": "·ASOE",
+      "confidence": 0.55861,
+      "box": [
+        [
+          246.0,
+          152.0
+        ],
+        [
+          278.0,
+          166.0
+        ],
+        [
+          273.0,
+          177.0
+        ],
+        [
+          241.0,
+          162.0
+        ]
+      ]
+    },
+    {
+      "text": " arnbacterial agent",
+      "confidence": 0.87292,
+      "box": [
+        [
+          221.0,
+          190.0
+        ],
+        [
+          286.0,
+          223.0
+        ],
+        [
+          280.0,
+          235.0
+        ],
+        [
+          215.0,
+          203.0
+        ]
+      ]
+    }
+  ]
+}

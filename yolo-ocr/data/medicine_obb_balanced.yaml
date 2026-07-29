@@ -1,0 +1,23 @@
+path: C:/Users/王鑫/OneDrive/桌面/ai-vision/软通动力实训-2026-07/软通动力实训-2026-07/ai-training/yolo-ocr/data/training/medicine_copypaste
+train: C:/Users/王鑫/OneDrive/桌面/ai-vision/软通动力实训-2026-07/软通动力实训-2026-07/ai-training/yolo-ocr/data/medicine_obb_balanced_train.txt
+val: valid/images
+nc: 18
+names:
+- 感冒药
+- 止咳化痰
+- 消炎药
+- 止痛药
+- 退烧药
+- 肠胃药
+- 泻药通便
+- 维生素
+- 抗过敏药
+- 外用药
+- 创可贴绷带
+- 慢性病药
+- 心血管药
+- 中成药
+- 妇科用药
+- 肛肠用药
+- 保健品
+- 其他

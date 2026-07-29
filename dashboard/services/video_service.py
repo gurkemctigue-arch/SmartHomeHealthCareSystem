@@ -1,5 +1,6 @@
 """视频流服务 — 异步推理版（后台线程检测 + 主线程只负责推流）"""
 
+import copy
 import logging
 import os
 import time
@@ -10,23 +11,47 @@ from PIL import Image, ImageDraw, ImageFont
 
 logger = logging.getLogger(__name__)
 
-from models.detector import MedicineDetector
+from config import Config
+from models.medicine_recognizer import MedicineRecognizer
 from models.emotion import EmotionRecognizer
-from models.fusion import request_fusion, FUSION_CONF_THRESHOLD
 
 # ── 全局模型实例 ──
-detector = MedicineDetector()
+detector = MedicineRecognizer(
+    model_path=Config.YOLO_WEIGHTS,
+    database_path=Config.MEDICINE_DATABASE,
+    catalog_path=Config.MEDICINE_CATALOG,
+    conf=Config.YOLO_CONF,
+    iou=Config.YOLO_IOU,
+    imgsz=Config.YOLO_IMGSZ,
+    ocr_interval=Config.OCR_INTERVAL,
+    ocr_known_interval=Config.OCR_KNOWN_INTERVAL,
+    ocr_max_boxes=Config.OCR_MAX_BOXES,
+    min_ocr_area=Config.OCR_MIN_AREA,
+    fuzzy_threshold=Config.OCR_FUZZY_THRESHOLD,
+    ocr_angles=Config.OCR_ANGLES,
+    confirm_hits=Config.YOLO_CONFIRM_HITS,
+    hold_frames=Config.YOLO_HOLD_FRAMES,
+    box_smoothing=Config.YOLO_BOX_SMOOTHING,
+    locked_box_smoothing=Config.YOLO_LOCKED_BOX_SMOOTHING,
+    immediate_conf=Config.YOLO_IMMEDIATE_CONF,
+    switch_check_interval=Config.OCR_SWITCH_CHECK_INTERVAL,
+    switch_threshold=Config.OCR_SWITCH_THRESHOLD,
+    switch_confirm_hits=Config.OCR_SWITCH_CONFIRM_HITS,
+)
 emotion_model = EmotionRecognizer()
 
-_DETECTOR_TAG = "YOLO-OBB" if detector.is_real_model else "MOCK"
+_DETECTOR_TAG = "YOLO-OCR" if detector.is_real_model else "OCR OFFLINE"
 _EMOTION_TAG = "CNN" if emotion_model.is_real_model else "MOCK"
 
 # ── 检测模式 ──
 _detect_mode = "medicine"  # medicine / emotion / both（与前端默认按钮一致）
 
 # ── 入库参数 ──
-_SAVE_INTERVAL = 5  # 秒（与 config.py 的 SAVE_INTERVAL 一致）
+_SAVE_INTERVAL = Config.SAVE_INTERVAL
 _last_save_time = 0
+_latest_recognition_lock = threading.Lock()
+_latest_recognition_time = 0.0
+_latest_recognition_detections = []
 
 
 def get_detect_mode():
@@ -38,12 +63,34 @@ def set_detect_mode(mode):
     _detect_mode = mode
     logger.info("检测模式切换为: %s", mode)
 
+
+def _publish_recognition(detections):
+    global _latest_recognition_time, _latest_recognition_detections
+    with _latest_recognition_lock:
+        _latest_recognition_detections = copy.deepcopy(detections)
+        _latest_recognition_time = time.time()
+
+
+def get_latest_recognition(max_age_seconds=2.0):
+    """Return fresh structured results associated with the MJPEG stream."""
+    with _latest_recognition_lock:
+        updated_at = _latest_recognition_time
+        detections = copy.deepcopy(_latest_recognition_detections)
+    age_seconds = max(0.0, time.time() - updated_at) if updated_at else None
+    active = age_seconds is not None and age_seconds <= max_age_seconds
+    if not active:
+        detections = []
+    return {
+        "active": active,
+        "updated_at": updated_at or None,
+        "age_ms": round(age_seconds * 1000) if age_seconds is not None else None,
+        "detections": detections,
+    }
+
 # ── 性能参数 ──
 CAMERA_WIDTH = 640
 CAMERA_HEIGHT = 480
 JPEG_QUALITY = 78
-YOLO_IMGSZ = 416         # YOLO 推理尺寸（后台异步运行，不影响帧率）
-
 # ── 中文字体 ──
 _FONT_PATH = None
 _FONT_CANDIDATES = [
@@ -76,12 +123,20 @@ def _draw_all_cn_labels(frame, labels):
     img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     pil_img = Image.fromarray(img_rgb)
     draw = ImageDraw.Draw(pil_img)
+    image_width, image_height = pil_img.size
 
     for text, x, y, font_size, color, bg_color in labels:
         font = _get_font(font_size)
         pil_color = (color[2], color[1], color[0])
         bbox = draw.textbbox((0, 0), text, font=font)
         tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        while tw > image_width - 8 and font_size > 11:
+            font_size -= 1
+            font = _get_font(font_size)
+            bbox = draw.textbbox((0, 0), text, font=font)
+            tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        x = max(0, min(int(x), image_width - tw - 6))
+        y = max(0, min(int(y), image_height - th - 4))
         if bg_color is not None:
             pil_bg = (bg_color[2], bg_color[1], bg_color[0])
             draw.rectangle([x, y, x + tw + 6, y + th + 4], fill=pil_bg)
@@ -116,7 +171,7 @@ class AsyncDetector:
         self.thread.start()
 
     def _run(self):
-        """后台循环：取最新帧 → 推理 → OCR+LLM融合(低置信度) → 写入结果"""
+        """后台循环：取最新帧 → 药盒定位/OCR 或情绪识别 → 写入结果"""
         while self.running:
             with self.lock:
                 frame = self.latest_frame
@@ -127,21 +182,11 @@ class AsyncDetector:
 
                 # ── YOLO 检测（medicine / both 模式） ──
                 if mode in ("medicine", "both"):
-                    # 不预缩放，让 YOLO 内部 letterbox 保持宽高比
                     try:
-                        raw_detections = self.detector.detect(frame)
-                    except Exception:
-                        raw_detections = []
-
-                    fused = []
-                    for d in raw_detections:
-                        if d["confidence"] < FUSION_CONF_THRESHOLD:
-                            enhanced = request_fusion(frame, d)
-                            fused.append(enhanced)
-                        else:
-                            d["source"] = "YOLO"
-                            fused.append(d)
-                    self.detections = fused
+                        self.detections = self.detector.detect(frame)
+                    except Exception as exc:
+                        logger.exception("药盒 OCR 识别失败: %s", exc)
+                        self.detections = []
                 else:
                     self.detections = []
 
@@ -181,9 +226,9 @@ def generate_video_stream():
     主线程：读摄像头 → 请求推理（非阻塞）→ 叠加标注 → 编码输出
     后台线程：取帧 → YOLO 检测 + 情绪识别 → 写入结果
     """
-    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    cap = cv2.VideoCapture(Config.CAMERA_INDEX, cv2.CAP_DSHOW)
     if not cap.isOpened():
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture(Config.CAMERA_INDEX)
     if not cap.isOpened():
         yield from _generate_placeholder_stream()
         return
@@ -210,6 +255,7 @@ def generate_video_stream():
 
             # ── 读取最新推理结果（非阻塞） ──
             detections, emotion_result = async_det.get_results()
+            _publish_recognition(detections)
 
             # ── FPS ──
             current_time = time.time()
@@ -225,35 +271,40 @@ def generate_video_stream():
             for item in detections:
                 x1, y1, x2, y2 = item["box"]
                 name = item["name"]
+                category = item.get("category", "待查询")
                 conf = item["confidence"]
-                source = item.get("source", "YOLO")
+                recognition_confidence = item.get("recognition_confidence", conf)
+                status = item.get("status", "pending")
+                box_color = {
+                    "known": (60, 200, 90),
+                    "unknown": (0, 210, 255),
+                    "error": (40, 40, 230),
+                    "pending": (255, 170, 30),
+                }.get(status, (255, 170, 30))
 
-                # 框颜色：LLM纠错后用绿色，纯YOLO用橙蓝
-                if "LLM" in source:
-                    box_color = (0, 200, 100)   # 绿色 = 已纠错
-                elif "OCR" in source:
-                    box_color = (0, 180, 220)   # 黄色 = OCR辅助
+                polygon = np.asarray(item.get("polygon", []), dtype=np.int32)
+                if polygon.shape == (4, 2):
+                    cv2.polylines(frame, [polygon], True, box_color, 2)
                 else:
-                    box_color = (0, 80, 255)    # 橙蓝 = YOLO
+                    cv2.rectangle(frame, (x1, y1), (x2, y2), box_color, 2)
 
-                cv2.rectangle(frame, (x1, y1), (x2, y2), box_color, 2)
-
-                # 标签：药名 + 置信度 + 来源标记
-                src_tag = {"YOLO": "", "YOLO+OCR": " [OCR]", "YOLO+OCR+LLM": " [AI]"}.get(source, "")
-                label = f"{name} {conf:.2f}{src_tag}"
-                cn_labels.append((label, x1, max(y1 - 26, 0), 16,
+                label_y = y1 - 48 if y1 >= 50 else min(y2 + 4, frame.shape[0] - 44)
+                cn_labels.append((f"药名：{name}", x1, label_y, 16,
                                   (255, 255, 255), box_color))
+                cn_labels.append((f"类别：{category}  综合置信度：{recognition_confidence:.0%}", x1,
+                                  label_y + 22, 15, (255, 255, 255), box_color))
 
             face_box = emotion_result.get("face_box")
             if face_box:
                 fx1, fy1, fx2, fy2 = face_box
                 cv2.rectangle(frame, (fx1, fy1), (fx2, fy2), (255, 255, 0), 2)
 
-            emotion = emotion_result["emotion"]
-            emotion_conf = emotion_result["confidence"]
-            cn_labels.append((f"情绪: {emotion}  ({emotion_conf:.2f})",
-                              20, frame.shape[0] - 28, 18,
-                              (0, 255, 255), (0, 0, 0)))
+            if get_detect_mode() in ("emotion", "both"):
+                emotion = emotion_result["emotion"]
+                emotion_conf = emotion_result["confidence"]
+                cn_labels.append((f"情绪: {emotion}  ({emotion_conf:.2f})",
+                                  20, frame.shape[0] - 28, 18,
+                                  (0, 255, 255), (0, 0, 0)))
 
             # 批量中文
             _draw_all_cn_labels(frame, cn_labels)
@@ -300,27 +351,28 @@ def _save_detections_to_db(detections, emotion_result, app=None):
         from database.db import get_db
         db = get_db(app)
 
-        if detections:
-            # 写入检测记录（每个检测结果一条）
-            for d in detections:
+        recognized_detections = [
+            item
+            for item in detections
+            if item.get("status") in {"known", "unknown"}
+        ]
+        if recognized_detections:
+            # 仅写入 OCR 已完成的结果，避免“识别中”污染类别统计。
+            for d in recognized_detections:
                 db.execute(
-                    "INSERT INTO detection_record (medicine_name, confidence, emotion, emotion_confidence) "
-                    "VALUES (?, ?, ?, ?)",
+                    "INSERT INTO detection_record "
+                    "(medicine_name, medicine_category, medicine_efficacy, "
+                    "confidence, emotion, emotion_confidence) "
+                    "VALUES (?, ?, ?, ?, ?, ?)",
                     (
                         d.get("name", "未知"),
-                        d.get("confidence", 0),
+                        d.get("category", "其他"),
+                        d.get("efficacy", ""),
+                        d.get("recognition_confidence", d.get("confidence", 0)),
                         emotion_result.get("emotion", ""),
                         emotion_result.get("confidence", 0),
                     )
                 )
-
-        # 如果没有任何检测，也记录一条（用于统计活跃时间）
-        if not detections:
-            db.execute(
-                "INSERT INTO detection_record (medicine_name, confidence, emotion, emotion_confidence) "
-                "VALUES (?, ?, ?, ?)",
-                ("", 0, emotion_result.get("emotion", ""), emotion_result.get("confidence", 0))
-            )
 
         db.commit()
     except Exception as e:

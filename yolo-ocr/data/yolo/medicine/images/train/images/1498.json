@@ -1,0 +1,36 @@
+{
+  "version": "6.2.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "肠胃药",
+      "points": [
+        [
+          105.43689320388353,
+          139.90291262135923
+        ],
+        [
+          110.16077644596578,
+          479.0777294028808
+        ],
+        [
+          483.1067961165048,
+          473.8834951456311
+        ],
+        [
+          478.3829128744226,
+          134.70867836410955
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "1498.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

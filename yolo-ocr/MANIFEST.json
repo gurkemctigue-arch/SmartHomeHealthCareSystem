@@ -1,0 +1,99 @@
+{
+  "bundle": "yolo-ocr",
+  "created_at": "2026-07-28T18:19:45+08:00",
+  "copy_policy": "copied; original files were not moved or deleted",
+  "environment": {
+    "conda_env": "ai-vision-nmgdx",
+    "python": "3.10.20"
+  },
+  "current_model": {
+    "file": "models/best_obb.pt",
+    "source": "D:/ai-vision-training/models/best_obb.pt",
+    "origin_run": "medicine_stage3_copypaste",
+    "bytes": 19819132,
+    "sha256": "B18091595E88C208DF7996EE15E89EE439D2EF68EE077703BE268412CF8D7B5E",
+    "validation": {
+      "precision": 0.6105299964793593,
+      "recall": 0.4695947215277924,
+      "map50": 0.5124930870439034,
+      "map50_95": 0.41597992304197084,
+      "evaluated_classes": 15,
+      "configured_classes": 18
+    }
+  },
+  "key_files": [
+    {
+      "file": "models/yolo11s-obb.pt",
+      "bytes": 19934534,
+      "sha256": "43FA63102922E0701501241B307420D24FC55E080816888B18BF8C6F96B1A45A"
+    },
+    {
+      "file": "runs/obb/medicine_stage3_copypaste/weights/last.pt",
+      "bytes": 19819132,
+      "sha256": "ACC9AC149AA74D145BF52002BF502C14BEAF257075F65AA8B770B9D30B9ABD1A"
+    },
+    {
+      "file": "db/medicine.db",
+      "bytes": 221184,
+      "sha256": "A838A9636B8C228FEC78C6E18845A36153AF6D52C27B2079341B2984885275AD"
+    },
+    {
+      "file": "docs/类别(2).pdf",
+      "bytes": 135664,
+      "sha256": "854CE80382751E8E8B9AFD74FD284C6BB6F235C5588C30844E0FAA475BDE605C"
+    }
+  ],
+  "included_sources": [
+    {
+      "destination": "data/yolo/medicine",
+      "source": "ai-training/data/yolo/medicine",
+      "files": 10870,
+      "bytes": 191009297,
+      "purpose": "original OBB images and labels"
+    },
+    {
+      "destination": "data/training/medicine_copypaste",
+      "source": "D:/ai-vision-training/datasets/medicine_copypaste",
+      "files": 7947,
+      "bytes": 216336772,
+      "purpose": "final training dataset"
+    },
+    {
+      "destination": "day4",
+      "source": "ai-training/day4",
+      "purpose": "training, data preparation, OCR, SQLite and camera scripts"
+    },
+    {
+      "destination": "output",
+      "source": "ai-training/output and D:/ai-vision-training/output",
+      "purpose": "OCR review, catalog import and model evaluation artifacts"
+    },
+    {
+      "destination": "runs/obb",
+      "source": "D:/ai-vision-training/runs/obb",
+      "purpose": "stage parameters, metrics, and final-stage best/last weights"
+    }
+  ],
+  "portable_adjustments": [
+    "dataset YAML roots use relative paths",
+    "bundle-local model and final dataset are preferred by default",
+    "old Ultralytics cache files were renamed because they contain absolute D: paths"
+  ],
+  "not_copied": [
+    "early epoch*.pt checkpoints and duplicate intermediate weights",
+    "download caches and pip caches",
+    "models unrelated to the YOLO medicine/OCR pipeline",
+    "intermediate datasets superseded by medicine_copypaste"
+  ],
+  "verification": {
+    "python_compile": "passed",
+    "training_dry_run": "passed: 3066 train images, 904 validation images, 18 configured classes",
+    "camera_check": "passed: OBB model, RapidOCR and SQLite loaded",
+    "inference_smoke_test": "passed: 麻苏止咳颗粒 -> 止咳化痰 (exact, 1.00)",
+    "inference_output": "output/bundle_smoke_test.jpg",
+    "sqlite_integrity": "ok",
+    "medicine_categories": 18,
+    "standard_medicine_names": 437,
+    "medicine_names_and_aliases": 668
+  }
+}

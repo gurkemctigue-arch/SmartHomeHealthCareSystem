@@ -1,0 +1,90 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          122.80952380952377,
+          166.66666666666669
+        ],
+        [
+          227.78413951957947,
+          168.9994359046683
+        ],
+        [
+          222.8095238095238,
+          392.8571428571429
+        ],
+        [
+          117.83490809946812,
+          390.52437361914133
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          241.85714285714283,
+          42.85714285714283
+        ],
+        [
+          418.047619047619,
+          430.95238095238096
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          437.0952380952381,
+          121.42857142857144
+        ],
+        [
+          579.952380952381,
+          457.1428571428571
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          587.0952380952381,
+          161.90476190476193
+        ],
+        [
+          744.2380952380953,
+          483.33333333333337
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "131.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 848
+}

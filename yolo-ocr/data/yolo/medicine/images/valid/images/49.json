@@ -1,0 +1,108 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "中成药",
+      "points": [
+        [
+          142.3235294117647,
+          188.38235294117646
+        ],
+        [
+          372.4134551511458,
+          124.83370678458346
+        ],
+        [
+          437.7649957673945,
+          361.451353843407
+        ],
+        [
+          207.67507002801335,
+          425.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "中成药",
+      "points": [
+        [
+          377.61764705882354,
+          91.91176470588236
+        ],
+        [
+          567.0,
+          362.45798319327736
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "中成药",
+      "points": [
+        [
+          17.617647058823522,
+          30.73529411764706
+        ],
+        [
+          270.55882352941177,
+          320.14705882352945
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "中成药",
+      "points": [
+        [
+          231.73529411764707,
+          20.147058823529413
+        ],
+        [
+          428.20588235294116,
+          131.91176470588235
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "中成药",
+      "points": [
+        [
+          421.1470588235294,
+          1.3235294117647056
+        ],
+        [
+          567.0,
+          115.92226890756294
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "49.jpg",
+  "imageData": null,
+  "imageHeight": 425,
+  "imageWidth": 567
+}

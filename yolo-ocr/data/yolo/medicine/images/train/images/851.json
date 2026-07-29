@@ -1,0 +1,46 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          38.03278688524588,
+          182.2950819672131
+        ],
+        [
+          523.27868852459,
+          441.3114754098361
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "维生素",
+      "points": [
+        [
+          41.31147540983602,
+          188.85245901639342
+        ],
+        [
+          529.8360655737705,
+          447.8688524590164
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "851.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

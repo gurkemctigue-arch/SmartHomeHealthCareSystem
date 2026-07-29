@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "肛肠用药",
+      "points": [
+        [
+          3.6842105263158187,
+          32.63157894736845
+        ],
+        [
+          1.5065076285935106,
+          463.81675269669046
+        ],
+        [
+          496.31578947368416,
+          466.31578947368416
+        ],
+        [
+          498.4934923714065,
+          35.130615724362144
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "821.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

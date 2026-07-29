@@ -1,0 +1,53 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\175.jpg",
+  "text": "维C银期片\nCNasol",
+  "line_count": 2,
+  "average_confidence": 0.68023,
+  "elapsed_seconds": 0.1537,
+  "lines": [
+    {
+      "text": "维C银期片",
+      "confidence": 0.85567,
+      "box": [
+        [
+          183.0,
+          179.0
+        ],
+        [
+          244.0,
+          205.0
+        ],
+        [
+          237.0,
+          222.0
+        ],
+        [
+          176.0,
+          196.0
+        ]
+      ]
+    },
+    {
+      "text": "CNasol",
+      "confidence": 0.50478,
+      "box": [
+        [
+          336.0,
+          382.0
+        ],
+        [
+          397.0,
+          415.0
+        ],
+        [
+          379.0,
+          448.0
+        ],
+        [
+          318.0,
+          415.0
+        ]
+      ]
+    }
+  ]
+}

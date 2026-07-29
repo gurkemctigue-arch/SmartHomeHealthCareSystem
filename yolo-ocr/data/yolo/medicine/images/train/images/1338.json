@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "中成药",
+      "points": [
+        [
+          148.32167832167832,
+          281.5384615384615
+        ],
+        [
+          284.8108027870202,
+          460.30297853733333
+        ],
+        [
+          557.4125874125874,
+          252.16783216783213
+        ],
+        [
+          420.9234629472455,
+          73.40331516896032
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "1338.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

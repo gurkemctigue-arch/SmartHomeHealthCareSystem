@@ -1,0 +1,54 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "妇科用药",
+      "points": [
+        [
+          15.753424657534225,
+          30.136986301369863
+        ],
+        [
+          488.3561643835617,
+          482.1917808219178
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "妇科用药",
+      "points": [
+        [
+          11.643835616438338,
+          391.7808219178082
+        ],
+        [
+          454.28604685836495,
+          269.7704688190712
+        ],
+        [
+          484.11569209896936,
+          377.989646901263
+        ],
+        [
+          41.473480857042716,
+          500.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "20.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

@@ -1,0 +1,152 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "外用药",
+      "points": [
+        [
+          31.227272727272744,
+          87.12121212121211
+        ],
+        [
+          437.2878787878788,
+          347.72727272727275
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          438.8030303030303,
+          61.36363636363636
+        ],
+        [
+          570.6212121212121,
+          244.6969696969697
+        ]
+      ],
+      "group_id": null,
+      "description": null,
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          579.7121212121212,
+          68.93939393939394
+        ],
+        [
+          723.6515151515151,
+          264.3939393939394
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          737.2878787878788,
+          75.0
+        ],
+        [
+          890.3181818181818,
+          249.24242424242425
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          228.19696969696972,
+          396.2121212121212
+        ],
+        [
+          483.10723258090127,
+          480.6080866263946
+        ],
+        [
+          514.560606060606,
+          385.6060606060606
+        ],
+        [
+          259.6503431766745,
+          301.21009519178716
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          567.5909090909091,
+          190.15151515151513
+        ],
+        [
+          457.465378883412,
+          326.7071726088131
+        ],
+        [
+          581.2272727272727,
+          426.5151515151515
+        ],
+        [
+          691.35280293477,
+          289.95949405785353
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          679.7121212121212,
+          225.0
+        ],
+        [
+          910.0151515151515,
+          371.96969696969694
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "30.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 917
+}

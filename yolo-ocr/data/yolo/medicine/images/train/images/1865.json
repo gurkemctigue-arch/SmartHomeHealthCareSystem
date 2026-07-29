@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          329.2783505154639,
+          138.04123711340205
+        ],
+        [
+          182.20477494171098,
+          389.19765078549915
+        ],
+        [
+          369.48453608247416,
+          498.8659793814433
+        ],
+        [
+          516.5581116562271,
+          247.7095657093462
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "1865.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

@@ -1,0 +1,64 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "外用药",
+      "points": [
+        [
+          300.92424242424244,
+          34.090909090909086
+        ],
+        [
+          534.2575757575758,
+          262.8787878787879
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          493.3484848484849,
+          197.7272727272727
+        ],
+        [
+          743.3484848484849,
+          396.2121212121212
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "外用药",
+      "points": [
+        [
+          223.65151515151516,
+          267.42424242424244
+        ],
+        [
+          481.22727272727275,
+          461.3636363636364
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "35.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 917
+}

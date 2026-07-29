@@ -1,0 +1,257 @@
+version: 1
+policy: 只批准原图或高置信 OCR 能确认药名，且类别能按类别(2).pdf边界明确判断的记录。
+
+decisions:
+  - sample_id: "12"
+    decision: approve
+    name: 痛泻宁颗粒
+    category_id: 5
+    reason: 用于肠易激综合征和腹泻，属于肠胃药，不是通便药。
+  - sample_id: "35"
+    decision: approve
+    name: 注射用胸腺肽
+    category_id: 17
+    reason: 免疫调节药，无法归入其余项目类别。
+  - sample_id: "36"
+    decision: approve
+    name: 痔疮栓
+    category_id: 15
+    reason: 原图适应症明确为内痔、混合痔，既有人工修正也确认属于肛肠用药。
+  - sample_id: "39"
+    decision: approve
+    name: 热毒平颗粒
+    category_id: 0
+    reason: 包装及数据集标签用于感冒发热类。
+  - sample_id: "44"
+    decision: approve
+    name: 氟康唑片
+    category_id: 2
+    reason: 明确的抗真菌药，归入抗感染类。
+  - sample_id: "46"
+    decision: approve
+    name: 草分枝杆菌F.U.36注射液
+    category_id: 17
+    reason: 免疫调节制剂，无法归入其余项目类别。
+  - sample_id: "49"
+    decision: approve
+    name: 二羟丙茶碱注射液
+    category_id: 17
+    reason: 支气管扩张剂，项目没有对应的平喘类别。
+  - sample_id: "51"
+    decision: approve
+    name: 西青果颗粒
+    category_id: 13
+    reason: 中成药，主要用于慢性咽炎，不能等同感冒或抗感染药。
+  - sample_id: "59"
+    decision: approve
+    name: 脑心舒口服液
+    category_id: 13
+    reason: 益气养血、镇静安神的中成药。
+  - sample_id: "64"
+    decision: approve
+    name: 三七伤药片
+    category_id: 3
+    reason: 主要用于跌打损伤和疼痛，归入止痛药。
+  - sample_id: "66"
+    decision: approve
+    name: 利咽灵片
+    category_id: 13
+    reason: 咽喉用中成药，不能明确归入止咳或抗感染药。
+  - sample_id: "67"
+    decision: approve
+    name: 西瓜霜润喉片
+    category_id: 13
+    reason: 清咽润喉中成药。
+  - sample_id: "69"
+    decision: approve
+    name: 天参胶囊
+    category_id: 12
+    reason: 原图明确用于冠心病、心绞痛，属于心血管药。
+  - sample_id: "70"
+    decision: approve
+    name: 奈玛特韦片/利托那韦片组合包装
+    category_id: 2
+    reason: 抗病毒组合药，归入抗感染类。
+  - sample_id: "73"
+    decision: approve
+    name: 盐酸倍他司汀片
+    category_id: 17
+    reason: 用于眩晕和梅尼埃病，项目没有对应类别。
+  - sample_id: "77"
+    decision: approve
+    name: 硫酸沙丁胺醇气雾剂
+    category_id: 17
+    reason: 支气管扩张剂，项目没有对应的平喘类别。
+  - sample_id: "88"
+    decision: approve
+    name: 注射用磷霉素钠
+    category_id: 2
+    reason: 明确的抗菌药。
+  - sample_id: "90"
+    decision: approve
+    name: 炔雌醇环丙孕酮片
+    category_id: 14
+    reason: 妇科激素用药。
+  - sample_id: "93"
+    decision: approve
+    name: 美沙拉嗪肠溶片
+    category_id: 5
+    reason: 用于溃疡性结肠炎，属于肠胃药而非肛肠疾病用药。
+  - sample_id: "102"
+    decision: approve
+    name: 消痛贴膏
+    category_id: 9
+    reason: 原图明确为皮肤贴敷的外用制剂。
+  - sample_id: "103"
+    decision: approve
+    name: 枯草杆菌、肠球菌二联活菌多维颗粒剂
+    category_id: 5
+    reason: 原图为妈咪爱益生菌颗粒，用于胃肠道菌群调节。
+  - sample_id: "105"
+    decision: approve
+    name: L-赖氨酸盐酸盐颗粒剂
+    category_id: 7
+    reason: 氨基酸营养补充制剂。
+  - sample_id: "114"
+    decision: approve
+    name: 盐酸多巴胺注射液
+    category_id: 12
+    reason: 明确的心血管系统用药。
+  - sample_id: "116"
+    decision: approve
+    name: 天麻首乌片
+    category_id: 13
+    reason: 中成药，不能优先归入其他功效类。
+  - sample_id: "124"
+    decision: approve
+    name: 肾炎舒片
+    category_id: 13
+    reason: 肾炎相关中成药，项目没有对应肾病类别。
+  - sample_id: "131"
+    decision: approve
+    name: 右美沙芬缓释混悬液
+    category_id: 1
+    reason: 明确的镇咳药。
+  - sample_id: "132"
+    decision: approve
+    name: 脾肾两助丸
+    category_id: 13
+    reason: 中成药，无法优先归入其他功效类。
+  - sample_id: "156"
+    decision: approve
+    name: 追风舒经活血片
+    category_id: 3
+    reason: 主要用于腰腿疼痛，归入止痛药。
+  - sample_id: "158"
+    decision: approve
+    name: 清热化毒丸
+    category_id: 13
+    reason: 既有人工复核确认主要功效不是通便。
+  - sample_id: "169"
+    decision: approve
+    name: 清热散结片
+    category_id: 2
+    reason: 既有人工复核确认以消炎解毒为主要功效。
+  - sample_id: "192"
+    decision: approve
+    name: 金刚藤颗粒
+    category_id: 14
+    reason: 原图明确用于附件炎和妇科炎症。
+  - sample_id: "194"
+    decision: approve
+    name: 珍龙醒脑胶囊
+    category_id: 12
+    reason: 心脑血管相关用药。
+  - sample_id: "198"
+    decision: approve
+    name: 白癜风丸
+    category_id: 13
+    reason: 口服中成药，不属于普通皮肤外用制剂。
+  - sample_id: "201"
+    decision: approve
+    name: 头孢氨苄注射液
+    category_id: 2
+    reason: 原图药名清晰，为头孢类抗菌药。
+  - sample_id: "215"
+    decision: approve
+    name: 舒筋活血片
+    category_id: 3
+    reason: 口服片剂，主要用于筋骨和跌打疼痛，不是外用药。
+  - sample_id: "217"
+    decision: approve
+    name: 硫酸沙丁胺醇雾化吸入溶液
+    category_id: 17
+    reason: 支气管扩张剂，项目没有对应的平喘类别。
+  - sample_id: "223"
+    decision: approve
+    name: 活血止痛片
+    category_id: 3
+    reason: 原图药名和止痛功效均清晰。
+  - sample_id: "225"
+    decision: approve
+    name: 大株红景天胶囊
+    category_id: 12
+    reason: 原图明确用于冠心病、心绞痛。
+  - sample_id: "239"
+    decision: approve
+    name: 阳春口服液
+    category_id: 13
+    reason: 中成药，无法优先归入其他功效类。
+
+  - sample_id: "27"
+    decision: reject
+    reason: 药浴和包装设计素材，不是可确认的药品包装。
+  - sample_id: "40"
+    decision: reject
+    reason: 修护贴产品展示，不能确认是药品。
+  - sample_id: "62"
+    decision: reject
+    reason: 带素材网站水印的包装设计图，不是真实药盒。
+  - sample_id: "81"
+    decision: reject
+    reason: 包装工艺样品，不是可确认药品。
+  - sample_id: "92"
+    decision: reject
+    reason: 药浴包装设计案例，不是药品。
+  - sample_id: "109"
+    decision: reject
+    reason: 药浴礼盒设计，不是可确认药品。
+  - sample_id: "111"
+    decision: reject
+    reason: 宠物营养补充剂，不属于人用药品数据库。
+  - sample_id: "123"
+    decision: reject
+    reason: 瑶浴礼盒，不是可确认药品。
+  - sample_id: "143"
+    decision: reject
+    reason: 包装设计联系方式图片，不是药品。
+  - sample_id: "151"
+    decision: reject
+    reason: 使用“某某”占位名称的包装模板。
+  - sample_id: "168"
+    decision: reject
+    reason: 药品收纳用品广告，不是药盒。
+  - sample_id: "170"
+    decision: reject
+    reason: 药品收纳用品广告，不是药盒。
+  - sample_id: "181"
+    decision: reject
+    reason: 防伪标签展示，无法确认药品名称。
+  - sample_id: "185"
+    decision: reject
+    reason: 设计素材图片，不是药品。
+  - sample_id: "197"
+    decision: reject
+    reason: 动物饲料相关产品，不属于人用药品数据库。
+  - sample_id: "210"
+    decision: reject
+    reason: 家庭药品收纳箱，不是药品。
+  - sample_id: "228"
+    decision: reject
+    reason: 包装效果图，无法确认真实药品。
+  - sample_id: "236"
+    decision: reject
+    reason: 无有效药品名称的素材图。
+  - sample_id: "237"
+    decision: reject
+    reason: OCR 与图像均无法确认药品名称。

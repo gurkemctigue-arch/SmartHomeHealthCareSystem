@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "消炎药",
+      "points": [
+        [
+          6.410256410256409,
+          87.17948717948717
+        ],
+        [
+          494.4312060289291,
+          84.63771140022578
+        ],
+        [
+          496.15384615384613,
+          415.3846153846154
+        ],
+        [
+          8.132896535173426,
+          417.9263911638768
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "478.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

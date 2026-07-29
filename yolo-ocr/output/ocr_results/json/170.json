@@ -1,0 +1,31 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\170.jpg",
+  "text": "透明外盖防灰防",
+  "line_count": 1,
+  "average_confidence": 0.99998,
+  "elapsed_seconds": 0.1367,
+  "lines": [
+    {
+      "text": "透明外盖防灰防",
+      "confidence": 0.99998,
+      "box": [
+        [
+          226.0,
+          3.0
+        ],
+        [
+          499.0,
+          5.0
+        ],
+        [
+          499.0,
+          42.0
+        ],
+        [
+          226.0,
+          40.0
+        ]
+      ]
+    }
+  ]
+}

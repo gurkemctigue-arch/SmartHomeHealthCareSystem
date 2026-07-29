@@ -1,0 +1,36 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "止咳化痰",
+      "points": [
+        [
+          139.58762886597935,
+          259.69072164948454
+        ],
+        [
+          197.4243537603042,
+          509.3018501407797
+        ],
+        [
+          527.2164948453608,
+          432.88659793814435
+        ],
+        [
+          469.37976995103594,
+          183.27546944684912
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "oriented_rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "1934.jpg",
+  "imageData": null,
+  "imageHeight": 640,
+  "imageWidth": 640
+}

@@ -1,0 +1,209 @@
+{
+  "image": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\images\\257.jpg",
+  "label": "C:\\Users\\王鑫\\OneDrive\\桌面\\ai-vision\\软通动力实训-2026-07\\软通动力实训-2026-07\\ai-training\\data\\yolo\\medicine\\images\\train\\labels\\257.txt",
+  "text": "北家月仁壹股份右品公司同仁堂制药厂\nDiyuHuaijiaoWan\n地榆槐角丸\nOTC",
+  "line_count": 4,
+  "average_confidence": 0.95576,
+  "objects": [
+    {
+      "object_index": 0,
+      "class_id": 15,
+      "class_name": "肛肠用药",
+      "selected_angle": 180,
+      "quality": 11.2837,
+      "crop_shape": [
+        174,
+        434
+      ],
+      "lines": [
+        {
+          "text": "北家月仁壹股份右品公司同仁堂制药厂",
+          "confidence": 0.85466,
+          "box": [
+            [
+              116.0,
+              27.0
+            ],
+            [
+              315.0,
+              25.0
+            ],
+            [
+              316.0,
+              38.0
+            ],
+            [
+              116.0,
+              40.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "DiyuHuaijiaoWan",
+          "confidence": 0.99153,
+          "box": [
+            [
+              137.0,
+              103.0
+            ],
+            [
+              297.0,
+              101.0
+            ],
+            [
+              297.0,
+              117.0
+            ],
+            [
+              137.0,
+              120.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "地榆槐角丸",
+          "confidence": 0.98339,
+          "box": [
+            [
+              122.0,
+              122.0
+            ],
+            [
+              314.0,
+              119.0
+            ],
+            [
+              314.0,
+              150.0
+            ],
+            [
+              123.0,
+              153.0
+            ]
+          ],
+          "object_index": 0
+        },
+        {
+          "text": "OTC",
+          "confidence": 0.99347,
+          "box": [
+            [
+              7.0,
+              157.0
+            ],
+            [
+              44.0,
+              157.0
+            ],
+            [
+              44.0,
+              170.0
+            ],
+            [
+              7.0,
+              170.0
+            ]
+          ],
+          "object_index": 0
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "text": "北家月仁壹股份右品公司同仁堂制药厂",
+      "confidence": 0.85466,
+      "box": [
+        [
+          116.0,
+          27.0
+        ],
+        [
+          315.0,
+          25.0
+        ],
+        [
+          316.0,
+          38.0
+        ],
+        [
+          116.0,
+          40.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "DiyuHuaijiaoWan",
+      "confidence": 0.99153,
+      "box": [
+        [
+          137.0,
+          103.0
+        ],
+        [
+          297.0,
+          101.0
+        ],
+        [
+          297.0,
+          117.0
+        ],
+        [
+          137.0,
+          120.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "地榆槐角丸",
+      "confidence": 0.98339,
+      "box": [
+        [
+          122.0,
+          122.0
+        ],
+        [
+          314.0,
+          119.0
+        ],
+        [
+          314.0,
+          150.0
+        ],
+        [
+          123.0,
+          153.0
+        ]
+      ],
+      "object_index": 0
+    },
+    {
+      "text": "OTC",
+      "confidence": 0.99347,
+      "box": [
+        [
+          7.0,
+          157.0
+        ],
+        [
+          44.0,
+          157.0
+        ],
+        [
+          44.0,
+          170.0
+        ],
+        [
+          7.0,
+          170.0
+        ]
+      ],
+      "object_index": 0
+    }
+  ],
+  "ocr_method": "rapidocr_obb_rectified"
+}

@@ -1,0 +1,64 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "其它",
+      "points": [
+        [
+          125.34246575342465,
+          150.68493150684932
+        ],
+        [
+          418.4931506849315,
+          306.8493150684932
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          19.86301369863014,
+          284.9315068493151
+        ],
+        [
+          319.8630136986301,
+          465.75342465753425
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "其它",
+      "points": [
+        [
+          322.6027397260274,
+          295.8904109589041
+        ],
+        [
+          481.5068493150685,
+          452.05479452054794
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "47.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}

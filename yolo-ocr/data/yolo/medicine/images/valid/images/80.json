@@ -1,0 +1,46 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "保健品",
+      "points": [
+        [
+          1.7241379310344829,
+          80.17241379310343
+        ],
+        [
+          239.65517241379314,
+          416.37931034482756
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "保健品",
+      "points": [
+        [
+          268.96551724137936,
+          78.44827586206895
+        ],
+        [
+          494.82758620689657,
+          407.75862068965523
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "80.jpg",
+  "imageData": null,
+  "imageHeight": 500,
+  "imageWidth": 500
+}
