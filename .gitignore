@@ -23,6 +23,8 @@ env/
 # Database
 *.db
 *.sqlite3
+*.db-shm
+*.db-wal
 
 # Model caches
 .cache/
@@ -35,6 +37,11 @@ models/rag/
 models/emotion/
 models/lora/
 models/yolo/
+dashboard/models/yolo/
+
+# Browser validation output
+.playwright-artifacts/
+test-results/
 
 # OCR output
 dashboard/ocr_output/*.json

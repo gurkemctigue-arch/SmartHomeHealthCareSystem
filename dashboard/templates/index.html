@@ -3,196 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多模态智能医疗家庭助手·成果大屏</title>
+    <meta name="theme-color" content="#f5f7f9">
+    <link rel="icon" href="data:,">
+    <title>MedPro 家庭健康工作台</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vital-twin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quest.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wellness-detail.css') }}">
+    <script src="{{ url_for('static', filename='vendor/echarts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/lucide.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/three.min.js') }}"></script>
 </head>
 <body>
-<div class="dashboard">
+<div class="app-shell">
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
 
-    <!-- ═══ 左侧导航栏 ═══ -->
-    <aside class="sidebar" id="sidebar">
-        <div class="logo-area">
-            <div class="logo">🏠</div>
-            <span class="logo-text">MedPro</span>
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true"><i data-lucide="heart-pulse"></i></div>
+            <div class="brand-copy"><strong>MedPro</strong><span>家庭健康工作台</span></div>
+            <button class="icon-button sidebar-close" id="sidebarClose" type="button" title="关闭导航" aria-label="关闭导航"><i data-lucide="x"></i></button>
         </div>
 
-        <nav class="nav-menu">
-            <div class="menu active" data-page="overview">
-                <span class="menu-icon">📊</span>
-                <span>首页概览</span>
-            </div>
-            <div class="menu" data-page="detection">
-                <span class="menu-icon">📷</span>
-                <span>实时检测</span>
-            </div>
-            <div class="menu" data-page="medicine">
-                <span class="menu-icon">💊</span>
-                <span>药品管理</span>
-            </div>
-            <div class="menu" data-page="emotion">
-                <span class="menu-icon">😊</span>
-                <span>情绪分析</span>
-            </div>
-            <div class="menu" data-page="stats">
-                <span class="menu-icon">📈</span>
-                <span>数据统计</span>
-            </div>
-            <div class="menu" data-page="alerts">
-                <span class="menu-icon">🔔</span>
-                <span>告警记录</span>
-            </div>
-            <div class="menu" data-page="chat">
-                <span class="menu-icon">💬</span>
-                <span>问答对话</span>
-            </div>
-            <div class="menu" data-page="settings">
-                <span class="menu-icon">⚙️</span>
-                <span>系统设置</span>
-            </div>
+        <nav class="nav-list">
+            <button class="nav-item active" type="button" data-page="overview"><i data-lucide="layout-dashboard"></i><span>首页概览</span></button>
+            <button class="nav-item nav-wellness" type="button" data-page="wellness"><i data-lucide="cloud-sun"></i><span>天时智养</span><span class="nav-live">LIVE</span></button>
+            <button class="nav-item nav-vital" type="button" data-page="vital"><i data-lucide="scan-heart"></i><span>生命镜像</span><span class="nav-live vital-live">TWIN</span></button>
+            <button class="nav-item nav-quest" type="button" data-page="quest"><i data-lucide="orbit"></i><span>健康远征</span><span class="nav-live quest-live">NEW</span></button>
+            <button class="nav-item" type="button" data-page="detection"><i data-lucide="scan-line"></i><span>实时检测</span></button>
+            <button class="nav-item" type="button" data-page="medicine"><i data-lucide="pill"></i><span>药品管理</span></button>
+            <button class="nav-item" type="button" data-page="emotion"><i data-lucide="activity"></i><span>情绪分析</span></button>
+            <button class="nav-item" type="button" data-page="stats"><i data-lucide="chart-no-axes-combined"></i><span>数据统计</span></button>
+            <button class="nav-item" type="button" data-page="alerts"><i data-lucide="bell"></i><span>告警记录</span><span class="nav-count hidden" id="navAlertCount">0</span></button>
+            <button class="nav-item" type="button" data-page="chat"><i data-lucide="message-square-more"></i><span>健康问答</span></button>
+            <button class="nav-item" type="button" data-page="settings"><i data-lucide="settings-2"></i><span>系统设置</span></button>
         </nav>
 
         <div class="sidebar-footer">
-            <div class="version">v1.0.0</div>
+            <div class="connection-state" id="sidebarConnection"><span class="status-dot neutral"></span><div><strong>系统检测中</strong><span>正在获取运行状态</span></div></div>
+            <span class="version">v1.1.0</span>
         </div>
     </aside>
 
-    <!-- ═══ 主内容区 ═══ -->
-    <main class="main" id="mainContent">
-        <!-- 顶部标题栏 -->
-        <header class="header">
-            <h1>多模态智能医疗家庭助手·成果大屏</h1>
-            <p>摄像头检测药盒与情绪 · 数据入库 · 本地大模型问答 · 一张屏看懂全貌</p>
+    <div class="app-main">
+        <header class="topbar">
+            <div class="topbar-title">
+                <button class="icon-button mobile-menu" id="mobileMenu" type="button" title="打开导航" aria-label="打开导航"><i data-lucide="menu"></i></button>
+                <div><h1 id="pageTitle">首页概览</h1><p id="pageMeta">--</p></div>
+            </div>
+            <div class="topbar-actions">
+                <button class="system-chip" id="systemChip" type="button" data-navigate="settings"><span class="status-dot neutral"></span><span id="systemChipText">检查系统</span></button>
+                <button class="icon-button" id="refreshPage" type="button" title="刷新当前页面" aria-label="刷新当前页面"><i data-lucide="refresh-cw"></i></button>
+                <div class="user-avatar" aria-label="本地用户">本地</div>
+            </div>
         </header>
 
-        <!-- 状态卡片 -->
-        <section class="cards" id="statusCards">
-            <div class="card card-blue">
-                <div class="card-icon">📋</div>
-                <div class="card-body">
-                    <p class="card-label">今日检测次数</p>
-                    <h2 class="card-value"><span id="todayCount">--</span><small>次</small></h2>
-                    <small class="card-change up">较昨日 ↑ <span id="todayRate">--</span>%</small>
-                </div>
-                <div class="card-spark" id="sparkToday"></div>
-            </div>
-
-            <div class="card card-orange">
-                <div class="card-icon">🔔</div>
-                <div class="card-body">
-                    <p class="card-label">告警数</p>
-                    <h2 class="card-value"><span id="alertCount">--</span><small>条</small></h2>
-                    <small class="card-change up">较昨日 ↑ <span id="alertRate">--</span>%</small>
-                </div>
-            </div>
-
-            <div class="card card-green">
-                <div class="card-icon">🧠</div>
-                <div class="card-body">
-                    <p class="card-label">本地模型状态</p>
-                    <h2 class="card-value" id="llmStatus">--</h2>
-                    <small class="card-change" id="llmDesc">--</small>
-                </div>
-                <div class="status-indicator" id="llmIndicator"></div>
-            </div>
-
-            <div class="card card-time">
-                <div class="time-main">
-                    <p id="dateTime" class="time-datetime">--</p>
-                </div>
-                <div class="weather-info" id="weatherInfo">--</div>
-            </div>
-        </section>
-
-        <!-- 内容区域 -->
-        <section class="content">
-            <!-- 左侧视频面板 -->
-            <div class="left-panel">
-                <div class="panel video-panel">
-                    <div class="panel-header">
-                        <span class="panel-title-text" id="videoTitle">📹 实时视频检测</span>
-                        <div class="mode-toggles">
-                            <button class="mode-btn active" data-mode="medicine" id="btnMedicine">💊 药盒</button>
-                            <button class="mode-btn" data-mode="emotion" id="btnEmotion">😊 表情</button>
-                            <button class="mode-btn" data-mode="both" id="btnBoth">📹 全部</button>
-                        </div>
-                        <span class="status-dot" id="cameraStatus">● 摄像头已连接</span>
-                    </div>
-                    <div class="video-box">
-                        <img id="videoFeed" src="/video_feed" alt="实时检测视频流" onerror="this.style.display='none';document.getElementById('videoPlaceholder').style.display='flex'">
-                        <div id="videoPlaceholder" class="video-placeholder" style="display:none;">
-                            <div class="placeholder-icon">📷</div>
-                            <p>摄像头未连接</p>
-                            <small>请检查摄像头设备</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 右侧面板 -->
-            <div class="right-panel">
-                <!-- 上方图表 -->
-                <div class="top-charts">
-                    <div class="panel chart-panel">
-                        <div class="panel-header">
-                            <span class="panel-title-text">🥧 药品类别统计（今日）</span>
-                            <span class="panel-badge">实时</span>
-                        </div>
-                        <div id="pieChart" class="chart-container"></div>
-                    </div>
-
-                    <div class="panel chart-panel">
-                        <div class="panel-header">
-                            <span class="panel-title-text">📊 近7日检测趋势</span>
-                            <span class="panel-badge">每日更新</span>
-                        </div>
-                        <div id="barChart" class="chart-container"></div>
-                    </div>
+        <main class="page-scroll" id="pageScroll">
+            <section class="app-page active" data-page-panel="overview">
+                <div class="metric-grid" aria-label="今日概览">
+                    <article class="metric-card metric-blue"><div class="metric-icon primary"><i data-lucide="scan-line"></i></div><div class="metric-content"><span>今日有效检测</span><strong><span id="todayCount">--</span><small>次</small></strong><span class="metric-trend" id="todayTrend">较昨日 --</span></div></article>
+                    <article class="metric-card metric-amber"><div class="metric-icon warning"><i data-lucide="triangle-alert"></i></div><div class="metric-content"><span>待处理告警</span><strong><span id="alertCount">--</span><small>条</small></strong><span class="metric-trend" id="alertTrend">较昨日 --</span></div></article>
+                    <article class="metric-card metric-violet"><div class="metric-icon success"><i data-lucide="brain-circuit"></i></div><div class="metric-content"><span>问答模型</span><strong class="metric-text" id="llmStatus">--</strong><span class="metric-trend truncate" id="llmDesc">--</span></div></article>
+                    <article class="metric-card metric-cyan"><div class="metric-icon neutral"><i data-lucide="clock-3"></i></div><div class="metric-content"><span>最后同步</span><strong class="metric-text tabular" id="syncTime">--:--:--</strong><span class="metric-trend" id="syncDate">----</span></div></article>
                 </div>
 
-                <!-- 下方告警+问答 -->
-                <div class="bottom-area">
-                    <div class="panel alert-panel">
-                        <div class="panel-header">
-                            <span class="panel-title-text">🚨 最新告警</span>
-                            <a class="panel-link" id="refreshAlerts">刷新</a>
-                        </div>
-                        <div id="alertList" class="alert-list">
-                            <div class="alert-empty">加载中...</div>
-                        </div>
-                    </div>
+                <div class="overview-primary-grid">
+                    <section class="surface system-overview">
+                        <div class="section-header"><div><h2>运行状态</h2><p>本机服务与模型</p></div><button class="text-button" type="button" data-navigate="settings">查看详情<i data-lucide="arrow-right"></i></button></div>
+                        <div class="status-list" id="overviewStatusList"><div class="status-row skeleton-row"></div><div class="status-row skeleton-row"></div><div class="status-row skeleton-row"></div></div>
+                        <button class="primary-button wide-button" type="button" data-navigate="detection"><i data-lucide="scan-line"></i>进入实时检测</button>
+                    </section>
+                    <section class="surface overview-alerts">
+                        <div class="section-header"><div><h2>最新告警</h2><p>按严重程度排序</p></div><button class="text-button" type="button" data-navigate="alerts">全部告警<i data-lucide="arrow-right"></i></button></div>
+                        <div class="compact-alert-list" id="overviewAlertList"><div class="empty-inline">正在加载...</div></div>
+                    </section>
+                </div>
 
-                    <div class="panel chat-panel">
-                        <div class="panel-header">
-                            <span class="panel-title-text">💬 健康科普问答</span>
-                            <a class="panel-link" id="clearChat">清空对话</a>
-                        </div>
-                        <div id="chatMessages" class="chat-messages">
-                            <div class="chat-msg bot-msg">
-                                <div class="msg-avatar">🤖</div>
-                                <div class="msg-bubble">
-                                    您好，我是家庭医疗健康科普助手。<br>
-                                    可以询问药品用法、注意事项和健康科普问题。
-                                </div>
+                <div class="chart-grid">
+                    <section class="surface chart-surface accent-teal"><div class="section-header"><div><h2>药品类别</h2><p>今日有效检测</p></div><span class="status-badge neutral">实时</span></div><div class="chart-box" id="overviewMedicineChart"></div></section>
+                    <section class="surface chart-surface accent-blue"><div class="section-header"><div><h2>检测趋势</h2><p>最近 7 天</p></div><span class="status-badge neutral">每日</span></div><div class="chart-box" id="overviewTrendChart"></div></section>
+                </div>
+            </section>
+
+            <section class="app-page wellness-page" data-page-panel="wellness">
+                <section class="wellness-hero" id="wellnessHero" data-weather="clear" data-day="true">
+                    <canvas id="wellnessScene" aria-hidden="true"></canvas>
+                    <div class="wellness-hero-content">
+                        <div class="wellness-hero-toolbar">
+                            <div class="wellness-kicker"><span class="wellness-live-dot"></span><span>CLIMATE WELLNESS</span><strong>天时智养</strong></div>
+                            <div class="wellness-location-tools">
+                                <form class="city-search" id="citySearchForm" autocomplete="off">
+                                    <label><i data-lucide="search"></i><input id="citySearchInput" type="search" maxlength="60" placeholder="搜索城市" aria-label="搜索城市"></label>
+                                    <button class="weather-icon-button" type="submit" title="搜索城市" aria-label="搜索城市"><i data-lucide="arrow-right"></i></button>
+                                    <div class="city-search-results hidden" id="citySearchResults" role="listbox"></div>
+                                </form>
+                                <button class="weather-action-button" id="wellnessLocate" type="button"><i data-lucide="locate-fixed"></i><span>当前位置</span></button>
+                                <button class="weather-action-button" id="editProfile" type="button"><i data-lucide="sliders-horizontal"></i><span>健康档案</span></button>
                             </div>
                         </div>
-                        <div class="chat-input-area">
-                            <input
-                                id="questionInput"
-                                class="chat-input"
-                                placeholder="请输入您的问题，如：布洛芬的用法用量..."
-                                autocomplete="off"
-                            >
-                            <button id="sendBtn" class="chat-send-btn" title="发送">➤</button>
+
+                        <div class="wellness-hero-main">
+                            <div class="wellness-place-block">
+                                <div class="wellness-location-line"><i data-lucide="map-pin"></i><span id="wellnessLocationName">等待定位</span><span class="weather-live-badge waiting" id="wellnessLiveBadge">STANDBY</span></div>
+                                <h2 id="wellnessCondition">连接真实天气</h2>
+                                <p id="wellnessFocus">允许浏览器定位，或搜索城市</p>
+                            </div>
+                            <div class="wellness-temperature"><strong id="wellnessTemperature">--</strong><span>°C</span><small id="wellnessFeels">体感 --°</small></div>
+                        </div>
+
+                        <div class="weather-hud" aria-label="当前环境指标">
+                            <div><i data-lucide="droplets"></i><span>湿度</span><strong id="wellnessHumidity">--%</strong></div>
+                            <div><i data-lucide="wind"></i><span>风速</span><strong id="wellnessWind">-- km/h</strong></div>
+                            <div><i data-lucide="waves"></i><span>空气</span><strong id="wellnessAqi">AQI --</strong></div>
+                            <div><i data-lucide="sun"></i><span>紫外线</span><strong id="wellnessUv">UV --</strong></div>
+                            <div><i data-lucide="cloud-rain"></i><span>降水</span><strong id="wellnessRain">--%</strong></div>
+                        </div>
+
+                        <div class="wellness-provenance">
+                            <span id="wellnessSource">数据源待连接</span>
+                            <span id="wellnessUpdated">--</span>
+                            <span id="wellnessAccuracy">定位精度 --</span>
+                        </div>
+                    </div>
+
+                    <div class="wellness-loader hidden" id="wellnessLoader" aria-live="polite">
+                        <div class="weather-orbit"><span></span><span></span><span></span></div>
+                        <strong id="wellnessLoaderTitle">读取环境信号</strong>
+                        <div class="wellness-loader-steps" id="wellnessLoaderSteps"><span class="active">定位</span><span>天气</span><span>档案</span><span>防护</span></div>
+                    </div>
+                </section>
+
+                <div class="wellness-content" id="wellnessContent">
+                    <section class="wellness-briefing-band">
+                        <div class="wellness-section-heading">
+                            <span class="section-index">01 / DAILY SIGNAL</span>
+                            <h2 id="wellnessSummaryTitle">今日身体节律</h2>
+                            <p id="wellnessSummaryText">环境数据准备后生成今日方案</p>
+                        </div>
+                        <div class="wellness-briefing-actions">
+                            <button class="wellness-command" id="playBriefing" type="button" disabled><i data-lucide="volume-2"></i><span>语音简报</span></button>
+                            <button class="wellness-command" id="exportWellness" type="button" disabled><i data-lucide="download"></i><span>导出日报</span></button>
+                        </div>
+                        <div class="hydration-readout">
+                            <span>今日补水</span>
+                            <strong id="hydrationValue">--</strong>
+                            <div class="hydration-track"><span id="hydrationMeter"></span></div>
+                            <small id="hydrationNote">--</small>
+                        </div>
+                    </section>
+
+                    <section class="wellness-band meal-band">
+                        <div class="wellness-section-heading compact-heading"><span class="section-index">02 / NUTRITION</span><h2>气候适配三餐</h2><p>按天气、档案与饮食禁忌动态筛选</p></div>
+                        <div class="wellness-exclusions hidden" id="wellnessExclusions"></div>
+                        <div class="meal-grid" id="wellnessMealGrid"><div class="wellness-placeholder">等待真实环境数据</div></div>
+                    </section>
+
+                    <div class="wellness-data-grid">
+                        <section class="wellness-workspace hourly-workspace">
+                            <div class="wellness-section-heading compact-heading"><span class="section-index">03 / 24H PULSE</span><h2>24 小时环境脉冲</h2><p>体感与降水概率</p></div>
+                            <div class="wellness-chart" id="wellnessHourlyChart"></div>
+                        </section>
+                        <section class="wellness-workspace rhythm-workspace">
+                            <div class="wellness-section-heading compact-heading"><span class="section-index">04 / RHYTHM</span><h2>今日行动节律</h2><p>随日出、UV 与空气质量调整</p></div>
+                            <div class="wellness-timeline" id="wellnessTimeline"><div class="wellness-placeholder">尚未生成</div></div>
+                        </section>
+                    </div>
+
+                    <section class="wellness-band risk-band">
+                        <div class="wellness-section-heading compact-heading"><span class="section-index">05 / RISK RADAR</span><h2>环境风险矩阵</h2><p>风险强度随实时环境变化</p></div>
+                        <div class="risk-grid" id="wellnessRiskGrid"><div class="wellness-placeholder">尚未评估</div></div>
+                    </section>
+
+                    <section class="wellness-band protection-band">
+                        <div class="wellness-section-heading compact-heading"><span class="section-index">06 / PREVENTION</span><h2>疾病与不适预防</h2><p>基于环境暴露的分级防护</p></div>
+                        <div class="protection-grid" id="wellnessProtectionGrid"><div class="wellness-placeholder">尚未生成</div></div>
+                    </section>
+
+                    <footer class="wellness-disclosure">
+                        <div id="wellnessNotices"><i data-lucide="shield-check"></i><span>内容用于日常健康管理，不替代医学诊断。</span></div>
+                        <div class="wellness-sources" id="wellnessSources"></div>
+                    </footer>
+                </div>
+            </section>
+
+            <section class="app-page vital-twin-page" data-page-panel="vital">
+                <div class="vital-stage" id="vitalStage" data-member-color="mint" data-focus-zone="body">
+                    <canvas id="vitalTwinCanvas" aria-label="家庭成员健康状态三维人体"></canvas>
+                    <div class="vital-coordinate-field" aria-hidden="true"></div>
+
+                    <header class="vital-command-header">
+                        <div class="vital-wordmark">
+                            <span><b></b> FAMILY VITAL TWIN</span>
+                            <strong>家庭生命中枢</strong>
+                        </div>
+                        <div class="vital-layer-switch" id="vitalLayerSwitch" aria-label="人体观察层">
+                            <button class="active" type="button" data-vital-layer="overview">综合</button>
+                            <button type="button" data-vital-layer="cardio">心血管</button>
+                            <button type="button" data-vital-layer="respiratory">呼吸</button>
+                            <button type="button" data-vital-layer="metabolic">代谢</button>
+                        </div>
+                        <div class="vital-header-actions">
+                            <span class="vital-sync-state"><i data-lucide="radio-tower"></i><b id="vitalSyncLabel">LOCAL SYNC</b></span>
+                            <button class="vital-icon-button" id="vitalResetView" type="button" title="重置人体视角" aria-label="重置人体视角"><i data-lucide="focus"></i></button>
+                            <button class="vital-primary-command" id="vitalAddMeasurement" type="button"><i data-lucide="plus"></i><span>记录体征</span></button>
+                        </div>
+                    </header>
+
+                    <aside class="vital-family-rail" aria-label="家庭成员">
+                        <div class="vital-rail-heading"><span>FAMILY / 家庭</span><button id="vitalAddMember" type="button" title="新增家庭成员" aria-label="新增家庭成员"><i data-lucide="user-plus"></i></button></div>
+                        <div class="vital-member-list" id="vitalMemberList"></div>
+                    </aside>
+
+                    <section class="vital-identity-readout">
+                        <div class="vital-member-kicker"><span class="vital-pulse-dot"></span><b id="vitalMemberRelation">本人</b><em id="vitalMemberAge">年龄未录入</em></div>
+                        <div class="vital-member-title"><h2 id="vitalMemberName">我</h2><button id="vitalEditMember" type="button" title="编辑成员档案" aria-label="编辑成员档案"><i data-lucide="square-pen"></i></button></div>
+                        <p id="vitalMemberContext">正在建立个人健康基线</p>
+                        <div class="vital-score-line">
+                            <div><strong id="vitalScore">--</strong><span>/ 100</span></div>
+                            <div><span>数据覆盖</span><b id="vitalCoverage">0%</b><i><span id="vitalCoverageBar"></span></i></div>
+                        </div>
+                    </section>
+
+                    <section class="vital-signal-deck" id="vitalSignalDeck" aria-label="身体信号区域"></section>
+
+                    <aside class="vital-action-rail">
+                        <div class="vital-panel-heading">
+                            <div><span>PRIORITY QUEUE</span><h2>今日行动</h2></div>
+                            <button id="vitalAddTask" type="button" title="新增照护任务" aria-label="新增照护任务"><i data-lucide="clipboard-plus"></i></button>
+                        </div>
+                        <div class="vital-action-list" id="vitalActionList"><div class="vital-loading-line">正在分析家庭信号</div></div>
+                        <footer><i data-lucide="shield-check"></i><span id="vitalDisclaimer">用于趋势观察，不替代医学诊断</span></footer>
+                    </aside>
+
+                    <section class="vital-zone-readout" id="vitalZoneReadout">
+                        <span id="vitalZoneIndex">BODY / 00</span>
+                        <h3 id="vitalZoneTitle">综合生命状态</h3>
+                        <p id="vitalZoneSummary">选择身体区域查看关联的家庭健康信号</p>
+                    </section>
+
+                    <section class="vital-timeline-deck">
+                        <div class="vital-timeline-heading">
+                            <div><span>PERSONAL HEALTH LOG</span><h2>健康轨迹</h2></div>
+                            <div class="vital-timeline-count"><b id="vitalTimelineCount">0</b><span>条记录</span></div>
+                        </div>
+                        <div class="vital-timeline-track" id="vitalTimelineTrack"><div class="vital-timeline-empty">第一条健康记录将从这里开始</div></div>
+                    </section>
+                </div>
+            </section>
+
+            <section class="app-page quest-page" data-page-panel="quest">
+                <div class="quest-stage">
+                    <header class="quest-command-deck">
+                        <canvas id="questConstellation" aria-hidden="true"></canvas>
+                        <div class="quest-command-grid" aria-hidden="true"></div>
+                        <div class="quest-command-copy">
+                            <div class="quest-wordmark"><span>MEDPRO / VITAL QUEST</span><strong>健康远征</strong></div>
+                            <div class="quest-rank-line">
+                                <span id="questLevelLabel">LEVEL 01</span>
+                                <h2 id="questRankName">健康观察员</h2>
+                                <p id="questNextLevel">正在同步远征记录</p>
+                            </div>
+                        </div>
+                        <div class="quest-profile-cluster">
+                            <div class="quest-xp-orbit" id="questXpOrbit" style="--quest-progress: 0">
+                                <span><strong id="questXpValue">0</strong><small>VITAL POINTS</small></span>
+                            </div>
+                            <button class="quest-profile-button" id="questProfileButton" type="button" title="切换探索者档案">
+                                <span class="quest-avatar" id="questAvatar">MP</span>
+                                <span><small>ACTIVE EXPLORER</small><strong id="questDisplayName">MedPro 探索者</strong></span>
+                                <i data-lucide="chevrons-up-down"></i>
+                            </button>
+                        </div>
+                        <div class="quest-command-stats">
+                            <div><span>知识完成</span><strong id="questArticleStat">0 / 0</strong></div>
+                            <div><span>安全班次</span><strong id="questShiftStat">0</strong></div>
+                            <div><span>连续活跃</span><strong><b id="questStreakStat">0</b> 天</strong></div>
+                        </div>
+                    </header>
+
+                    <nav class="quest-switcher" id="questSwitcher" aria-label="健康远征视图">
+                        <button class="active" type="button" data-quest-view-target="mission" aria-selected="true"><i data-lucide="radar"></i><span>行动总览</span></button>
+                        <button type="button" data-quest-view-target="codex" aria-selected="false"><i data-lucide="library-big"></i><span>知识舱</span><b id="questUnreadCount">0</b></button>
+                        <button type="button" data-quest-view-target="game" aria-selected="false"><i data-lucide="gamepad-2"></i><span>急诊大作战</span></button>
+                        <button type="button" data-quest-view-target="atlas" aria-selected="false"><i data-lucide="medal"></i><span>成就星图</span><b id="questAchievementCount">0</b></button>
+                    </nav>
+
+                    <div class="quest-view active" data-quest-view="mission">
+                        <section class="quest-mission-band">
+                            <div class="quest-section-heading">
+                                <span>WEEKLY TRANSMISSION / 01</span>
+                                <h2>本周行动序列</h2>
+                                <p id="questMissionSummary">任务信号正在接入</p>
+                            </div>
+                            <div class="quest-mission-list" id="questMissionList"></div>
+                        </section>
+
+                        <div class="quest-dashboard-grid">
+                            <section class="quest-map-workspace">
+                                <div class="quest-section-heading compact-heading">
+                                    <span>KNOWLEDGE ATLAS / LIVE</span>
+                                    <h2>健康知识星图</h2>
+                                    <p>领域掌握度</p>
+                                </div>
+                                <canvas id="questKnowledgeMap" aria-label="健康知识领域掌握度"></canvas>
+                                <div class="quest-map-legend" id="questMapLegend"></div>
+                            </section>
+
+                            <aside class="quest-action-rail">
+                                <div class="quest-section-heading compact-heading">
+                                    <span>NEXT ACTION</span>
+                                    <h2>继续你的远征</h2>
+                                </div>
+                                <button class="quest-primary-action" type="button" data-quest-jump="codex">
+                                    <span class="quest-action-icon"><i data-lucide="book-open-check"></i></span>
+                                    <span><small>CODEX / KNOWLEDGE</small><strong id="questContinueTitle">选择一篇知识文章</strong><em id="questContinueMeta">+5 VP · 阅读完成</em></span>
+                                    <i data-lucide="arrow-up-right"></i>
+                                </button>
+                                <button class="quest-secondary-action" type="button" data-quest-jump="game">
+                                    <span class="quest-action-icon hot"><i data-lucide="siren"></i></span>
+                                    <span><small>MED RUSH / NIGHT SHIFT</small><strong>夜间交接班</strong><em>安全权重 50% · 8 位患者</em></span>
+                                    <i data-lucide="play"></i>
+                                </button>
+                                <div class="quest-latest-unlock" id="questLatestUnlock">
+                                    <span><i data-lucide="radio"></i>最近信号</span>
+                                    <strong>尚未解锁成就</strong>
+                                    <small>完成第一篇文章，点亮第一枚勋章</small>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <div class="quest-view" data-quest-view="codex" hidden>
+                        <header class="quest-view-header">
+                            <div class="quest-section-heading">
+                                <span>CODEX / VERIFIED KNOWLEDGE</span>
+                                <h2>知识舱</h2>
+                                <p>来源可追溯，内容经过版本化复核</p>
+                            </div>
+                            <div class="quest-codex-tools">
+                                <label class="quest-search"><i data-lucide="search"></i><input id="questArticleSearch" type="search" placeholder="搜索主题" autocomplete="off"></label>
+                                <select id="questArticleCategory" aria-label="文章分类"><option value="all">全部领域</option></select>
+                            </div>
+                        </header>
+                        <div class="quest-article-grid" id="questArticleGrid"><div class="quest-loading-line">正在校验知识档案...</div></div>
+                    </div>
+
+                    <div class="quest-view" data-quest-view="game" hidden>
+                        <header class="quest-view-header game-heading">
+                            <div class="quest-section-heading">
+                                <span>MED RUSH / SHIFT 01</span>
+                                <h2>急诊大作战</h2>
+                                <p>安全核对优先于速度</p>
+                            </div>
+                            <div class="game-score-contract">
+                                <span><i data-lucide="shield-check"></i><b>50%</b> 医疗安全</span>
+                                <span><i data-lucide="scan-search"></i><b>20%</b> 核对判断</span>
+                                <span><i data-lucide="brain-circuit"></i><b>20%</b> 知识掌握</span>
+                                <span><i data-lucide="timer"></i><b>10%</b> 操作效率</span>
+                            </div>
+                        </header>
+                        <section class="hospital-game-shell" id="hospitalGameShell">
+                            <div class="hospital-game-topline">
+                                <div><small>SHIFT STATUS</small><strong id="gameShiftStatus">待命</strong></div>
+                                <div class="game-live-metrics">
+                                    <span><small>SCORE</small><strong id="gameScore">0000</strong></span>
+                                    <span><small>SAFETY</small><strong id="gameSafety">100%</strong></span>
+                                    <span><small>QUEUE</small><strong id="gameQueue">0 / 8</strong></span>
+                                    <span><small>TIME</small><strong id="gameTimer">02:00</strong></span>
+                                </div>
+                                <button class="game-exit-button hidden" id="gameExit" type="button" title="结束当前班次" aria-label="结束当前班次"><i data-lucide="log-out"></i></button>
+                            </div>
+                            <div class="hospital-game-viewport">
+                                <div id="hospitalGameCanvas" aria-label="急诊大作战游戏区域"></div>
+                                <div class="game-launch-panel" id="gameLaunchPanel">
+                                    <span class="game-launch-mark"><i data-lucide="stethoscope"></i></span>
+                                    <small>MEDPRO SIMULATION / READY</small>
+                                    <h3>夜间交接班</h3>
+                                    <p>8 位患者 · 处方核对 · 紧急分诊 · 药品隔离</p>
+                                    <button id="startHospitalGame" type="button"><i data-lucide="play"></i><span>开始执勤</span></button>
+                                    <em>训练内容不构成诊断或处方建议</em>
+                                </div>
+                                <div class="game-case-file hidden" id="gameCaseFile" aria-live="polite">
+                                    <div><span id="gameCaseTag">分诊核对</span><small id="gameCaseIndex">01 / 08</small></div>
+                                    <h3 id="gamePatientName">患者</h3>
+                                    <p id="gamePatientBrief">病例信息</p>
+                                </div>
+                                <div class="game-feedback hidden" id="gameFeedback" aria-live="assertive">
+                                    <span id="gameFeedbackIcon"><i data-lucide="shield-check"></i></span>
+                                    <div><small id="gameFeedbackLabel">SAFE ACTION</small><strong id="gameFeedbackTitle">核对正确</strong><p id="gameFeedbackText"></p></div>
+                                    <button id="gameFeedbackContinue" type="button" title="继续下一位患者" aria-label="继续下一位患者"><i data-lucide="arrow-right"></i></button>
+                                </div>
+                                <div class="game-result-panel hidden" id="gameResultPanel">
+                                    <span class="game-result-seal"><i data-lucide="shield-check"></i></span>
+                                    <small>SHIFT COMPLETE</small>
+                                    <h3 id="gameResultTitle">班次完成</h3>
+                                    <div class="game-result-grid">
+                                        <div><span>最终得分</span><strong id="gameResultScore">0</strong></div>
+                                        <div><span>安全率</span><strong id="gameResultSafety">100%</strong></div>
+                                        <div><span>正确处置</span><strong id="gameResultCorrect">0 / 0</strong></div>
+                                        <div><span>获得积分</span><strong id="gameResultPoints">+0 VP</strong></div>
+                                    </div>
+                                    <div><button class="game-result-secondary" type="button" data-quest-jump="codex"><i data-lucide="book-open"></i>进入病例复习</button><button id="restartHospitalGame" type="button"><i data-lucide="rotate-ccw"></i>再次执勤</button></div>
+                                </div>
+                            </div>
+                            <div class="game-touch-controls" id="gameTouchControls" aria-label="游戏控制">
+                                <button type="button" data-game-move="left" title="向左移动" aria-label="向左移动"><i data-lucide="arrow-left"></i></button>
+                                <button type="button" data-game-move="up" title="向上移动" aria-label="向上移动"><i data-lucide="arrow-up"></i></button>
+                                <button type="button" data-game-move="down" title="向下移动" aria-label="向下移动"><i data-lucide="arrow-down"></i></button>
+                                <button type="button" data-game-move="right" title="向右移动" aria-label="向右移动"><i data-lucide="arrow-right"></i></button>
+                                <button class="game-touch-action" id="gameTouchAction" type="button" title="执行核对" aria-label="执行核对"><i data-lucide="hand"></i></button>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="quest-view" data-quest-view="atlas" hidden>
+                        <header class="quest-view-header">
+                            <div class="quest-section-heading">
+                                <span>ATLAS / ACHIEVEMENT SIGNALS</span>
+                                <h2>成就星图</h2>
+                                <p id="questAtlasSummary">正在读取勋章序列</p>
+                            </div>
+                            <div class="quest-atlas-total"><small>UNLOCKED</small><strong id="questAtlasCount">0 / 0</strong></div>
+                        </header>
+                        <div class="quest-atlas-layout">
+                            <div class="quest-achievement-grid" id="questAchievementGrid"></div>
+                            <aside class="quest-activity-stream">
+                                <div class="quest-section-heading compact-heading"><span>ACTIVITY LOG</span><h2>积分记录</h2></div>
+                                <div id="questActivityList"></div>
+                            </aside>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
+            <section class="app-page" data-page-panel="detection">
+                <div class="page-toolbar">
+                    <div class="segmented-control" id="detectModeControl" aria-label="检测模式"><button class="active" type="button" data-mode="medicine"><i data-lucide="pill"></i>药品</button><button type="button" data-mode="emotion"><i data-lucide="activity"></i>情绪</button><button type="button" data-mode="both"><i data-lucide="scan-line"></i>全部</button></div>
+                    <div class="toolbar-actions"><span class="status-badge neutral" id="cameraBadge"><span class="status-dot neutral"></span>未启动</span><button class="secondary-button" id="toggleCamera" type="button"><i data-lucide="video"></i>启动画面</button></div>
+                </div>
+                <div class="detection-grid">
+                    <section class="video-workspace">
+                        <div class="video-stage" id="videoStage"><img id="videoFeed" alt="实时检测视频" hidden><div class="video-empty" id="videoPlaceholder"><div class="empty-icon dark"><i data-lucide="video-off"></i></div><strong>画面未启动</strong><span>摄像头保持关闭</span></div></div>
+                        <div class="video-footer"><span id="videoModeLabel">药品检测</span><span class="tabular" id="videoClock">--:--:--</span></div>
+                    </section>
+                    <aside class="surface detection-results"><div class="section-header"><div><h2>最近识别</h2><p>已写入的有效记录</p></div><button class="icon-button compact" id="refreshDetections" type="button" title="刷新识别结果" aria-label="刷新识别结果"><i data-lucide="refresh-cw"></i></button></div><div class="detection-list" id="detectionList"></div></aside>
+                </div>
+            </section>
+
+            <section class="app-page" data-page-panel="medicine">
+                <div class="page-toolbar"><div class="filter-group"><label class="search-field"><i data-lucide="search"></i><input id="medicineSearch" type="search" placeholder="搜索药品" autocomplete="off"></label><select class="select-control" id="medicineFilter" aria-label="药品状态"><option value="all">全部状态</option><option value="normal">正常</option><option value="low">库存不足</option><option value="expiring">即将过期</option><option value="expired">已过期</option></select></div><button class="primary-button" id="addMedicine" type="button"><i data-lucide="plus"></i>新增药品</button></div>
+                <section class="surface table-surface"><div class="table-wrap"><table class="data-table"><thead><tr><th>药品</th><th>类别</th><th>有效期</th><th>库存</th><th>状态</th><th class="actions-column">操作</th></tr></thead><tbody id="medicineTableBody"></tbody></table></div><div class="mobile-data-list" id="medicineMobileList"></div><div class="empty-state hidden" id="medicineEmpty"><div class="empty-icon"><i data-lucide="package-open"></i></div><strong>暂无药品</strong><button class="secondary-button" type="button" data-action="add-medicine"><i data-lucide="plus"></i>新增药品</button></div></section>
+            </section>
+
+            <section class="app-page" data-page-panel="emotion">
+                <div class="emotion-grid">
+                    <section class="surface emotion-current accent-violet"><div class="section-header"><div><h2>当前状态</h2><p>最近一次有效记录</p></div><span class="status-badge neutral">实时</span></div><div class="emotion-reading" id="emotionReading"><div class="emotion-symbol"><i data-lucide="activity"></i></div><strong>暂无记录</strong><span>--</span></div><div class="confidence-meter"><span id="emotionConfidenceBar"></span></div></section>
+                    <section class="surface chart-surface emotion-chart-surface accent-coral"><div class="section-header"><div><h2>情绪分布</h2><p>最近 7 天</p></div></div><div class="chart-box" id="emotionChart"></div></section>
+                </div>
+                <div class="notice-banner"><i data-lucide="info"></i><span>情绪识别仅作为趋势参考，不用于医学诊断。</span></div>
+            </section>
+
+            <section class="app-page" data-page-panel="stats">
+                <div class="page-toolbar"><div class="toolbar-heading"><strong>统计报告</strong><span id="statsRangeLabel">最近 7 天</span></div><select class="select-control" id="statsRange" aria-label="统计周期"><option value="7">最近 7 天</option></select></div>
+                <div class="chart-grid stats-chart-grid"><section class="surface chart-surface large-chart accent-blue"><div class="section-header"><div><h2>检测趋势</h2><p>每日有效记录</p></div></div><div class="chart-box" id="statsTrendChart"></div></section><section class="surface chart-surface large-chart accent-teal"><div class="section-header"><div><h2>药品类别</h2><p>检测结果构成</p></div></div><div class="chart-box" id="statsMedicineChart"></div></section></div>
+            </section>
+
+            <section class="app-page" data-page-panel="alerts">
+                <div class="page-toolbar"><div class="filter-group"><select class="select-control" id="alertLevelFilter" aria-label="告警级别"><option value="all">全部级别</option><option value="danger">严重</option><option value="warning">警告</option><option value="info">提示</option></select><select class="select-control" id="alertStatusFilter" aria-label="处理状态"><option value="open">待处理</option><option value="acknowledged">已处理</option><option value="all">全部状态</option></select></div><button class="secondary-button" id="refreshAlerts" type="button"><i data-lucide="refresh-cw"></i>刷新</button></div>
+                <section class="surface alert-center"><div class="alert-center-list" id="alertCenterList"></div></section>
+            </section>
+
+            <section class="app-page" data-page-panel="chat">
+                <div class="chat-layout">
+                    <aside class="chat-presets"><h2>常用问题</h2><button type="button" data-question="这个药品有哪些常见注意事项？"><i data-lucide="circle-help"></i>药品注意事项</button><button type="button" data-question="老年人日常用药需要注意什么？"><i data-lucide="circle-help"></i>老年人用药</button><button type="button" data-question="发现药品过期应该如何处理？"><i data-lucide="circle-help"></i>过期药品处理</button><div class="chat-safety"><i data-lucide="shield-check"></i><span>回答仅供健康科普参考</span></div></aside>
+                    <section class="surface chat-workspace"><div class="section-header"><div><h2>健康问答</h2><p id="chatBackend">正在检查模型</p></div><button class="icon-button compact" id="clearChat" type="button" title="清空对话" aria-label="清空对话"><i data-lucide="trash-2"></i></button></div><div class="chat-messages" id="chatMessages" aria-live="polite"></div><form class="chat-composer" id="chatForm"><textarea id="questionInput" rows="1" maxlength="1000" placeholder="输入健康问题" aria-label="健康问题"></textarea><button class="primary-icon-button" id="sendBtn" type="submit" title="发送" aria-label="发送"><i data-lucide="send"></i></button></form></section>
+                </div>
+            </section>
+
+            <section class="app-page" data-page-panel="settings">
+                <div class="settings-grid">
+                    <section class="surface settings-section"><div class="section-header"><div><h2>系统组件</h2><p>实时运行状态</p></div><button class="icon-button compact" id="refreshHealth" type="button" title="刷新状态" aria-label="刷新状态"><i data-lucide="refresh-cw"></i></button></div><div class="settings-list" id="healthDetails"></div></section>
+                    <section class="surface settings-section"><div class="section-header"><div><h2>检测偏好</h2><p>应用于实时检测</p></div></div><label class="setting-row"><span><strong>默认检测模式</strong><small>切换后立即生效</small></span><select class="select-control" id="settingsMode"><option value="medicine">药品</option><option value="emotion">情绪</option><option value="both">全部</option></select></label><label class="setting-row"><span><strong>紧凑显示</strong><small>减少列表垂直间距</small></span><input class="switch-control" id="compactMode" type="checkbox"></label></section>
+                    <section class="surface settings-section full-span"><div class="section-header"><div><h2>数据与隐私</h2><p>本机数据库</p></div></div><div class="privacy-note"><i data-lucide="hard-drive"></i><div><strong>数据保存在本机</strong><span>检测、告警和问答记录使用本地 SQLite 数据库。</span></div></div></section>
+                </div>
+            </section>
+        </main>
+    </div>
 </div>
 
+<section class="recipe-experience" id="recipeExperience" aria-hidden="true" hidden>
+    <div class="recipe-loading" id="recipeLoading" aria-live="polite">
+        <span class="recipe-loading-mark"><i data-lucide="chef-hat"></i></span>
+        <strong>正在进入天时厨房</strong>
+        <small>核对食谱与健康档案</small>
+    </div>
+
+    <div class="recipe-view hidden" id="recipeView">
+        <header class="recipe-hero" id="recipeHero">
+            <img id="recipeHeroImage" alt="">
+            <div class="recipe-hero-shade"></div>
+            <div class="recipe-topbar">
+                <button class="recipe-icon-button" id="closeRecipe" type="button" title="返回天时智养" aria-label="返回天时智养"><i data-lucide="arrow-left"></i></button>
+                <div class="recipe-brand"><i data-lucide="chef-hat"></i><span>天时厨房</span><small>CLIMATE KITCHEN</small></div>
+                <button class="recipe-icon-button" id="speakRecipe" type="button" title="朗读食谱概览" aria-label="朗读食谱概览"><i data-lucide="volume-2"></i></button>
+            </div>
+            <div class="recipe-hero-copy">
+                <div class="recipe-hero-labels"><span id="recipeSlot">今日餐食</span><span id="recipeMatchLabel">档案核对中</span></div>
+                <h1 id="recipeTitle">食谱详情</h1>
+                <p id="recipeSubtitle"></p>
+                <div class="recipe-hero-meta">
+                    <span><i data-lucide="clock-3"></i><b id="recipeDuration">-- 分钟</b></span>
+                    <span><i data-lucide="gauge"></i><b id="recipeDifficulty">--</b></span>
+                    <span><i data-lucide="flame"></i><b id="recipeCalories">-- kcal / 份</b></span>
+                </div>
+            </div>
+            <div class="recipe-fit-orbit" id="recipeFitOrbit" aria-label="食谱匹配度">
+                <span><strong id="recipeFitScore">--</strong><small>% MATCH</small></span>
+            </div>
+            <p class="recipe-image-note" id="recipeImageNote"></p>
+        </header>
+
+        <main class="recipe-content">
+            <section class="recipe-evidence-band" aria-labelledby="recipeEvidenceTitle">
+                <div class="recipe-band-heading"><span>01 / WHY TODAY</span><h2 id="recipeEvidenceTitle">为什么今天推荐</h2><p>天气、档案与餐次结构共同参与筛选</p></div>
+                <div class="recipe-evidence-flow" id="recipeEvidenceFlow"></div>
+            </section>
+
+            <section class="recipe-profile-band" id="recipeProfileBand" aria-live="polite">
+                <span class="recipe-profile-icon"><i data-lucide="shield-check"></i></span>
+                <div><small>PROFILE SAFETY CHECK</small><strong id="recipeProfileTitle">正在核对健康档案</strong><p id="recipeProfileText"></p></div>
+            </section>
+
+            <section class="recipe-control-band">
+                <div class="serving-control" aria-label="用餐人数">
+                    <span><small>SERVINGS</small><strong><b id="servingCount">2</b> 人份</strong></span>
+                    <div>
+                        <button id="servingMinus" type="button" title="减少一人份" aria-label="减少一人份"><i data-lucide="minus"></i></button>
+                        <button id="servingPlus" type="button" title="增加一人份" aria-label="增加一人份"><i data-lucide="plus"></i></button>
+                    </div>
+                </div>
+                <button class="kitchen-launch" id="launchKitchen" type="button"><i data-lucide="cooking-pot"></i><span><small>HANDS-FREE MODE</small><strong>进入厨房模式</strong></span><i data-lucide="arrow-up-right"></i></button>
+            </section>
+
+            <nav class="recipe-tabs" id="recipeTabs" aria-label="食谱详情视图">
+                <button class="active" type="button" data-recipe-tab="method" aria-selected="true"><i data-lucide="list-checks"></i><span>做法</span></button>
+                <button type="button" data-recipe-tab="nutrition" aria-selected="false"><i data-lucide="chart-no-axes-combined"></i><span>营养</span></button>
+                <button type="button" data-recipe-tab="swaps" aria-selected="false"><i data-lucide="repeat-2"></i><span>替换方案</span></button>
+            </nav>
+
+            <section class="recipe-tab-panel active" data-recipe-panel="method">
+                <div class="recipe-method-layout">
+                    <section class="ingredient-section" aria-labelledby="ingredientTitle">
+                        <div class="recipe-section-heading"><span>SHOPPING LIST</span><h2 id="ingredientTitle">食材清单</h2><p>勾选状态会保存在当前浏览器</p></div>
+                        <div class="ingredient-progress"><span><b id="ingredientDone">0</b> / <b id="ingredientTotal">0</b> 已备齐</span><button id="clearIngredients" type="button">清空勾选</button></div>
+                        <div class="ingredient-list" id="ingredientList"></div>
+                    </section>
+                    <section class="steps-section" aria-labelledby="stepsTitle">
+                        <div class="recipe-section-heading"><span>COOKING FLOW</span><h2 id="stepsTitle">烹饪步骤</h2><p>按顺序完成，带计时步骤可直接启动</p></div>
+                        <ol class="recipe-step-list" id="recipeStepList"></ol>
+                    </section>
+                </div>
+            </section>
+
+            <section class="recipe-tab-panel" data-recipe-panel="nutrition" hidden>
+                <div class="nutrition-layout">
+                    <section class="nutrition-visual" aria-labelledby="nutritionTitle">
+                        <div class="recipe-section-heading"><span>ESTIMATED / SERVING</span><h2 id="nutritionTitle">每份营养估算</h2><p id="nutritionNote"></p></div>
+                        <div class="nutrition-chart" id="recipeNutritionChart" role="img" aria-label="营养构成图"></div>
+                    </section>
+                    <div class="nutrition-metrics" id="nutritionMetrics"></div>
+                </div>
+            </section>
+
+            <section class="recipe-tab-panel" data-recipe-panel="swaps" hidden>
+                <div class="swap-layout">
+                    <section aria-labelledby="swapTitle">
+                        <div class="recipe-section-heading"><span>SAFE ALTERNATIVES</span><h2 id="swapTitle">替换方案</h2><p>替换后仍需结合个人医嘱和实际耐受情况</p></div>
+                        <div class="swap-list" id="recipeSwapList"></div>
+                    </section>
+                    <aside class="recipe-source-block">
+                        <i data-lucide="badge-check"></i>
+                        <small>CONTENT REVIEW</small>
+                        <strong id="recipeReviewStatus">规则复核</strong>
+                        <p id="recipeMedicalNotice"></p>
+                        <a id="recipeSourceLink" target="_blank" rel="noopener noreferrer">查看膳食参考来源<i data-lucide="external-link"></i></a>
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section class="kitchen-mode hidden" id="kitchenMode" aria-hidden="true">
+        <img class="kitchen-backdrop" id="kitchenBackdrop" alt="">
+        <div class="kitchen-shade"></div>
+        <header class="kitchen-topbar">
+            <button class="kitchen-icon-button" id="closeKitchen" type="button" title="退出厨房模式" aria-label="退出厨房模式"><i data-lucide="x"></i></button>
+            <div><small>CLIMATE KITCHEN · LIVE</small><strong id="kitchenRecipeTitle">食谱</strong></div>
+            <button class="kitchen-icon-button" id="toggleWakeLock" type="button" title="保持屏幕常亮" aria-label="保持屏幕常亮"><i data-lucide="sun"></i></button>
+        </header>
+        <div class="kitchen-progress"><span id="kitchenProgressBar"></span></div>
+        <main class="kitchen-stage">
+            <div class="kitchen-step-index"><span id="kitchenStepCurrent">01</span><small id="kitchenStepTotal">/ 06</small></div>
+            <div class="kitchen-step-copy">
+                <span id="kitchenHeat">准备</span>
+                <h2 id="kitchenStepTitle">开始烹饪</h2>
+                <p id="kitchenStepBody"></p>
+                <div class="kitchen-tip"><i data-lucide="sparkles"></i><span id="kitchenStepTip"></span></div>
+            </div>
+            <div class="kitchen-timer hidden" id="kitchenTimer">
+                <small>STEP TIMER</small><strong id="kitchenTimerValue">00:00</strong>
+                <button id="kitchenTimerToggle" type="button"><i data-lucide="play"></i><span>开始计时</span></button>
+            </div>
+        </main>
+        <footer class="kitchen-actions">
+            <button id="kitchenPrevious" type="button"><i data-lucide="arrow-left"></i><span>上一步</span></button>
+            <button id="kitchenSpeak" type="button"><i data-lucide="volume-2"></i><span>朗读本步</span></button>
+            <button id="kitchenNext" type="button"><span>下一步</span><i data-lucide="arrow-right"></i></button>
+        </footer>
+    </section>
+</section>
+
+<dialog class="modal" id="medicineDialog">
+    <form method="dialog" id="medicineForm">
+        <div class="modal-header"><div><h2 id="medicineDialogTitle">新增药品</h2><p>药品库存信息</p></div><button class="icon-button" type="button" data-close-dialog title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+        <input id="medicineId" type="hidden">
+        <div class="form-grid"><label class="form-field full-span"><span>药品名称</span><input id="medicineName" name="name" required maxlength="80" autocomplete="off"><small class="field-error"></small></label><label class="form-field"><span>类别</span><input id="medicineCategory" name="category" maxlength="40" autocomplete="off"></label><label class="form-field"><span>库存</span><input id="medicineStock" name="stock" type="number" min="0" max="99999" value="0" required></label><label class="form-field"><span>有效期</span><input id="medicineExpireDate" name="expire_date" type="date"></label><label class="form-field full-span"><span>备注</span><textarea id="medicineDescription" name="description" rows="3" maxlength="300"></textarea></label></div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-dialog>取消</button><button class="primary-button" id="saveMedicine" type="submit"><i data-lucide="check"></i>保存</button></div>
+    </form>
+</dialog>
+
+<dialog class="quest-reader-dialog" id="questReaderDialog">
+    <div class="quest-reader-frame">
+        <header class="quest-reader-hero" id="questReaderHero">
+            <img id="questReaderImage" alt="">
+            <div class="quest-reader-shade"></div>
+            <div class="quest-reader-topbar">
+                <button id="closeQuestReader" type="button" title="关闭文章" aria-label="关闭文章"><i data-lucide="arrow-left"></i></button>
+                <div class="quest-reader-source"><span id="questReaderCategory">知识领域</span><small id="questReaderReview">内容复核</small></div>
+                <a id="questReaderSourceLink" target="_blank" rel="noopener noreferrer" title="查看原始来源" aria-label="查看原始来源"><i data-lucide="external-link"></i></a>
+            </div>
+            <div class="quest-reader-title"><span>CODEX ENTRY / <b id="questReaderNumber">001</b></span><h1 id="questReaderTitle">文章标题</h1><p id="questReaderDek"></p><div><span><i data-lucide="clock-3"></i><b id="questReaderMinutes">5 分钟</b></span><span><i data-lucide="badge-check"></i><b id="questReaderReviewer">医学内容组</b></span></div></div>
+            <div class="quest-reader-progress"><span id="questReaderProgressBar"></span></div>
+        </header>
+        <main class="quest-reader-content" id="questReaderScroll">
+            <article id="questReaderBody"></article>
+            <section class="quest-takeaway-block"><span>FIELD NOTES</span><h2>带走这三件事</h2><div id="questTakeawayList"></div></section>
+            <section class="quest-quiz-block" id="questQuizBlock"><span>KNOWLEDGE CHECK</span><h2>知识校验</h2><p>完成全部题目后提交</p><form id="questQuizForm"><div id="questQuizQuestions"></div><button type="submit"><i data-lucide="scan-search"></i>提交判断</button></form><div class="quest-quiz-result hidden" id="questQuizResult"></div></section>
+            <section class="quest-discussion-block"><div><span>DISCUSSION</span><h2>理性讨论</h2><p>分享理解，不发布诊断、处方或具体剂量建议</p></div><form id="questCommentForm"><textarea id="questCommentInput" maxlength="500" rows="3" placeholder="写下你的理解或问题" required></textarea><button type="submit" title="发布评论" aria-label="发布评论"><i data-lucide="send"></i></button></form><div class="quest-comment-list" id="questCommentList"></div></section>
+        </main>
+    </div>
+</dialog>
+
+<dialog class="modal quest-profile-dialog" id="questProfileDialog">
+    <div class="modal-header"><div><h2>探索者档案</h2><p>积分与进度按档案独立记录</p></div><button class="icon-button" id="closeQuestProfile" type="button" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+    <div class="quest-profile-list" id="questProfileList"></div>
+    <form class="quest-profile-create" id="questProfileForm"><label><span>新探索者名称</span><input id="questProfileName" maxlength="24" autocomplete="off" required></label><button class="primary-button" type="submit"><i data-lucide="user-plus"></i>创建档案</button></form>
+</dialog>
+
+<dialog class="modal vital-form-dialog" id="vitalMemberDialog">
+    <form id="vitalMemberForm">
+        <div class="modal-header"><div><h2 id="vitalMemberDialogTitle">新增家庭成员</h2><p>建立独立的健康档案与生命镜像</p></div><button class="icon-button" type="button" data-close-dialog title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+        <input id="vitalMemberId" type="hidden">
+        <div class="vital-dialog-body">
+            <div class="form-grid">
+                <label class="form-field full-span"><span>成员称呼</span><input id="vitalMemberInputName" maxlength="24" autocomplete="off" required></label>
+                <label class="form-field"><span>家庭关系</span><select id="vitalMemberRelationInput"><option value="self">本人</option><option value="spouse">伴侣</option><option value="father">父亲</option><option value="mother">母亲</option><option value="child">子女</option><option value="grandparent">长辈</option><option value="other">其他家人</option></select></label>
+                <label class="form-field"><span>性别</span><select id="vitalMemberSex"><option value="unspecified">不填写</option><option value="female">女性</option><option value="male">男性</option></select></label>
+                <label class="form-field"><span>出生日期</span><input id="vitalMemberBirthDate" type="date"></label>
+                <label class="form-field"><span>身高</span><div class="vital-input-unit"><input id="vitalMemberHeight" type="number" min="40" max="250" step="0.1"><b>cm</b></div></label>
+                <label class="form-field full-span"><span>健康状况</span><input id="vitalMemberConditions" maxlength="300" placeholder="例如：高血压、哮喘，用逗号分隔"></label>
+                <label class="form-field full-span"><span>过敏信息</span><input id="vitalMemberAllergies" maxlength="300" placeholder="例如：青霉素、海鲜，用逗号分隔"></label>
+            </div>
+            <fieldset class="vital-color-field"><legend>镜像识别色</legend><div><label><input type="radio" name="vitalMemberColor" value="mint" checked><span class="mint"></span></label><label><input type="radio" name="vitalMemberColor" value="cyan"><span class="cyan"></span></label><label><input type="radio" name="vitalMemberColor" value="coral"><span class="coral"></span></label><label><input type="radio" name="vitalMemberColor" value="amber"><span class="amber"></span></label><label><input type="radio" name="vitalMemberColor" value="violet"><span class="violet"></span></label></div></fieldset>
+        </div>
+        <div class="modal-actions vital-modal-actions"><button class="danger-button hidden" id="vitalDeleteMember" type="button"><i data-lucide="trash-2"></i>删除成员</button><span></span><button class="secondary-button" type="button" data-close-dialog>取消</button><button class="primary-button" type="submit"><i data-lucide="check"></i>保存档案</button></div>
+    </form>
+</dialog>
+
+<dialog class="modal vital-form-dialog" id="vitalMeasurementDialog">
+    <form id="vitalMeasurementForm">
+        <div class="modal-header"><div><h2>记录生命体征</h2><p>数据将写入当前成员的健康轨迹</p></div><button class="icon-button" type="button" data-close-dialog title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+        <div class="vital-dialog-body">
+            <div class="form-grid">
+                <label class="form-field"><span>家庭成员</span><select id="vitalMeasurementMember"></select></label>
+                <label class="form-field"><span>测量类型</span><select id="vitalMeasurementType"><option value="blood_pressure">血压</option><option value="heart_rate">心率</option><option value="spo2">血氧</option><option value="temperature">体温</option><option value="blood_glucose">血糖</option><option value="weight">体重</option></select></label>
+                <label class="form-field"><span id="vitalPrimaryLabel">收缩压</span><div class="vital-input-unit"><input id="vitalMeasurementPrimary" type="number" step="0.1" required><b id="vitalMeasurementUnit">mmHg</b></div></label>
+                <label class="form-field" id="vitalSecondaryField"><span>舒张压</span><div class="vital-input-unit"><input id="vitalMeasurementSecondary" type="number" step="0.1"><b>mmHg</b></div></label>
+                <label class="form-field full-span"><span>测量时间</span><input id="vitalMeasurementTime" type="datetime-local" required></label>
+                <label class="form-field full-span"><span>备注</span><textarea id="vitalMeasurementNote" rows="3" maxlength="160" placeholder="可记录测量场景或身体感受"></textarea></label>
+            </div>
+            <div class="vital-medical-note"><i data-lucide="info"></i><span>异常提示只用于帮助发现变化；身体不适或数值明显异常时，请及时联系专业医疗人员。</span></div>
+        </div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-dialog>取消</button><button class="primary-button" type="submit"><i data-lucide="activity"></i>写入健康轨迹</button></div>
+    </form>
+</dialog>
+
+<dialog class="modal vital-form-dialog" id="vitalTaskDialog">
+    <form id="vitalTaskForm">
+        <div class="modal-header"><div><h2>新增照护任务</h2><p>把需要关注的事情放进今日行动</p></div><button class="icon-button" type="button" data-close-dialog title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+        <div class="vital-dialog-body"><div class="form-grid">
+            <label class="form-field"><span>家庭成员</span><select id="vitalTaskMember"></select></label>
+            <label class="form-field"><span>优先级</span><select id="vitalTaskPriority"><option value="normal">日常</option><option value="important">重要</option><option value="urgent">紧急</option></select></label>
+            <label class="form-field full-span"><span>任务名称</span><input id="vitalTaskTitle" maxlength="60" required></label>
+            <label class="form-field full-span"><span>计划时间</span><input id="vitalTaskDue" type="datetime-local" required></label>
+            <label class="form-field full-span"><span>任务说明</span><textarea id="vitalTaskDetail" rows="3" maxlength="180"></textarea></label>
+        </div></div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-dialog>取消</button><button class="primary-button" type="submit"><i data-lucide="clipboard-check"></i>加入今日行动</button></div>
+    </form>
+</dialog>
+
+<dialog class="modal profile-modal" id="profileDialog">
+    <form method="dialog" id="profileForm">
+        <div class="modal-header"><div><h2>健康档案</h2><p>用于禁忌过滤与环境风险分层</p></div><button class="icon-button" type="button" data-close-dialog title="关闭" aria-label="关闭"><i data-lucide="x"></i></button></div>
+        <div class="profile-form-scroll">
+            <div class="form-grid"><label class="form-field"><span>年龄段</span><select id="profileAge"><option value="child">儿童</option><option value="teen">青少年</option><option value="adult">成年人</option><option value="older_adult">老年人</option></select></label><label class="form-field"><span>性别</span><select id="profileSex"><option value="unspecified">不填写</option><option value="female">女性</option><option value="male">男性</option></select></label></div>
+            <fieldset class="profile-choice-group"><legend>慢性疾病</legend><div class="profile-choice-grid"><label><input type="checkbox" name="conditions" value="hypertension"><span>高血压</span></label><label><input type="checkbox" name="conditions" value="diabetes"><span>糖尿病</span></label><label><input type="checkbox" name="conditions" value="hyperlipidemia"><span>高血脂</span></label><label><input type="checkbox" name="conditions" value="gout"><span>痛风</span></label><label><input type="checkbox" name="conditions" value="kidney_disease"><span>肾脏疾病</span></label><label><input type="checkbox" name="conditions" value="cardiovascular"><span>心血管疾病</span></label><label><input type="checkbox" name="conditions" value="asthma"><span>哮喘</span></label><label><input type="checkbox" name="conditions" value="allergic_rhinitis"><span>过敏性鼻炎</span></label></div></fieldset>
+            <fieldset class="profile-choice-group"><legend>食物过敏</legend><div class="profile-choice-grid"><label><input type="checkbox" name="allergies" value="dairy"><span>乳制品</span></label><label><input type="checkbox" name="allergies" value="egg"><span>蛋类</span></label><label><input type="checkbox" name="allergies" value="nuts"><span>坚果</span></label><label><input type="checkbox" name="allergies" value="seafood"><span>海鲜</span></label><label><input type="checkbox" name="allergies" value="soy"><span>大豆</span></label><label><input type="checkbox" name="allergies" value="gluten"><span>麸质</span></label></div></fieldset>
+            <fieldset class="profile-choice-group"><legend>饮食偏好</legend><div class="profile-choice-grid"><label><input type="checkbox" name="dietary_preferences" value="vegetarian"><span>素食</span></label><label><input type="checkbox" name="dietary_preferences" value="vegan"><span>纯素</span></label><label><input type="checkbox" name="dietary_preferences" value="low_sodium"><span>低盐</span></label><label><input type="checkbox" name="dietary_preferences" value="low_sugar"><span>低糖</span></label></div></fieldset>
+            <fieldset class="profile-choice-group"><legend>健康目标</legend><div class="profile-choice-grid"><label><input type="checkbox" name="health_goals" value="weight_control"><span>体重管理</span></label><label><input type="checkbox" name="health_goals" value="sleep"><span>睡眠改善</span></label><label><input type="checkbox" name="health_goals" value="immunity"><span>免疫支持</span></label><label><input type="checkbox" name="health_goals" value="blood_pressure"><span>血压管理</span></label><label><input type="checkbox" name="health_goals" value="blood_sugar"><span>血糖管理</span></label></div></fieldset>
+            <label class="form-field"><span>当前用药</span><textarea id="profileMedications" rows="3" maxlength="300" placeholder="药品名称与用法（可选）"></textarea></label>
+            <label class="setting-row profile-location-consent"><span><strong>记住上次位置</strong><small>仅在当前浏览器保存约 1 公里粒度坐标</small></span><input class="switch-control" id="profileRetainLocation" type="checkbox"></label>
+            <div class="profile-privacy"><i data-lucide="lock-keyhole"></i><span>健康档案保存在本机 SQLite；精确定位不会写入数据库。</span></div>
+        </div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-dialog>取消</button><button class="primary-button" id="saveProfile" type="submit"><i data-lucide="check"></i>保存并重新生成</button></div>
+    </form>
+</dialog>
+
+<dialog class="modal confirm-modal" id="confirmDialog"><form method="dialog"><div class="confirm-icon"><i data-lucide="triangle-alert"></i></div><h2 id="confirmTitle">确认操作</h2><p id="confirmMessage">此操作无法撤销。</p><div class="modal-actions"><button class="secondary-button" value="cancel">取消</button><button class="danger-button" value="confirm">确认删除</button></div></form></dialog>
+
+<div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+<script src="{{ url_for('static', filename='vendor/phaser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/hospital-game.js') }}"></script>
+<script src="{{ url_for('static', filename='js/quest.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vital-twin.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/wellness-detail.js') }}"></script>
 </body>
 </html>

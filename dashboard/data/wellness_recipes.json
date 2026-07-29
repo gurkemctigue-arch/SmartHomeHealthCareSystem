@@ -1,0 +1,360 @@
+[
+  {
+    "id": "berry-oat-cup",
+    "title": "莓果燕麦轻盈杯",
+    "slot": "早餐",
+    "subtitle": "免开火的全谷物早餐，酸甜、清爽、适合提前一晚准备",
+    "theme": "berry",
+    "image": "/static/images/wellness/breakfast-berry-bowl.jpg",
+    "image_alt": "装有燕麦、莓果和白色植物酸奶的早餐碗",
+    "image_note": "图片为同类成品展示；实际按无坚果配方制作。",
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 286, "protein_g": 9.4, "carbohydrates_g": 49.2, "fat_g": 6.1, "fiber_g": 8.2, "sodium_mg": 82},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "low_sodium", "no_added_sugar"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "oats", "name": "燕麦片", "amount": 80, "unit": "g", "note": "过敏人群选择有无麸质认证的产品"},
+      {"id": "oat-yogurt", "name": "无糖燕麦酸奶", "amount": 240, "unit": "g", "note": "配料表不含乳、大豆和坚果"},
+      {"id": "berries", "name": "新鲜莓果", "amount": 180, "unit": "g", "note": "草莓、蓝莓或树莓均可"},
+      {"id": "chia", "name": "奇亚籽", "amount": 12, "unit": "g", "note": "可省略"},
+      {"id": "water", "name": "温水", "amount": 60, "unit": "ml", "note": "用于调节浓稠度"},
+      {"id": "cinnamon", "name": "肉桂粉", "amount": 1, "unit": "g", "note": "可选"}
+    ],
+    "steps": [
+      {"title": "清洗莓果", "body": "莓果用流动水轻柔冲洗，沥干后将较大的草莓切成四瓣。", "timer_seconds": 0, "heat": "无需加热", "tip": "莓果不要长时间浸泡。"},
+      {"title": "调开基底", "body": "燕麦酸奶与温水搅匀，保留顺滑但能挂勺的质地。", "timer_seconds": 0, "heat": "无需加热", "tip": "先加一半水，再按喜好调整。"},
+      {"title": "拌入燕麦", "body": "加入燕麦片和奇亚籽，充分搅拌，让每片燕麦都接触液体。", "timer_seconds": 0, "heat": "无需加热", "tip": "使用即食燕麦可缩短静置时间。"},
+      {"title": "冷藏吸水", "body": "加盖冷藏，让燕麦充分吸水变软。", "timer_seconds": 1800, "heat": "冷藏", "tip": "也可提前一晚完成，次日直接装杯。"},
+      {"title": "分层装杯", "body": "按燕麦基底、莓果、燕麦基底的顺序装入两只杯中。", "timer_seconds": 0, "heat": "无需加热", "tip": "保留一半莓果放在最上层。"},
+      {"title": "完成调味", "body": "表面撒少量肉桂粉，食用前轻轻拌匀。", "timer_seconds": 0, "heat": "冷食", "tip": "不额外加入蜂蜜或糖浆。"}
+    ],
+    "substitutions": [
+      {"title": "无麸质方案", "replace": "燕麦片", "with": "等量熟小米", "note": "无法确认燕麦无交叉接触时，直接使用小米食谱。"},
+      {"title": "低糖强化", "replace": "180 g 莓果", "with": "120 g 莓果加 60 g 黄瓜丁", "note": "保留口感并减少单餐水果量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "berry-millet-porridge",
+    "title": "莓果小米温粥",
+    "slot": "早餐",
+    "subtitle": "温热软糯的无麸质谷物早餐，适合清晨与偏冷天气",
+    "theme": "berry",
+    "image": "/static/images/wellness/breakfast-berry-bowl.jpg",
+    "image_alt": "以莓果点缀的谷物早餐碗",
+    "image_note": "图片为莓果谷物碗展示；本配方不含燕麦与坚果。",
+    "prep_minutes": 8,
+    "cook_minutes": 28,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 268, "protein_g": 6.8, "carbohydrates_g": 55.4, "fat_g": 3.0, "fiber_g": 5.6, "sodium_mg": 26},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "gluten_free", "low_sodium", "no_added_sugar"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "millet", "name": "小米", "amount": 90, "unit": "g", "note": "淘洗两遍"},
+      {"id": "water", "name": "清水", "amount": 760, "unit": "ml", "note": "按锅具蒸发量调整"},
+      {"id": "berries", "name": "新鲜莓果", "amount": 160, "unit": "g", "note": "洗净沥干"},
+      {"id": "apple", "name": "苹果", "amount": 120, "unit": "g", "note": "去核切小丁"},
+      {"id": "lemon", "name": "柠檬汁", "amount": 6, "unit": "ml", "note": "可选"},
+      {"id": "cinnamon", "name": "肉桂粉", "amount": 1, "unit": "g", "note": "可选"}
+    ],
+    "steps": [
+      {"title": "淘洗小米", "body": "小米快速淘洗两遍，沥去多余水分，不要反复搓洗。", "timer_seconds": 0, "heat": "无需加热", "tip": "保留小米自然香气。"},
+      {"title": "煮沸清水", "body": "锅中加入清水，大火煮至持续沸腾。", "timer_seconds": 0, "heat": "大火", "tip": "水开后下米更不容易粘底。"},
+      {"title": "下米搅散", "body": "倒入小米并沿锅底搅拌一次，重新煮沸。", "timer_seconds": 0, "heat": "大火", "tip": "此后不要频繁搅动。"},
+      {"title": "小火熬煮", "body": "转小火留缝加盖，熬至米粒开花、粥体浓稠。", "timer_seconds": 1200, "heat": "小火", "tip": "中途检查一次水量即可。"},
+      {"title": "加入苹果", "body": "放入苹果丁，再煮至苹果略软但仍保留形状。", "timer_seconds": 300, "heat": "小火", "tip": "苹果提供自然甜味，无需加糖。"},
+      {"title": "温度收束", "body": "关火静置，装碗后放入莓果、柠檬汁和肉桂粉。", "timer_seconds": 180, "heat": "关火静置", "tip": "入口前确认温度，避免过烫。"}
+    ],
+    "substitutions": [
+      {"title": "水果替换", "replace": "莓果", "with": "等量梨丁", "note": "当地莓果不易获得时仍保留完整水果。"},
+      {"title": "控糖份量", "replace": "苹果 120 g", "with": "苹果 60 g 加南瓜 60 g", "note": "主食和水果均需纳入单餐总量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "pan-seared-fish-bowl",
+    "title": "香煎鱼柳时蔬碗",
+    "slot": "午餐",
+    "subtitle": "优质蛋白、全谷物与多彩蔬菜组成的稳定供能午餐",
+    "theme": "citrus",
+    "image": "/static/images/wellness/lunch-fish.jpg",
+    "image_alt": "煎鱼柳搭配谷物和多彩蔬菜的午餐碗",
+    "image_note": "成品图用于展示摆盘，食材和调味以当前配方为准。",
+    "prep_minutes": 18,
+    "cook_minutes": 22,
+    "difficulty": "中等",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 486, "protein_g": 35.6, "carbohydrates_g": 51.8, "fat_g": 15.2, "fiber_g": 9.1, "sodium_mg": 348},
+    "allergens": ["seafood"],
+    "tags": ["low_sodium", "high_protein"],
+    "avoid_conditions": ["gout"],
+    "ingredients": [
+      {"id": "fish", "name": "去刺白肉鱼柳", "amount": 260, "unit": "g", "note": "彻底解冻并吸干表面水分"},
+      {"id": "quinoa", "name": "熟藜麦", "amount": 280, "unit": "g", "note": "约由 90 g 生藜麦煮成"},
+      {"id": "broccoli", "name": "西兰花", "amount": 180, "unit": "g", "note": "切小朵"},
+      {"id": "pepper", "name": "彩椒", "amount": 140, "unit": "g", "note": "切条"},
+      {"id": "oil", "name": "橄榄油", "amount": 14, "unit": "ml", "note": "分两次使用"},
+      {"id": "lemon", "name": "柠檬", "amount": 1, "unit": "个", "note": "取汁和少量皮屑"},
+      {"id": "peppercorn", "name": "黑胡椒", "amount": 1, "unit": "g", "note": "现磨"}
+    ],
+    "steps": [
+      {"title": "处理鱼柳", "body": "检查并去除鱼刺，吸干水分后用一半柠檬汁和黑胡椒轻腌。", "timer_seconds": 600, "heat": "冷藏腌制", "tip": "不使用高盐酱料。"},
+      {"title": "准备蔬菜", "body": "西兰花和彩椒洗净切好，保持大小接近以便同步成熟。", "timer_seconds": 0, "heat": "无需加热", "tip": "蔬菜表面水分沥干再入锅。"},
+      {"title": "焯烫西兰花", "body": "沸水下西兰花，颜色转鲜绿后立即捞出。", "timer_seconds": 90, "heat": "大火", "tip": "不要久煮，保留脆度。"},
+      {"title": "煎制鱼柳", "body": "平底锅中火预热，加入一半橄榄油，鱼柳每面煎至中心完全不透明。", "timer_seconds": 420, "heat": "中火", "tip": "厚鱼柳需确认中心熟透。"},
+      {"title": "快炒彩椒", "body": "同锅加入余油和彩椒，翻炒后拌入西兰花。", "timer_seconds": 180, "heat": "中大火", "tip": "利用柠檬和黑胡椒增加风味。"},
+      {"title": "组合餐碗", "body": "熟藜麦分碗，放上蔬菜和鱼柳，挤余下柠檬汁后食用。", "timer_seconds": 0, "heat": "温热食用", "tip": "鱼柳从冷藏到食用不宜久置。"}
+    ],
+    "substitutions": [
+      {"title": "海鲜过敏或痛风", "replace": "整份鱼柳餐", "with": "香烤时蔬藜麦碗", "note": "不要仅移除鱼柳，以免蛋白质和能量不足。"},
+      {"title": "谷物替换", "replace": "熟藜麦", "with": "等量熟糙米", "note": "按血糖管理要求控制总份量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "roasted-vegetable-quinoa-bowl",
+    "title": "香烤时蔬藜麦碗",
+    "slot": "午餐",
+    "subtitle": "不依赖动物性食材的彩色能量碗，兼顾饱腹与清爽",
+    "theme": "citrus",
+    "image": "/static/images/wellness/lunch-vegetable-bowl.jpg",
+    "image_alt": "装有藜麦、鹰嘴豆和多彩蔬菜的餐碗",
+    "image_note": "图片为同类蔬菜谷物碗，实际配方不含坚果与大豆。",
+    "prep_minutes": 16,
+    "cook_minutes": 25,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 472, "protein_g": 18.7, "carbohydrates_g": 73.5, "fat_g": 12.8, "fiber_g": 15.1, "sodium_mg": 276},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "gluten_free", "low_sodium"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "quinoa", "name": "熟藜麦", "amount": 280, "unit": "g", "note": "温热备用"},
+      {"id": "chickpeas", "name": "熟鹰嘴豆", "amount": 200, "unit": "g", "note": "冲洗沥干"},
+      {"id": "pumpkin", "name": "南瓜", "amount": 240, "unit": "g", "note": "切 2 cm 小块"},
+      {"id": "broccoli", "name": "西兰花", "amount": 180, "unit": "g", "note": "切小朵"},
+      {"id": "pepper", "name": "彩椒", "amount": 140, "unit": "g", "note": "切条"},
+      {"id": "oil", "name": "橄榄油", "amount": 16, "unit": "ml", "note": "用于烤制和调汁"},
+      {"id": "lemon", "name": "柠檬汁", "amount": 20, "unit": "ml", "note": "现挤"}
+    ],
+    "steps": [
+      {"title": "预热烤箱", "body": "烤箱预热至 210°C，烤盘铺烘焙纸。", "timer_seconds": 300, "heat": "210°C", "tip": "空气炸锅可用 190°C。"},
+      {"title": "处理食材", "body": "南瓜、西兰花和彩椒切成接近大小，鹰嘴豆吸干水分。", "timer_seconds": 0, "heat": "无需加热", "tip": "表面越干越容易烤出焦香。"},
+      {"title": "拌油调味", "body": "食材与 12 ml 橄榄油、黑胡椒拌匀，单层铺开。", "timer_seconds": 0, "heat": "无需加热", "tip": "不额外加入酱油或高盐酱汁。"},
+      {"title": "烤至上色", "body": "烤至南瓜变软、蔬菜边缘出现焦色，中途翻动一次。", "timer_seconds": 1200, "heat": "210°C", "tip": "西兰花提前上色时可先取出。"},
+      {"title": "调柠檬汁", "body": "余下橄榄油与柠檬汁搅匀，可加少量温水乳化。", "timer_seconds": 0, "heat": "无需加热", "tip": "酸味能在低盐条件下提升风味。"},
+      {"title": "组合餐碗", "body": "藜麦分碗，铺上烤蔬菜与鹰嘴豆，淋柠檬汁。", "timer_seconds": 0, "heat": "温热食用", "tip": "按主食管理目标调整藜麦份量。"}
+    ],
+    "substitutions": [
+      {"title": "豆类不耐受", "replace": "鹰嘴豆", "with": "熟白芸豆或增加 80 g 藜麦", "note": "首次增加豆类时从小份量开始。"},
+      {"title": "控糖份量", "replace": "南瓜 240 g", "with": "南瓜 120 g 加西葫芦 120 g", "note": "同时保持藜麦定量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "tomato-mushroom-soup",
+    "title": "番茄菌菇蔬菜汤",
+    "slot": "晚餐",
+    "subtitle": "酸鲜轻盈的日常蔬菜汤，用香草和菌菇建立层次",
+    "theme": "leaf",
+    "image": "/static/images/wellness/dinner-tomato-soup.jpg",
+    "image_alt": "番茄蔬菜汤与绿色香草",
+    "image_note": "成品图展示番茄汤质感，配方不使用奶油。",
+    "prep_minutes": 15,
+    "cook_minutes": 26,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 236, "protein_g": 9.2, "carbohydrates_g": 37.6, "fat_g": 7.8, "fiber_g": 9.4, "sodium_mg": 318},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "gluten_free", "low_sodium"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "tomato", "name": "番茄", "amount": 520, "unit": "g", "note": "熟透，切块"},
+      {"id": "mushroom", "name": "鲜香菇", "amount": 180, "unit": "g", "note": "切片"},
+      {"id": "carrot", "name": "胡萝卜", "amount": 120, "unit": "g", "note": "切小丁"},
+      {"id": "celery", "name": "芹菜", "amount": 100, "unit": "g", "note": "切小丁"},
+      {"id": "water", "name": "清水", "amount": 720, "unit": "ml", "note": "不使用浓汤宝"},
+      {"id": "oil", "name": "橄榄油", "amount": 12, "unit": "ml", "note": "约 1 汤匙"},
+      {"id": "herbs", "name": "罗勒或欧芹", "amount": 8, "unit": "g", "note": "切碎"}
+    ],
+    "steps": [
+      {"title": "处理蔬菜", "body": "所有蔬菜洗净切好，番茄与其他蔬菜分开放置。", "timer_seconds": 0, "heat": "无需加热", "tip": "大小一致能让口感更均匀。"},
+      {"title": "炒香菌菇", "body": "锅中加入橄榄油，中火将香菇炒至出水并略微上色。", "timer_seconds": 240, "heat": "中火", "tip": "先不加盐，避免大量出水。"},
+      {"title": "加入根茎", "body": "放入胡萝卜和芹菜，继续翻炒至香气释放。", "timer_seconds": 180, "heat": "中火", "tip": "锅底发干可加一勺水。"},
+      {"title": "煮出番茄汁", "body": "加入番茄块翻炒，轻压部分番茄帮助出汁。", "timer_seconds": 300, "heat": "中火", "tip": "熟番茄自然鲜甜，不必加糖。"},
+      {"title": "小火煮汤", "body": "加入清水，煮沸后转小火，煮至胡萝卜软熟。", "timer_seconds": 900, "heat": "小火", "tip": "保持微沸即可。"},
+      {"title": "香草收尾", "body": "关火后加入香草和黑胡椒，静置再分碗。", "timer_seconds": 120, "heat": "关火静置", "tip": "入口前确认温度。"}
+    ],
+    "substitutions": [
+      {"title": "菌菇替换", "replace": "鲜香菇", "with": "口蘑或杏鲍菇", "note": "对菌菇不耐受时可改为西葫芦。"},
+      {"title": "增加饱腹", "replace": "单独饮用", "with": "搭配每人 80 g 熟糙米", "note": "糖尿病人需计入主食总量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "pumpkin-chicken-soup",
+    "title": "南瓜鸡肉暖汤",
+    "slot": "晚餐",
+    "subtitle": "冷天使用的温热少油配方，南瓜提供柔和稠度",
+    "theme": "leaf",
+    "image": "/static/images/wellness/dinner-pumpkin-soup.jpg",
+    "image_alt": "盛在碗中的金黄色南瓜汤",
+    "image_note": "成品图展示南瓜汤质地，鸡肉切丁位于汤体中。",
+    "prep_minutes": 16,
+    "cook_minutes": 30,
+    "difficulty": "中等",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 354, "protein_g": 31.2, "carbohydrates_g": 39.5, "fat_g": 9.8, "fiber_g": 7.3, "sodium_mg": 326},
+    "allergens": [],
+    "tags": ["gluten_free", "low_sodium", "high_protein"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "pumpkin", "name": "去皮南瓜", "amount": 520, "unit": "g", "note": "切 2 cm 块"},
+      {"id": "chicken", "name": "去皮鸡胸肉", "amount": 240, "unit": "g", "note": "切 1.5 cm 丁"},
+      {"id": "onion", "name": "洋葱", "amount": 120, "unit": "g", "note": "切丁"},
+      {"id": "spinach", "name": "菠菜", "amount": 120, "unit": "g", "note": "洗净切段"},
+      {"id": "water", "name": "清水", "amount": 760, "unit": "ml", "note": "不使用浓缩鸡汤"},
+      {"id": "oil", "name": "橄榄油", "amount": 10, "unit": "ml", "note": "用于炒香"},
+      {"id": "ginger", "name": "姜片", "amount": 8, "unit": "g", "note": "2 至 3 片"}
+    ],
+    "steps": [
+      {"title": "准备食材", "body": "南瓜、鸡肉、洋葱分别切好，生熟食材使用不同砧板。", "timer_seconds": 0, "heat": "无需加热", "tip": "处理生鸡肉后及时洗手和清洁台面。"},
+      {"title": "炒香洋葱", "body": "锅中加油，中火炒洋葱和姜片至洋葱半透明。", "timer_seconds": 240, "heat": "中火", "tip": "不需要炒至焦黄。"},
+      {"title": "翻炒南瓜", "body": "加入南瓜翻炒，让表面均匀裹上油脂和香气。", "timer_seconds": 120, "heat": "中火", "tip": "锅底发干时加少量水。"},
+      {"title": "煮软南瓜", "body": "加入清水，煮沸后转小火，煮至南瓜可轻松压碎。", "timer_seconds": 900, "heat": "小火", "tip": "保留少量南瓜块增加口感。"},
+      {"title": "煮熟鸡肉", "body": "加入鸡肉丁并轻轻搅散，煮至中心完全变白且无粉红。", "timer_seconds": 480, "heat": "中小火", "tip": "避免反复长时间沸腾使鸡肉变柴。"},
+      {"title": "加入菠菜", "body": "放入菠菜煮软，关火静置后分碗。", "timer_seconds": 90, "heat": "关火前", "tip": "温热食用，不要趁滚烫入口。"}
+    ],
+    "substitutions": [
+      {"title": "素食方案", "replace": "鸡肉", "with": "南瓜鹰嘴豆暖汤整份配方", "note": "使用独立食谱保证蛋白质和烹饪时间合理。"},
+      {"title": "菠菜替换", "replace": "菠菜", "with": "等量小白菜", "note": "肾脏疾病患者的钾摄入需按医嘱。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "pumpkin-chickpea-soup",
+    "title": "南瓜鹰嘴豆暖汤",
+    "slot": "晚餐",
+    "subtitle": "冷天纯素暖汤，以豆类和南瓜形成自然浓稠口感",
+    "theme": "leaf",
+    "image": "/static/images/wellness/dinner-pumpkin-soup.jpg",
+    "image_alt": "盛在碗中的金黄色南瓜汤",
+    "image_note": "成品图展示南瓜汤质地，鹰嘴豆位于汤体中。",
+    "prep_minutes": 14,
+    "cook_minutes": 27,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 382, "protein_g": 17.8, "carbohydrates_g": 63.2, "fat_g": 8.4, "fiber_g": 16.6, "sodium_mg": 288},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "gluten_free", "low_sodium"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "pumpkin", "name": "去皮南瓜", "amount": 480, "unit": "g", "note": "切块"},
+      {"id": "chickpeas", "name": "熟鹰嘴豆", "amount": 260, "unit": "g", "note": "冲洗沥干"},
+      {"id": "onion", "name": "洋葱", "amount": 120, "unit": "g", "note": "切丁"},
+      {"id": "kale", "name": "羽衣甘蓝", "amount": 100, "unit": "g", "note": "去粗梗切丝"},
+      {"id": "water", "name": "清水", "amount": 720, "unit": "ml", "note": "不使用浓汤宝"},
+      {"id": "oil", "name": "橄榄油", "amount": 12, "unit": "ml", "note": "约 1 汤匙"},
+      {"id": "paprika", "name": "甜椒粉", "amount": 2, "unit": "g", "note": "非辣味"}
+    ],
+    "steps": [
+      {"title": "准备食材", "body": "南瓜切块、洋葱切丁，鹰嘴豆冲洗后彻底沥干。", "timer_seconds": 0, "heat": "无需加热", "tip": "罐装豆类优先选择无盐或低盐款。"},
+      {"title": "炒香底味", "body": "锅中加油，中火炒洋葱至透明，加入甜椒粉快速拌匀。", "timer_seconds": 240, "heat": "中火", "tip": "香料不要在干锅中久炒。"},
+      {"title": "煮软南瓜", "body": "加入南瓜和清水，煮沸后转小火至南瓜变软。", "timer_seconds": 900, "heat": "小火", "tip": "保持轻微沸腾。"},
+      {"title": "压碎增稠", "body": "用勺背压碎约三分之一南瓜，保留其余块状口感。", "timer_seconds": 0, "heat": "小火", "tip": "无需加入奶油或面粉。"},
+      {"title": "加入鹰嘴豆", "body": "放入鹰嘴豆，小火煮至完全热透。", "timer_seconds": 360, "heat": "小火", "tip": "不要剧烈搅拌，以免全部破碎。"},
+      {"title": "加入绿叶菜", "body": "加入羽衣甘蓝煮软，关火静置后食用。", "timer_seconds": 120, "heat": "关火前", "tip": "豆类第一次增加时可从小份量开始。"}
+    ],
+    "substitutions": [
+      {"title": "豆类替换", "replace": "鹰嘴豆", "with": "熟白芸豆", "note": "选择无盐水煮豆并充分冲洗。"},
+      {"title": "绿叶菜替换", "replace": "羽衣甘蓝", "with": "小白菜", "note": "肾脏疾病患者按医嘱调整蔬菜种类和份量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "winter-melon-egg-soup",
+    "title": "冬瓜蛋花蔬菜汤",
+    "slot": "晚餐",
+    "subtitle": "清淡、短时烹调的蛋花蔬菜汤，避免浓肉汤和高盐调味",
+    "theme": "leaf",
+    "image": "/static/images/wellness/dinner-tomato-soup.jpg",
+    "image_alt": "清爽蔬菜汤的摆盘展示",
+    "image_note": "图片为蔬菜汤氛围展示；实际成品为浅色冬瓜蛋花清汤。",
+    "prep_minutes": 12,
+    "cook_minutes": 16,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 214, "protein_g": 13.6, "carbohydrates_g": 21.4, "fat_g": 8.2, "fiber_g": 5.2, "sodium_mg": 284},
+    "allergens": ["egg"],
+    "tags": ["vegetarian", "gluten_free", "low_sodium"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "winter-melon", "name": "冬瓜", "amount": 520, "unit": "g", "note": "去皮去瓤切薄片"},
+      {"id": "egg", "name": "鸡蛋", "amount": 2, "unit": "个", "note": "充分打散"},
+      {"id": "carrot", "name": "胡萝卜", "amount": 100, "unit": "g", "note": "切薄片"},
+      {"id": "bok-choy", "name": "小白菜", "amount": 140, "unit": "g", "note": "切段"},
+      {"id": "water", "name": "清水", "amount": 760, "unit": "ml", "note": "不使用海鲜或肉类高汤"},
+      {"id": "oil", "name": "芝麻油", "amount": 6, "unit": "ml", "note": "关火后使用"},
+      {"id": "ginger", "name": "姜丝", "amount": 6, "unit": "g", "note": "可选"}
+    ],
+    "steps": [
+      {"title": "处理冬瓜", "body": "冬瓜去皮去瓤后切薄片，胡萝卜和小白菜分别洗净切好。", "timer_seconds": 0, "heat": "无需加热", "tip": "冬瓜厚度一致才能同步熟透。"},
+      {"title": "煮开清水", "body": "锅中加清水和姜丝，大火煮至沸腾。", "timer_seconds": 0, "heat": "大火", "tip": "不用浓肉汤或海鲜汤底。"},
+      {"title": "煮冬瓜", "body": "加入冬瓜和胡萝卜，转中火煮至冬瓜边缘半透明。", "timer_seconds": 480, "heat": "中火", "tip": "不要煮至完全碎烂。"},
+      {"title": "加入小白菜", "body": "先放菜梗，稍后放菜叶，保持绿色。", "timer_seconds": 120, "heat": "中火", "tip": "菜叶最后加入。"},
+      {"title": "淋入蛋液", "body": "汤保持微沸，沿锅边缓慢淋入蛋液，停顿后轻推形成蛋花。", "timer_seconds": 90, "heat": "小火", "tip": "蛋液需完全凝固。"},
+      {"title": "关火收尾", "body": "关火后加入芝麻油和白胡椒，静置后分碗。", "timer_seconds": 120, "heat": "关火静置", "tip": "无需额外添加高盐酱料。"}
+    ],
+    "substitutions": [
+      {"title": "蛋类过敏或纯素", "replace": "整份蛋花汤", "with": "冬瓜杂蔬汤整份配方", "note": "不要保留蛋液或共用未清洁器具。"},
+      {"title": "芝麻不耐受", "replace": "芝麻油", "with": "3 ml 橄榄油或省略", "note": "本系统暂未记录芝麻过敏，已知过敏者需手动避开。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  },
+  {
+    "id": "winter-melon-vegetable-soup",
+    "title": "冬瓜杂蔬汤",
+    "slot": "晚餐",
+    "subtitle": "无蛋、无海鲜、无浓汤底的清爽蔬菜汤",
+    "theme": "leaf",
+    "image": "/static/images/wellness/dinner-tomato-soup.jpg",
+    "image_alt": "清爽蔬菜汤的摆盘展示",
+    "image_note": "图片为蔬菜汤氛围展示；实际成品为浅色冬瓜杂蔬清汤。",
+    "prep_minutes": 14,
+    "cook_minutes": 18,
+    "difficulty": "简单",
+    "servings": 2,
+    "nutrition": {"calories_kcal": 226, "protein_g": 9.8, "carbohydrates_g": 38.2, "fat_g": 5.8, "fiber_g": 10.1, "sodium_mg": 258},
+    "allergens": [],
+    "tags": ["vegan", "vegetarian", "gluten_free", "low_sodium"],
+    "avoid_conditions": [],
+    "ingredients": [
+      {"id": "winter-melon", "name": "冬瓜", "amount": 520, "unit": "g", "note": "去皮去瓤切薄片"},
+      {"id": "peas", "name": "青豌豆", "amount": 120, "unit": "g", "note": "新鲜或冷冻均可"},
+      {"id": "corn", "name": "鲜玉米粒", "amount": 100, "unit": "g", "note": "不使用加盐罐头"},
+      {"id": "carrot", "name": "胡萝卜", "amount": 100, "unit": "g", "note": "切薄片"},
+      {"id": "bok-choy", "name": "小白菜", "amount": 140, "unit": "g", "note": "切段"},
+      {"id": "water", "name": "清水", "amount": 780, "unit": "ml", "note": "不使用海鲜或肉类高汤"},
+      {"id": "oil", "name": "橄榄油", "amount": 8, "unit": "ml", "note": "关火前加入"}
+    ],
+    "steps": [
+      {"title": "处理蔬菜", "body": "冬瓜切薄片，胡萝卜切片，小白菜菜梗和菜叶分开放。", "timer_seconds": 0, "heat": "无需加热", "tip": "冷冻豌豆无需提前解冻。"},
+      {"title": "煮开清水", "body": "锅中加入清水，大火煮沸。", "timer_seconds": 0, "heat": "大火", "tip": "不用浓汤宝、肉汤或海鲜汤底。"},
+      {"title": "煮根茎蔬菜", "body": "加入冬瓜、胡萝卜和玉米，中火煮至冬瓜半透明。", "timer_seconds": 540, "heat": "中火", "tip": "维持轻微沸腾。"},
+      {"title": "加入豌豆", "body": "加入豌豆和小白菜梗，继续煮至豌豆熟透。", "timer_seconds": 240, "heat": "中火", "tip": "豌豆应完全加热。"},
+      {"title": "加入菜叶", "body": "放入小白菜叶，轻轻压入汤中至变软。", "timer_seconds": 90, "heat": "小火", "tip": "避免久煮变黄。"},
+      {"title": "关火调味", "body": "关火加入橄榄油和白胡椒，静置后分碗。", "timer_seconds": 120, "heat": "关火静置", "tip": "低盐需求者不额外加盐。"}
+    ],
+    "substitutions": [
+      {"title": "豆类不耐受", "replace": "青豌豆", "with": "西葫芦 120 g", "note": "替换后蛋白质会降低，需由其他餐补足。"},
+      {"title": "控糖份量", "replace": "玉米粒 100 g", "with": "玉米 50 g 加花菜 50 g", "note": "玉米计入主食和碳水总量。"}
+    ],
+    "source": {"name": "项目营养规则库", "url": "https://dg.cnsoc.org/", "reviewed_on": "2026-07-29", "status": "规则复核"}
+  }
+]

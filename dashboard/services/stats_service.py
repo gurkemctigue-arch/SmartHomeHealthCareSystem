@@ -18,25 +18,27 @@ def get_overview_data():
 
     # 今日检测次数
     today_count = db.execute(
-        "SELECT COUNT(*) FROM detection_record WHERE date(created_at) = ?",
+        "SELECT COUNT(*) FROM detection_record "
+        "WHERE date(created_at) = ? AND trim(COALESCE(medicine_name, '')) <> ''",
         (today_str,)
     ).fetchone()[0]
 
     # 昨日检测次数（用于计算趋势）
     yesterday_count = db.execute(
-        "SELECT COUNT(*) FROM detection_record WHERE date(created_at) = ?",
+        "SELECT COUNT(*) FROM detection_record "
+        "WHERE date(created_at) = ? AND trim(COALESCE(medicine_name, '')) <> ''",
         (yesterday_str,)
     ).fetchone()[0]
 
     # 今日告警数
     alert_count = db.execute(
-        "SELECT COUNT(*) FROM alert_record WHERE date(created_at) = ?",
+        "SELECT COUNT(*) FROM alert_record WHERE date(created_at) = ? AND status = 'open'",
         (today_str,)
     ).fetchone()[0]
 
     # 昨日告警数
     yesterday_alert = db.execute(
-        "SELECT COUNT(*) FROM alert_record WHERE date(created_at) = ?",
+        "SELECT COUNT(*) FROM alert_record WHERE date(created_at) = ? AND status = 'open'",
         (yesterday_str,)
     ).fetchone()[0]
 
@@ -66,9 +68,6 @@ def get_overview_data():
         "llm_desc": f"{llm_backend} · {rag_status}",
         "date": now.strftime("%Y-%m-%d"),
         "time": now.strftime("%H:%M:%S"),
-        "weather": "晴",
-        "temperature": "23℃",
-        "humidity": "45%"
     }
 
 
@@ -87,6 +86,7 @@ def get_medicine_stats():
                 COUNT(*) AS cnt
             FROM detection_record
             WHERE date(created_at) = ?
+              AND trim(COALESCE(medicine_name, '')) <> ''
             GROUP BY category
             ORDER BY cnt DESC
             LIMIT 8
@@ -114,7 +114,8 @@ def get_trend_data():
         dates.append(d.strftime("%m-%d"))
 
         count = db.execute(
-            "SELECT COUNT(*) FROM detection_record WHERE date(created_at) = ?",
+            "SELECT COUNT(*) FROM detection_record "
+            "WHERE date(created_at) = ? AND trim(COALESCE(medicine_name, '')) <> ''",
             (date_str,)
         ).fetchone()[0]
         values.append(count)
@@ -122,4 +123,42 @@ def get_trend_data():
     return {
         "dates": dates,
         "values": values
+    }
+
+
+def get_latest_detections(limit=20):
+    """Return recent valid medicine detections for the detection workspace."""
+    limit = max(1, min(int(limit), 100))
+    rows = get_db().execute(
+        "SELECT id, medicine_name, confidence, emotion, emotion_confidence, created_at "
+        "FROM detection_record "
+        "WHERE trim(COALESCE(medicine_name, '')) <> '' "
+        "ORDER BY created_at DESC, id DESC LIMIT ?",
+        (limit,),
+    ).fetchall()
+    return [dict(row) for row in rows]
+
+
+def get_emotion_summary(days=7):
+    """Return the latest usable emotion and its recent distribution."""
+    days = max(1, min(int(days), 30))
+    db = get_db()
+    valid_emotion = (
+        "trim(COALESCE(emotion, '')) <> '' "
+        "AND emotion NOT IN ('检测中...', '已关闭') "
+        "AND COALESCE(emotion_confidence, 0) > 0"
+    )
+    latest = db.execute(
+        "SELECT emotion, emotion_confidence, created_at FROM detection_record "
+        f"WHERE {valid_emotion} ORDER BY created_at DESC, id DESC LIMIT 1"
+    ).fetchone()
+    distribution = db.execute(
+        "SELECT emotion AS name, COUNT(*) AS value FROM detection_record "
+        f"WHERE {valid_emotion} AND created_at >= datetime('now', ?, 'localtime') "
+        "GROUP BY emotion ORDER BY value DESC",
+        (f"-{days} days",),
+    ).fetchall()
+    return {
+        "latest": dict(latest) if latest else None,
+        "distribution": [dict(row) for row in distribution],
     }
