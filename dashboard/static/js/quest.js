@@ -13,6 +13,9 @@
         progressTimer: null,
         progressSent: 0,
         constellationFrame: null,
+        knowledgeFrame: null,
+        knowledgeSkyKey: "",
+        knowledgeStars: [],
         gameSession: null,
         gameRuntime: null,
         gameIndex: 0,
@@ -84,7 +87,7 @@
         if (state.loading) return state.loading;
         if (state.loaded && !force) {
             startConstellation();
-            drawKnowledgeMap();
+            if (state.activeView === "knowledge") startKnowledgeSky();
             return;
         }
         state.loading = Promise.all([
@@ -97,9 +100,10 @@
             renderOverview();
             renderArticleFilters();
             renderArticles();
+            renderKnowledgeAtlas();
             renderAtlas();
             startConstellation();
-            drawKnowledgeMap();
+            if (state.activeView === "knowledge") startKnowledgeSky();
             state.loaded = true;
         }).finally(() => {
             state.loading = null;
@@ -112,6 +116,7 @@
             window.cancelAnimationFrame(state.constellationFrame);
             state.constellationFrame = null;
         }
+        stopKnowledgeSky();
         if (state.gameRuntime) state.gameRuntime.pause();
     }
 
@@ -127,6 +132,8 @@
         document.addEventListener("click", (event) => {
             const jump = event.target.closest("[data-quest-jump]");
             if (jump) switchView(jump.dataset.questJump);
+            const categoryButton = event.target.closest("[data-quest-category]");
+            if (categoryButton) openKnowledgeCategory(categoryButton.dataset.questCategory);
             const articleButton = event.target.closest("[data-quest-article]");
             if (articleButton) openArticle(articleButton.dataset.questArticle);
         });
@@ -157,7 +164,7 @@
         $("#gameExit").addEventListener("click", finishGame);
 
         window.addEventListener("resize", () => {
-            drawKnowledgeMap();
+            state.knowledgeSkyKey = "";
             if (state.gameRuntime) state.gameRuntime.resize();
         });
     }
@@ -175,7 +182,11 @@
             panel.hidden = !active;
             panel.classList.toggle("active", active);
         });
-        if (view === "mission") drawKnowledgeMap();
+        if (view === "knowledge") {
+            window.requestAnimationFrame(startKnowledgeSky);
+        } else {
+            stopKnowledgeSky();
+        }
         if (view === "game" && state.gameRuntime) {
             state.gameRuntime.resize();
             state.gameRuntime.resume();
@@ -230,11 +241,18 @@
 
         const nextArticle = state.articles.find((item) => !item.completed_at) || state.articles[0];
         if (nextArticle) {
-            $("#questContinueTitle").textContent = nextArticle.title;
             $("#questContinueMeta").textContent = nextArticle.progress
-                ? `${nextArticle.progress}% · 继续阅读`
-                : `+5 VP · ${nextArticle.reading_minutes} 分钟`;
-            $("#questContinueTitle").closest("button").dataset.questArticle = nextArticle.slug;
+                ? `知识任务 ${nextArticle.progress}% · 继续探索`
+                : `探索 7 个领域 · 下一任务 ${nextArticle.reading_minutes} 分钟`;
+            $("#questFeaturedImage").src = nextArticle.cover_asset;
+            $("#questFeaturedImage").alt = nextArticle.title;
+            $("#questFeaturedCategory").textContent = nextArticle.category;
+            $("#questFeaturedIndex").textContent = `CODEX / ${String(state.articles.indexOf(nextArticle) + 1).padStart(3, "0")}`;
+            $("#questFeaturedTitle").textContent = nextArticle.title;
+            $("#questFeaturedDek").textContent = nextArticle.dek;
+            $("#questFeaturedMinutes").textContent = `${nextArticle.reading_minutes} 分钟`;
+            $("#questFeaturedProgress").style.width = `${nextArticle.progress || 0}%`;
+            $("#questFeaturedOpen").dataset.questArticle = nextArticle.slug;
         }
 
         renderActivity(recent);
@@ -598,73 +616,183 @@
         }
     }
 
-    function drawKnowledgeMap() {
-        const canvas = $("#questKnowledgeMap");
-        if (!canvas || canvas.offsetParent === null || !state.articles.length) return;
-        const rect = canvas.getBoundingClientRect();
-        const ratio = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = Math.max(1, Math.round(rect.width * ratio));
-        canvas.height = Math.max(1, Math.round(rect.height * ratio));
-        const context = canvas.getContext("2d");
-        context.scale(ratio, ratio);
-        const width = rect.width;
-        const height = rect.height;
-        context.clearRect(0, 0, width, height);
+    const KNOWLEDGE_META = {
+        "安全用药": { icon: "shield-plus", color: "#5ce0c0", code: "MED-SAFE" },
+        "急救识别": { icon: "siren", color: "#ff7b72", code: "FIRST-AID" },
+        "慢病管理": { icon: "activity", color: "#79a8ff", code: "VITAL-CARE" },
+        "环境健康": { icon: "cloud-sun", color: "#f2c55c", code: "ENV-SCAN" },
+        "营养识读": { icon: "apple", color: "#83d56d", code: "NUTRI-LAB" },
+        "呼吸健康": { icon: "wind", color: "#55c7df", code: "AIRWAY" },
+        "照护沟通": { icon: "messages-square", color: "#c2a5f2", code: "CARE-LINK" },
+    };
 
-        const palette = ["#39bca4", "#e16d68", "#e1a33d", "#4f8ddd", "#9174c2", "#3f9eb7", "#6aa45e", "#c3688b"];
-        const categories = state.categories.map((category, index) => {
-            const articles = state.articles.filter((item) => item.category === category);
-            const completion = articles.length ? articles.filter((item) => item.completed_at).length / articles.length : 0;
-            const angle = -Math.PI / 2 + index / Math.max(state.categories.length, 1) * Math.PI * 2;
-            const radiusX = width * 0.36;
-            const radiusY = height * 0.34;
-            return {
-                name: category,
-                completion,
-                color: palette[index % palette.length],
-                x: width / 2 + Math.cos(angle) * radiusX,
-                y: height / 2 + Math.sin(angle) * radiusY,
-            };
-        });
-        context.strokeStyle = "#d8e4e5";
-        context.lineWidth = 1;
-        categories.forEach((node) => {
-            context.beginPath();
-            context.moveTo(width / 2, height / 2);
-            context.lineTo(node.x, node.y);
-            context.stroke();
-        });
-        categories.forEach((node) => {
-            context.fillStyle = node.color;
-            context.globalAlpha = 0.18 + node.completion * 0.72;
-            context.beginPath();
-            context.arc(node.x, node.y, 12 + node.completion * 8, 0, Math.PI * 2);
-            context.fill();
-            context.globalAlpha = 1;
-            context.strokeStyle = node.color;
-            context.lineWidth = 2;
-            context.stroke();
-            context.fillStyle = "#41535b";
-            context.font = "700 9px Microsoft YaHei";
-            context.textAlign = "center";
-            context.fillText(node.name, node.x, node.y + 33);
-        });
-        context.fillStyle = "#10272e";
-        context.beginPath();
-        context.arc(width / 2, height / 2, 31, 0, Math.PI * 2);
-        context.fill();
-        context.fillStyle = "#57dcc5";
-        context.font = "800 13px Microsoft YaHei";
-        context.textAlign = "center";
+    const KNOWLEDGE_POSITIONS = [
+        [18, 17], [50, 8], [82, 17], [89, 55], [72, 86], [28, 86], [11, 55],
+    ];
+
+    function renderKnowledgeAtlas() {
+        if (!state.overview || !state.articles.length) return;
         const completed = state.articles.filter((item) => item.completed_at).length;
-        context.fillText(`${completed}/${state.articles.length}`, width / 2, height / 2 + 4);
+        const domainData = state.categories.map((category, index) => {
+            const articles = state.articles.filter((item) => item.category === category);
+            const done = articles.filter((item) => item.completed_at).length;
+            return { category, articles, done, meta: KNOWLEDGE_META[category] || { icon: "sparkles", color: "#8ddfd1", code: "KNOWLEDGE" }, index };
+        });
+        const mastered = domainData.filter((domain) => domain.done === domain.articles.length).length;
+        $("#questKnowledgeCompleted").textContent = `${completed} / ${state.articles.length}`;
+        $("#questKnowledgeDomains").textContent = `${mastered} / ${domainData.length}`;
+        $("#questKnowledgeCoreValue").textContent = `${completed} / ${state.articles.length}`;
 
-        $("#questMapLegend").replaceChildren(...categories.map((node) => {
-            const item = element("span", "", `${node.name} ${Math.round(node.completion * 100)}%`);
-            item.style.color = node.color;
-            item.prepend(element("i"));
-            return item;
+        $("#questKnowledgeNodes").replaceChildren(...domainData.map((domain) => {
+            const position = KNOWLEDGE_POSITIONS[domain.index % KNOWLEDGE_POSITIONS.length];
+            const completion = domain.articles.length ? domain.done / domain.articles.length : 0;
+            const node = element("button", `quest-knowledge-node ${completion >= 1 ? "complete" : completion > 0 ? "active" : ""}`);
+            node.type = "button";
+            node.dataset.questCategory = domain.category;
+            node.dataset.color = domain.meta.color;
+            node.style.setProperty("--node-color", domain.meta.color);
+            node.style.setProperty("--node-x", `${position[0]}%`);
+            node.style.setProperty("--node-y", `${position[1]}%`);
+            node.appendChild(element("span", "quest-node-index", String(domain.index + 1).padStart(2, "0")));
+            node.appendChild(icon(domain.meta.icon, "quest-node-glyph"));
+            const copy = element("span", "quest-node-copy");
+            copy.appendChild(element("small", "", domain.meta.code));
+            copy.appendChild(element("strong", "", domain.category));
+            copy.appendChild(element("em", "", `${domain.done} / ${domain.articles.length} 已掌握`));
+            node.appendChild(copy);
+            const gauge = element("span", "quest-node-gauge");
+            const fill = element("i");
+            fill.style.width = `${completion * 100}%`;
+            gauge.appendChild(fill);
+            node.appendChild(gauge);
+            node.addEventListener("pointerenter", () => renderKnowledgeSignal(domain.category));
+            node.addEventListener("focus", () => renderKnowledgeSignal(domain.category));
+            return node;
         }));
+        const nextArticle = state.articles.find((item) => !item.completed_at) || state.articles[0];
+        renderKnowledgeSignal(nextArticle.category);
+        refreshIcons($("#questKnowledgeScene"));
+        state.knowledgeSkyKey = "";
+    }
+
+    function renderKnowledgeSignal(category) {
+        const articles = state.articles.filter((item) => item.category === category);
+        const article = articles.find((item) => !item.completed_at) || articles[0];
+        if (!article) return;
+        const done = articles.filter((item) => item.completed_at).length;
+        $("#questKnowledgeSignalCategory").textContent = `${category} / ${done} OF ${articles.length}`;
+        $("#questKnowledgeSignalTitle").textContent = article.completed_at ? `${category}航路已稳定` : article.title;
+        $("#questKnowledgeSignalMeta").textContent = article.completed_at
+            ? "该领域档案已全部点亮，可随时重新校验"
+            : `${article.reading_minutes} 分钟 · ${article.progress ? `已完成 ${article.progress}%` : "等待首次阅读"}`;
+        $("#questKnowledgeSignalOpen").dataset.questCategory = category;
+    }
+
+    function openKnowledgeCategory(category) {
+        const select = $("#questArticleCategory");
+        if (!select || !state.categories.includes(category)) return;
+        select.value = category;
+        switchView("codex");
+        renderArticles();
+    }
+
+    function stopKnowledgeSky() {
+        if (!state.knowledgeFrame) return;
+        window.cancelAnimationFrame(state.knowledgeFrame);
+        state.knowledgeFrame = null;
+    }
+
+    function startKnowledgeSky() {
+        if (state.knowledgeFrame || state.activeView !== "knowledge" || document.hidden) return;
+        const canvas = $("#questKnowledgeSky");
+        const scene = $("#questKnowledgeScene");
+        if (!canvas || !scene || scene.offsetParent === null) return;
+        const draw = (time) => {
+            if (state.activeView !== "knowledge" || !scene.offsetParent) {
+                state.knowledgeFrame = null;
+                return;
+            }
+            drawKnowledgeSkyFrame(canvas, scene, time);
+            state.knowledgeFrame = window.requestAnimationFrame(draw);
+        };
+        state.knowledgeFrame = window.requestAnimationFrame(draw);
+    }
+
+    function drawKnowledgeSkyFrame(canvas, scene, time) {
+        const rect = scene.getBoundingClientRect();
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const pixelWidth = Math.max(1, Math.round(rect.width * ratio));
+        const pixelHeight = Math.max(1, Math.round(rect.height * ratio));
+        if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+            canvas.width = pixelWidth;
+            canvas.height = pixelHeight;
+        }
+        const context = canvas.getContext("2d");
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        context.fillStyle = "#061116";
+        context.fillRect(0, 0, rect.width, rect.height);
+
+        const skyKey = `${Math.round(rect.width)}x${Math.round(rect.height)}`;
+        if (state.knowledgeSkyKey !== skyKey) {
+            state.knowledgeSkyKey = skyKey;
+            const count = Math.max(120, Math.min(260, Math.round(rect.width * rect.height / 5200)));
+            state.knowledgeStars = Array.from({ length: count }, (_, index) => ({
+                x: ((index * 73 + index * index * 19) % 997) / 997 * rect.width,
+                y: ((index * 151 + index * index * 7) % 991) / 991 * rect.height,
+                size: index % 19 === 0 ? 1.8 : index % 7 === 0 ? 1.15 : 0.65,
+                phase: index * 0.61,
+                speed: 0.45 + (index % 5) * 0.11,
+            }));
+        }
+
+        context.strokeStyle = "rgba(108, 198, 203, 0.035)";
+        context.lineWidth = 1;
+        for (let x = 32; x < rect.width; x += 72) {
+            context.beginPath(); context.moveTo(x, 0); context.lineTo(x, rect.height); context.stroke();
+        }
+        for (let y = 28; y < rect.height; y += 72) {
+            context.beginPath(); context.moveTo(0, y); context.lineTo(rect.width, y); context.stroke();
+        }
+
+        state.knowledgeStars.forEach((star, index) => {
+            const twinkle = 0.25 + (Math.sin(time * 0.0009 * star.speed + star.phase) + 1) * 0.28;
+            context.globalAlpha = twinkle;
+            context.fillStyle = index % 29 === 0 ? "#f2c55c" : index % 17 === 0 ? "#7acfe2" : "#d7f5f1";
+            context.beginPath();
+            context.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            context.fill();
+            if (star.size > 1.5) {
+                context.fillRect(star.x - 4, star.y - 0.35, 8, 0.7);
+                context.fillRect(star.x - 0.35, star.y - 4, 0.7, 8);
+            }
+        });
+        context.globalAlpha = 1;
+
+        const core = $("#questKnowledgeCore");
+        const field = $("#questKnowledgeField");
+        if (!core || !field) return;
+        const coreRect = core.getBoundingClientRect();
+        const startX = coreRect.left - rect.left + coreRect.width / 2;
+        const startY = coreRect.top - rect.top + coreRect.height / 2;
+        $$(".quest-knowledge-node", field).forEach((node, index) => {
+            const nodeRect = node.getBoundingClientRect();
+            const endX = nodeRect.left - rect.left + nodeRect.width / 2;
+            const endY = nodeRect.top - rect.top + nodeRect.height / 2;
+            context.strokeStyle = "rgba(127, 202, 204, 0.13)";
+            context.lineWidth = 1;
+            context.setLineDash([3, 8]);
+            context.lineDashOffset = -time * 0.012 - index * 8;
+            context.beginPath(); context.moveTo(startX, startY); context.lineTo(endX, endY); context.stroke();
+            const progress = (time * 0.00012 + index / 7) % 1;
+            const pulseX = startX + (endX - startX) * progress;
+            const pulseY = startY + (endY - startY) * progress;
+            context.setLineDash([]);
+            context.globalAlpha = 0.85;
+            context.fillStyle = node.dataset.color || "#5ce0c0";
+            context.beginPath(); context.arc(pulseX, pulseY, 2.2, 0, Math.PI * 2); context.fill();
+        });
+        context.globalAlpha = 1;
+        context.setLineDash([]);
     }
 
     function startConstellation() {
@@ -876,8 +1004,8 @@
         renderOverview();
         if (force) renderArticleFilters();
         renderArticles();
+        renderKnowledgeAtlas();
         renderAtlas();
-        drawKnowledgeMap();
     }
 
     function handleUnlocks(unlocked = []) {

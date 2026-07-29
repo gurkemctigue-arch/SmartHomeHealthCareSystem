@@ -266,7 +266,7 @@
     background: #ffffff;
     border-bottom: 1px solid #d9e2e5;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     min-height: 60px;
 }
 
@@ -445,39 +445,165 @@
     grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.7fr);
 }
 
-.quest-map-workspace {
-    background: #f8fbfb;
-    border-right: 1px solid #d9e2e5;
-    min-height: 460px;
-    padding: 34px 36px 28px;
+.quest-featured-mission {
+    background: #0d1a20;
+    color: #ffffff;
+    min-height: 470px;
+    overflow: hidden;
+    position: relative;
 }
 
-#questKnowledgeMap {
-    display: block;
-    height: 300px;
-    margin-top: 12px;
+.quest-featured-mission > img,
+.quest-featured-shade {
+    height: 100%;
+    inset: 0;
+    position: absolute;
     width: 100%;
 }
 
-.quest-map-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
+.quest-featured-mission > img {
+    object-fit: cover;
+    transition: transform 500ms ease;
 }
 
-.quest-map-legend span {
+.quest-featured-mission:hover > img {
+    transform: scale(1.025);
+}
+
+.quest-featured-shade {
+    background: rgba(4, 15, 20, 0.7);
+}
+
+.quest-featured-topline,
+.quest-featured-copy,
+.quest-featured-progress {
+    position: absolute;
+    z-index: 2;
+}
+
+.quest-featured-topline {
     align-items: center;
-    color: #6b7a82;
     display: flex;
-    font-size: 9px;
+    justify-content: space-between;
+    left: 30px;
+    right: 30px;
+    top: 26px;
+}
+
+.quest-featured-topline span,
+.quest-featured-topline small {
+    align-items: center;
+    display: flex;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.quest-featured-topline span {
+    color: #6ce3ce;
+    gap: 7px;
+}
+
+.quest-featured-topline span svg {
+    height: 13px;
+    width: 13px;
+}
+
+.quest-featured-topline small {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    min-height: 25px;
+    padding: 0 9px;
+}
+
+.quest-featured-copy {
+    bottom: 46px;
+    left: 36px;
+    max-width: 570px;
+    right: 36px;
+}
+
+.quest-featured-copy > span {
+    color: #f2c15a;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.quest-featured-copy h2 {
+    color: #ffffff;
+    font-size: 29px;
+    line-height: 38px;
+    margin: 10px 0 8px;
+}
+
+.quest-featured-copy > p {
+    color: #bdcbd0;
+    font-size: 11px;
+    line-height: 20px;
+    margin: 0;
+    max-width: 520px;
+}
+
+.quest-featured-meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.quest-featured-meta span {
+    align-items: center;
+    color: #a7b9bf;
+    display: flex;
+    font-size: 8px;
     gap: 6px;
 }
 
-.quest-map-legend i {
-    background: currentColor;
+.quest-featured-meta b {
+    font-size: inherit;
+}
+
+.quest-featured-meta svg {
+    color: #62dec9;
+    height: 13px;
+    width: 13px;
+}
+
+.quest-featured-copy button {
+    align-items: center;
+    background: #5de0c7;
+    border: 0;
+    color: #09221e;
+    display: grid;
+    font-size: 10px;
+    font-weight: 850;
+    gap: 9px;
+    grid-template-columns: 16px auto 16px;
+    height: 44px;
+    margin-top: 20px;
+    padding: 0 15px;
+}
+
+.quest-featured-copy button:hover {
+    background: #7fead6;
+}
+
+.quest-featured-copy button svg {
+    height: 15px;
+    width: 15px;
+}
+
+.quest-featured-progress {
+    background: rgba(255, 255, 255, 0.16);
+    bottom: 0;
+    height: 5px;
+    left: 0;
+    right: 0;
+}
+
+.quest-featured-progress span {
+    background: #f2c15a;
     display: block;
-    height: 6px;
-    width: 6px;
+    height: 100%;
+    min-width: 3px;
 }
 
 .quest-action-rail {
@@ -610,6 +736,478 @@
     font-size: 9px;
     line-height: 15px;
 }
+
+/* Knowledge constellation */
+.quest-knowledge-scene {
+    background: #061116;
+    color: #ffffff;
+    min-height: 760px;
+    overflow: hidden;
+    position: relative;
+}
+
+#questKnowledgeSky {
+    height: 100%;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+.quest-knowledge-header,
+.quest-knowledge-field,
+.quest-knowledge-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.quest-knowledge-header {
+    align-items: end;
+    border-bottom: 1px solid rgba(139, 214, 214, 0.13);
+    display: grid;
+    gap: 36px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 130px;
+    padding: 27px 36px 25px;
+}
+
+.quest-knowledge-header > div:first-child > span {
+    color: #5de0c7;
+    display: block;
+    font-size: 8px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.quest-knowledge-header h2 {
+    font-size: 27px;
+    line-height: 33px;
+    margin: 0;
+}
+
+.quest-knowledge-header p {
+    color: #789097;
+    font-size: 10px;
+    line-height: 17px;
+    margin: 5px 0 0;
+}
+
+.quest-knowledge-status {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(104px, 1fr));
+}
+
+.quest-knowledge-status > div {
+    border-left: 1px solid rgba(139, 214, 214, 0.16);
+    min-width: 104px;
+    padding: 0 19px;
+}
+
+.quest-knowledge-status small,
+.quest-knowledge-status strong,
+.quest-knowledge-status span {
+    display: block;
+}
+
+.quest-knowledge-status small {
+    color: #617a82;
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.quest-knowledge-status strong {
+    color: #eef9f8;
+    font-size: 17px;
+    line-height: 21px;
+    margin: 4px 0 2px;
+}
+
+.quest-knowledge-status span {
+    color: #71868d;
+    font-size: 7px;
+}
+
+.quest-knowledge-status .live strong {
+    align-items: center;
+    color: #5de0c7;
+    display: flex;
+    font-size: 10px;
+    gap: 7px;
+}
+
+.quest-knowledge-status .live strong i {
+    animation: quest-network-pulse 1.8s ease-in-out infinite;
+    background: #5de0c7;
+    box-shadow: 0 0 12px rgba(93, 224, 199, 0.8);
+    display: block;
+    height: 6px;
+    width: 6px;
+}
+
+@keyframes quest-network-pulse {
+    50% { opacity: 0.42; }
+}
+
+.quest-knowledge-field {
+    height: 505px;
+    margin: 0 auto;
+    max-width: 1240px;
+}
+
+.quest-orbit-ring {
+    border: 1px solid rgba(108, 204, 204, 0.11);
+    border-radius: 50%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+}
+
+.quest-orbit-ring::before,
+.quest-orbit-ring::after {
+    background: #5de0c7;
+    content: "";
+    height: 3px;
+    position: absolute;
+    width: 3px;
+}
+
+.quest-orbit-ring::before { left: 11%; top: 21%; }
+.quest-orbit-ring::after { bottom: 18%; right: 13%; }
+.quest-orbit-ring.ring-one { height: 70%; width: 67%; }
+.quest-orbit-ring.ring-two { height: 42%; transform: translate(-50%, -50%) rotate(13deg); width: 42%; }
+
+.quest-orbit-axis {
+    border-left: 1px solid rgba(108, 204, 204, 0.08);
+    border-top: 1px solid rgba(108, 204, 204, 0.08);
+    height: 270px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 270px;
+}
+
+.quest-orbit-axis span {
+    border: 1px solid rgba(125, 217, 213, 0.24);
+    height: 5px;
+    position: absolute;
+    width: 5px;
+}
+
+.quest-orbit-axis span:nth-child(1) { left: -3px; top: -3px; }
+.quest-orbit-axis span:nth-child(2) { right: -3px; top: -3px; }
+.quest-orbit-axis span:nth-child(3) { bottom: -3px; left: -3px; }
+.quest-orbit-axis span:nth-child(4) { bottom: -3px; right: -3px; }
+
+.quest-knowledge-core {
+    align-items: center;
+    background: rgba(7, 25, 31, 0.92);
+    border: 1px solid rgba(106, 229, 208, 0.48);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 166px;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 166px;
+    z-index: 4;
+}
+
+.quest-knowledge-core::before,
+.quest-knowledge-core::after {
+    border: 1px dashed rgba(107, 224, 208, 0.28);
+    border-radius: 50%;
+    content: "";
+    inset: -15px;
+    position: absolute;
+}
+
+.quest-knowledge-core::before {
+    animation: quest-core-rotate 24s linear infinite;
+}
+
+.quest-knowledge-core::after {
+    border-style: solid;
+    inset: 10px;
+    opacity: 0.25;
+}
+
+@keyframes quest-core-rotate {
+    to { transform: rotate(360deg); }
+}
+
+.quest-core-signal {
+    align-items: center;
+    background: #5de0c7;
+    color: #08231f;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    margin-bottom: 8px;
+    transform: rotate(45deg);
+    width: 36px;
+}
+
+.quest-core-signal svg {
+    height: 17px;
+    transform: rotate(-45deg);
+    width: 17px;
+}
+
+.quest-knowledge-core small {
+    color: #699098;
+    font-size: 6px;
+    font-weight: 900;
+}
+
+.quest-knowledge-core strong {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 2px;
+}
+
+.quest-knowledge-core em {
+    color: #739097;
+    font-size: 7px;
+    font-style: normal;
+}
+
+.quest-knowledge-nodes {
+    inset: 0;
+    position: absolute;
+}
+
+.quest-knowledge-node {
+    --node-color: #5ce0c0;
+    align-items: center;
+    background: rgba(8, 24, 30, 0.88);
+    border: 1px solid rgba(151, 202, 205, 0.2);
+    color: #ffffff;
+    display: grid;
+    gap: 9px;
+    grid-template-columns: 24px 42px minmax(0, 1fr);
+    left: var(--node-x);
+    min-height: 78px;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    top: var(--node-y);
+    transform: translate(-50%, -50%);
+    transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+    width: 185px;
+    z-index: 5;
+}
+
+.quest-knowledge-node::before {
+    background: var(--node-color);
+    content: "";
+    height: 15px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 2px;
+}
+
+.quest-knowledge-node:hover,
+.quest-knowledge-node:focus-visible {
+    background: rgba(11, 34, 41, 0.97);
+    border-color: var(--node-color);
+    outline: 0;
+    transform: translate(-50%, -50%) translateY(-3px);
+}
+
+.quest-node-index {
+    align-self: start;
+    color: #506971;
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.quest-node-glyph {
+    align-items: center;
+    border: 1px solid var(--node-color);
+    color: var(--node-color);
+    display: flex;
+    height: 38px;
+    justify-content: center;
+    position: relative;
+    transform: rotate(45deg);
+    width: 38px;
+}
+
+.quest-node-glyph::after {
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    content: "";
+    inset: 4px;
+    position: absolute;
+}
+
+.quest-node-glyph svg {
+    height: 18px;
+    transform: rotate(-45deg);
+    width: 18px;
+}
+
+.quest-node-copy {
+    min-width: 0;
+}
+
+.quest-node-copy small,
+.quest-node-copy strong,
+.quest-node-copy em {
+    display: block;
+    font-style: normal;
+}
+
+.quest-node-copy small {
+    color: var(--node-color);
+    font-size: 6px;
+    font-weight: 900;
+}
+
+.quest-node-copy strong {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 2px 0;
+}
+
+.quest-node-copy em {
+    color: #6e878e;
+    font-size: 7px;
+}
+
+.quest-node-gauge {
+    background: rgba(255, 255, 255, 0.08);
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.quest-node-gauge i {
+    background: var(--node-color);
+    display: block;
+    height: 100%;
+}
+
+.quest-knowledge-node.complete {
+    border-color: color-mix(in srgb, var(--node-color) 55%, transparent);
+    box-shadow: 0 0 22px color-mix(in srgb, var(--node-color) 12%, transparent);
+}
+
+.quest-knowledge-node.active .quest-node-glyph,
+.quest-knowledge-node.complete .quest-node-glyph {
+    background: color-mix(in srgb, var(--node-color) 12%, transparent);
+}
+
+.quest-knowledge-footer {
+    align-items: center;
+    border-top: 1px solid rgba(139, 214, 214, 0.13);
+    display: grid;
+    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 125px;
+    padding: 20px 36px;
+}
+
+.quest-signal-readout {
+    align-items: center;
+    display: grid;
+    gap: 13px;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    max-width: 780px;
+}
+
+.quest-signal-icon {
+    align-items: center;
+    background: #5de0c7;
+    color: #08231f;
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+.quest-signal-icon svg {
+    height: 19px;
+    width: 19px;
+}
+
+.quest-signal-readout small,
+.quest-signal-readout strong,
+.quest-signal-readout div > span {
+    display: block;
+}
+
+.quest-signal-readout small {
+    color: #5de0c7;
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.quest-signal-readout strong {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 2px 0;
+}
+
+.quest-signal-readout div > span {
+    color: #70878e;
+    font-size: 8px;
+}
+
+.quest-signal-readout button {
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(114, 217, 207, 0.33);
+    color: #d8eeeb;
+    display: flex;
+    font-size: 8px;
+    font-weight: 800;
+    gap: 7px;
+    height: 38px;
+    padding: 0 12px;
+}
+
+.quest-signal-readout button:hover {
+    background: #5de0c7;
+    color: #08231f;
+}
+
+.quest-signal-readout button svg {
+    height: 14px;
+    width: 14px;
+}
+
+.quest-map-key {
+    display: flex;
+    gap: 15px;
+}
+
+.quest-map-key span {
+    align-items: center;
+    color: #70878e;
+    display: flex;
+    font-size: 7px;
+    gap: 6px;
+}
+
+.quest-map-key i {
+    border: 1px solid #526c73;
+    display: block;
+    height: 7px;
+    width: 7px;
+}
+
+.quest-map-key i.complete { background: #5de0c7; border-color: #5de0c7; }
+.quest-map-key i.active { border-color: #f2c55c; }
 
 .quest-view-header {
     align-items: end;
@@ -1892,6 +2490,8 @@
     .quest-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .game-score-contract { grid-template-columns: repeat(2, minmax(110px, 1fr)); }
     .quest-achievement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .quest-knowledge-node { width: 166px; }
+    .quest-knowledge-field { height: 540px; }
 }
 
 @media (max-width: 900px) {
@@ -1905,9 +2505,15 @@
     .quest-mission-list { grid-template-columns: 1fr; }
     .quest-dashboard-grid,
     .quest-atlas-layout { grid-template-columns: 1fr; }
-    .quest-map-workspace { border-right: 0; }
     .quest-action-rail,
     .quest-activity-stream { border-left: 0; border-top: 1px solid #dbe3e6; }
+    .quest-knowledge-header { align-items: start; grid-template-columns: 1fr; }
+    .quest-knowledge-status { justify-self: stretch; }
+    .quest-knowledge-status > div:first-child { border-left: 0; padding-left: 0; }
+    .quest-knowledge-field { height: 560px; }
+    .quest-knowledge-node { width: 154px; }
+    .quest-knowledge-footer { grid-template-columns: 1fr; }
+    .quest-map-key { justify-self: start; }
     .game-score-contract { display: none; }
     .game-touch-controls { display: flex; }
     .hospital-game-viewport { min-height: 520px; }
@@ -1933,9 +2539,27 @@
     .quest-search { flex: 1; width: auto; }
     .quest-article-grid,
     .quest-achievement-grid { grid-template-columns: 1fr; }
-    .quest-map-workspace { padding: 28px 18px; }
-    #questKnowledgeMap { height: 260px; }
     .quest-action-rail { padding: 28px 18px; }
+    .quest-featured-mission { min-height: 440px; }
+    .quest-featured-topline { left: 20px; right: 20px; }
+    .quest-featured-copy { bottom: 36px; left: 22px; right: 22px; }
+    .quest-featured-copy h2 { font-size: 24px; line-height: 31px; }
+    .quest-knowledge-scene { min-height: 0; }
+    .quest-knowledge-header { gap: 22px; padding: 25px 18px; }
+    .quest-knowledge-header h2 { font-size: 24px; }
+    .quest-knowledge-status > div { min-width: 0; padding: 0 10px; }
+    .quest-knowledge-status strong { font-size: 14px; }
+    .quest-knowledge-field { height: auto; padding: 24px 16px 30px; }
+    .quest-orbit-ring,
+    .quest-orbit-axis { display: none; }
+    .quest-knowledge-core { left: auto; margin: 16px auto 38px; position: relative; top: auto; transform: none; }
+    .quest-knowledge-nodes { display: grid; gap: 9px; grid-template-columns: repeat(2, minmax(0, 1fr)); inset: auto; position: relative; }
+    .quest-knowledge-node { left: auto; min-height: 76px; position: relative; top: auto; transform: none; width: auto; }
+    .quest-knowledge-node:hover,
+    .quest-knowledge-node:focus-visible { transform: translateY(-3px); }
+    .quest-knowledge-footer { gap: 18px; padding: 20px 18px 24px; }
+    .quest-signal-readout { grid-template-columns: 38px minmax(0, 1fr) auto; }
+    .quest-signal-icon { height: 38px; width: 38px; }
     .hospital-game-topline { padding: 0 10px; }
     .hospital-game-topline > div:first-child { display: none; }
     .game-live-metrics { flex: 1; }
@@ -1980,9 +2604,19 @@
     #gameFeedbackIcon { height: 36px; width: 36px; }
     .quest-reader-topbar { padding: 12px 14px; }
     .quest-reader-title h1 { font-size: 23px; }
+    .quest-featured-topline span { max-width: 190px; }
+    .quest-featured-meta span:last-child { display: none; }
+    .quest-knowledge-header p { max-width: 300px; }
+    .quest-knowledge-status span { display: none; }
+    .quest-knowledge-nodes { grid-template-columns: 1fr; }
+    .quest-knowledge-node { min-height: 72px; }
+    .quest-signal-readout { grid-template-columns: 38px minmax(0, 1fr); }
+    .quest-signal-readout button { grid-column: 1 / -1; justify-content: center; width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .quest-view.active,
-    .quest-article-media img { animation: none; transition: none; }
+    .quest-article-media img,
+    .quest-knowledge-core::before,
+    .quest-knowledge-status .live strong i { animation: none; transition: none; }
 }

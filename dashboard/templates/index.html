@@ -283,9 +283,10 @@
 
                     <nav class="quest-switcher" id="questSwitcher" aria-label="健康远征视图">
                         <button class="active" type="button" data-quest-view-target="mission" aria-selected="true"><i data-lucide="radar"></i><span>行动总览</span></button>
+                        <button type="button" data-quest-view-target="knowledge" aria-selected="false"><i data-lucide="orbit"></i><span>知识星图</span></button>
                         <button type="button" data-quest-view-target="codex" aria-selected="false"><i data-lucide="library-big"></i><span>知识舱</span><b id="questUnreadCount">0</b></button>
                         <button type="button" data-quest-view-target="game" aria-selected="false"><i data-lucide="gamepad-2"></i><span>急诊大作战</span></button>
-                        <button type="button" data-quest-view-target="atlas" aria-selected="false"><i data-lucide="medal"></i><span>成就星图</span><b id="questAchievementCount">0</b></button>
+                        <button type="button" data-quest-view-target="atlas" aria-selected="false"><i data-lucide="medal"></i><span>成就陈列</span><b id="questAchievementCount">0</b></button>
                     </nav>
 
                     <div class="quest-view active" data-quest-view="mission">
@@ -299,14 +300,24 @@
                         </section>
 
                         <div class="quest-dashboard-grid">
-                            <section class="quest-map-workspace">
-                                <div class="quest-section-heading compact-heading">
-                                    <span>KNOWLEDGE ATLAS / LIVE</span>
-                                    <h2>健康知识星图</h2>
-                                    <p>领域掌握度</p>
+                            <section class="quest-featured-mission" id="questFeaturedMission">
+                                <img id="questFeaturedImage" src="/static/images/quest/article-medicine.jpg" alt="">
+                                <div class="quest-featured-shade" aria-hidden="true"></div>
+                                <div class="quest-featured-topline">
+                                    <span><i data-lucide="crosshair"></i>NEXT KNOWLEDGE MISSION</span>
+                                    <small id="questFeaturedCategory">知识领域</small>
                                 </div>
-                                <canvas id="questKnowledgeMap" aria-label="健康知识领域掌握度"></canvas>
-                                <div class="quest-map-legend" id="questMapLegend"></div>
+                                <div class="quest-featured-copy">
+                                    <span id="questFeaturedIndex">CODEX / 001</span>
+                                    <h2 id="questFeaturedTitle">正在定位下一项知识任务</h2>
+                                    <p id="questFeaturedDek">知识信号同步中</p>
+                                    <div class="quest-featured-meta">
+                                        <span><i data-lucide="clock-3"></i><b id="questFeaturedMinutes">-- 分钟</b></span>
+                                        <span><i data-lucide="badge-check"></i>医学内容复核</span>
+                                    </div>
+                                    <button id="questFeaturedOpen" type="button"><i data-lucide="book-open-check"></i><span>进入知识任务</span><i data-lucide="arrow-up-right"></i></button>
+                                </div>
+                                <div class="quest-featured-progress"><span id="questFeaturedProgress"></span></div>
                             </section>
 
                             <aside class="quest-action-rail">
@@ -314,9 +325,9 @@
                                     <span>NEXT ACTION</span>
                                     <h2>继续你的远征</h2>
                                 </div>
-                                <button class="quest-primary-action" type="button" data-quest-jump="codex">
-                                    <span class="quest-action-icon"><i data-lucide="book-open-check"></i></span>
-                                    <span><small>CODEX / KNOWLEDGE</small><strong id="questContinueTitle">选择一篇知识文章</strong><em id="questContinueMeta">+5 VP · 阅读完成</em></span>
+                                <button class="quest-primary-action" type="button" data-quest-jump="knowledge">
+                                    <span class="quest-action-icon"><i data-lucide="orbit"></i></span>
+                                    <span><small>KNOWLEDGE ATLAS / LIVE</small><strong>进入知识星图</strong><em id="questContinueMeta">探索 7 个健康知识领域</em></span>
                                     <i data-lucide="arrow-up-right"></i>
                                 </button>
                                 <button class="quest-secondary-action" type="button" data-quest-jump="game">
@@ -331,6 +342,46 @@
                                 </div>
                             </aside>
                         </div>
+                    </div>
+
+                    <div class="quest-view" data-quest-view="knowledge" hidden>
+                        <section class="quest-knowledge-scene" id="questKnowledgeScene">
+                            <canvas id="questKnowledgeSky" aria-hidden="true"></canvas>
+                            <header class="quest-knowledge-header">
+                                <div>
+                                    <span>KNOWLEDGE CONSTELLATION / LIVE</span>
+                                    <h2>知识星图</h2>
+                                    <p>每一次可靠阅读，都会让一条健康知识航路变得清晰</p>
+                                </div>
+                                <div class="quest-knowledge-status">
+                                    <div><small>ARCHIVES</small><strong id="questKnowledgeCompleted">0 / 0</strong><span>知识档案</span></div>
+                                    <div><small>DOMAINS</small><strong id="questKnowledgeDomains">0 / 0</strong><span>完全掌握</span></div>
+                                    <div class="live"><small>NETWORK</small><strong><i></i>ONLINE</strong><span>实时同步</span></div>
+                                </div>
+                            </header>
+
+                            <div class="quest-knowledge-field" id="questKnowledgeField">
+                                <div class="quest-orbit-ring ring-one" aria-hidden="true"></div>
+                                <div class="quest-orbit-ring ring-two" aria-hidden="true"></div>
+                                <div class="quest-orbit-axis" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                                <div class="quest-knowledge-core" id="questKnowledgeCore">
+                                    <span class="quest-core-signal"><i data-lucide="sparkles"></i></span>
+                                    <small>KNOWLEDGE CORE</small>
+                                    <strong id="questKnowledgeCoreValue">0 / 0</strong>
+                                    <em>已点亮档案</em>
+                                </div>
+                                <div class="quest-knowledge-nodes" id="questKnowledgeNodes"></div>
+                            </div>
+
+                            <footer class="quest-knowledge-footer">
+                                <div class="quest-signal-readout">
+                                    <span class="quest-signal-icon"><i data-lucide="scan-search"></i></span>
+                                    <div><small id="questKnowledgeSignalCategory">NEXT SIGNAL</small><strong id="questKnowledgeSignalTitle">正在扫描下一条知识航路</strong><span id="questKnowledgeSignalMeta">选择一个领域查看知识档案</span></div>
+                                    <button id="questKnowledgeSignalOpen" type="button"><span>打开领域</span><i data-lucide="arrow-up-right"></i></button>
+                                </div>
+                                <div class="quest-map-key" aria-label="星图图例"><span><i class="complete"></i>已掌握</span><span><i class="active"></i>探索中</span><span><i></i>待点亮</span></div>
+                            </footer>
+                        </section>
                     </div>
 
                     <div class="quest-view" data-quest-view="codex" hidden>
@@ -420,7 +471,7 @@
                         <header class="quest-view-header">
                             <div class="quest-section-heading">
                                 <span>ATLAS / ACHIEVEMENT SIGNALS</span>
-                                <h2>成就星图</h2>
+                                <h2>成就陈列</h2>
                                 <p id="questAtlasSummary">正在读取勋章序列</p>
                             </div>
                             <div class="quest-atlas-total"><small>UNLOCKED</small><strong id="questAtlasCount">0 / 0</strong></div>

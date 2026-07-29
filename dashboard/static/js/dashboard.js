@@ -4,6 +4,7 @@
     const PAGE_INFO = {
         overview: { title: "首页概览", loader: loadOverview },
         wellness: { title: "天时智养", loader: loadWellness },
+        vital: { title: "生命镜像", loader: loadVitalTwin },
         quest: { title: "健康远征", loader: loadQuest },
         detection: { title: "实时检测", loader: loadDetections },
         medicine: { title: "药品管理", loader: loadMedicines },
@@ -138,6 +139,9 @@
         if (state.activePage === "quest" && page !== "quest" && window.MedProQuest) {
             window.MedProQuest.pause();
         }
+        if (state.activePage === "vital" && page !== "vital" && window.MedProVitalTwin) {
+            window.MedProVitalTwin.pause();
+        }
         state.activePage = page;
 
         $$(".nav-item").forEach((item) => item.classList.toggle("active", item.dataset.page === page));
@@ -197,6 +201,12 @@
     async function loadQuest() {
         if (window.MedProQuest) {
             await window.MedProQuest.load();
+        }
+    }
+
+    async function loadVitalTwin() {
+        if (window.MedProVitalTwin) {
+            await window.MedProVitalTwin.load();
         }
     }
 
@@ -428,6 +438,7 @@
         window.requestAnimationFrame(() => {
             state.charts.forEach((chart) => chart.resize());
             resizeWellnessScene();
+            if (window.MedProVitalTwin) window.MedProVitalTwin.resize();
         });
     }
 

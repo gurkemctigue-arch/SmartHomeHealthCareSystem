@@ -679,4 +679,3 @@ def _json(value, fallback):
         return json.loads(value) if value else fallback
     except (TypeError, json.JSONDecodeError):
         return fallback
-

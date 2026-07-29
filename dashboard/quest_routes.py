@@ -98,4 +98,3 @@ def quest_validation_error(error):
 @quest_bp.errorhandler(QuestNotFoundError)
 def quest_not_found(error):
     return jsonify({"code": 404, "message": str(error), "data": None}), 404
-

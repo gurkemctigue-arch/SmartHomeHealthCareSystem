@@ -180,7 +180,7 @@ def create_task(payload):
     priority = str(payload.get("priority") or "normal")
     if priority not in {"normal", "important", "urgent"}:
         raise VitalTwinValidationError("任务优先级无效")
-    due_at = _parse_datetime(payload.get("due_at"))
+    due_at = _parse_datetime(payload.get("due_at"), allow_future=True)
     db = get_db()
     cursor = db.execute(
         "INSERT INTO health_task (member_id, task_type, title, detail, due_at, priority) "
@@ -210,7 +210,10 @@ def get_vital_twin_overview(member_id=None):
     members = list_members()
     if not members:
         raise VitalTwinNotFoundError("尚未建立家庭档案")
-    selected_id = int(member_id) if member_id is not None else members[0]["id"]
+    try:
+        selected_id = int(member_id) if member_id is not None else members[0]["id"]
+    except (TypeError, ValueError):
+        raise VitalTwinValidationError("家庭成员编号无效") from None
     member = get_member(selected_id)
     latest = _latest_measurements(selected_id)
     signals = _body_signals(latest)
@@ -293,7 +296,7 @@ def _string_list(value, field):
     return result
 
 
-def _parse_datetime(value):
+def _parse_datetime(value, allow_future=False):
     if not value:
         return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     text = str(value).strip().replace("T", " ")
@@ -301,7 +304,7 @@ def _parse_datetime(value):
         parsed = datetime.fromisoformat(text)
     except ValueError:
         raise VitalTwinValidationError("时间格式无效") from None
-    if parsed > datetime.now() + timedelta(minutes=5):
+    if not allow_future and parsed > datetime.now() + timedelta(minutes=5):
         raise VitalTwinValidationError("记录时间不能晚于当前时间")
     return parsed.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -349,10 +352,11 @@ def _age(birth_date):
 
 def _latest_measurements(member_id):
     rows = get_db().execute(
-        "SELECT hm.* FROM health_measurement hm "
-        "JOIN (SELECT metric_type, MAX(id) AS latest_id FROM health_measurement "
-        "WHERE member_id = ? GROUP BY metric_type) latest ON latest.latest_id = hm.id "
-        "ORDER BY hm.measured_at DESC", (member_id,)
+        "SELECT hm.* FROM health_measurement hm WHERE hm.member_id = ? "
+        "AND hm.id = (SELECT recent.id FROM health_measurement recent "
+        "WHERE recent.member_id = hm.member_id AND recent.metric_type = hm.metric_type "
+        "ORDER BY recent.measured_at DESC, recent.id DESC LIMIT 1) "
+        "ORDER BY hm.measured_at DESC, hm.id DESC", (member_id,)
     ).fetchall()
     return {row["metric_type"]: _serialize_measurement(row) for row in rows}
 
