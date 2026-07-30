@@ -14,3 +14,4 @@ accelerate
 chromadb
 sentence-transformers
 scikit-learn
+edge-tts
