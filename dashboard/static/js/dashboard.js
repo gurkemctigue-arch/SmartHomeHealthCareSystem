@@ -339,14 +339,23 @@ document.querySelectorAll(".mode-btn").forEach(btn => {
    ═══════════════════════════════════════════════════════════ */
 document.querySelectorAll(".menu").forEach(menu => {
     menu.addEventListener("click", function () {
+        const page = this.dataset.page;
+
+        // 问答对话 → 直接跳转
+        if (page === "chat") {
+            window.location.href = "/chat";
+            return;
+        }
+
         document.querySelectorAll(".menu").forEach(m => m.classList.remove("active"));
         this.classList.add("active");
 
-        const page = this.dataset.page;
         console.log(`[导航] 切换到: ${page}`);
 
-        // 第一版仅首页概览完整实现，其他菜单显示提示
-        // 后续可扩展为多页面路由
+        // 滚动到对应面板
+        if (page === "overview") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     });
 });
 

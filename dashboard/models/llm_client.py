@@ -23,7 +23,7 @@ except ImportError:
     PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
     class Config:  # type: ignore[no-redef]
-        LLM_BASE_MODEL = str(PROJECT_ROOT / "models" / "Qwen2.5-0.5B-Instruct")
+        LLM_BASE_MODEL = str(PROJECT_ROOT / "models" / "Qwen2.5-1.5B-Instruct")
         LLM_LORA_ADAPTER = str(PROJECT_ROOT / "models" / "lora")
         RAG_CHROMA_DIR = str(PROJECT_ROOT / "models" / "rag")
         RAG_BGE_MODEL = str(PROJECT_ROOT / "models" / "bge-small-zh-v1.5")

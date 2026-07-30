@@ -13,3 +13,4 @@ peft
 accelerate
 chromadb
 sentence-transformers
+scikit-learn

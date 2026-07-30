@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健康科普问答 — MedPro</title>
+<style>
+:root {
+    --blue: #1f7ae0; --blue-dark: #155bb5; --blue-light: #e8f1fd;
+    --red: #e74c3c; --green: #27ae60;
+    --t1: #1f2d3d; --t2: #5c7086; --t3: #8a9bad;
+    --bg: #f0f4fa; --card: #fff; --border: #d9e8fa; --border-light: #eef3fa;
+    --r: 12px; --tr: 0.2s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--t1);height:100vh;display:flex;flex-direction:column}
+
+/* header */
+.hdr{height:52px;min-height:52px;background:var(--card);border-bottom:2px solid var(--blue);display:flex;align-items:center;padding:0 20px;gap:14px;box-shadow:0 2px 8px rgba(31,122,224,.08)}
+.hdr a{color:var(--blue);text-decoration:none;font-size:13px;font-weight:600;padding:5px 12px;border:1px solid var(--blue);border-radius:18px;transition:var(--tr)}
+.hdr a:hover{background:var(--blue);color:#fff}
+.hdr h1{font-size:18px;background:linear-gradient(135deg,var(--blue),#4da3ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hdr .tag{margin-left:auto;font-size:12px;padding:4px 10px;border-radius:12px;background:var(--blue-light);color:var(--blue);white-space:nowrap}
+.hdr .tag.off{background:#fef2f2;color:var(--red)}
+
+/* main */
+.main{flex:1;display:flex;max-width:900px;width:100%;margin:0 auto;background:var(--card);overflow:hidden}
+
+/* sidebar */
+.side{width:240px;min-width:240px;border-right:1px solid var(--border-light);padding:16px;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
+.side h3{font-size:13px;font-weight:700;margin-bottom:8px;color:var(--t1)}
+.card{background:#f8fbff;border:1px solid var(--border-light);border-radius:var(--r);padding:12px}
+.sugs{display:flex;flex-direction:column;gap:5px}
+.sugs span{padding:7px 10px;border-radius:8px;background:#fff;border:1px solid var(--border-light);font-size:12px;color:var(--t2);cursor:pointer;transition:var(--tr);line-height:1.4}
+.sugs span:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.stat{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}
+.stat .l{color:var(--t3)} .stat .v{font-weight:600}
+.stat .v.g{color:var(--green)} .stat .v.r{color:var(--red)}
+.btn{padding:7px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--blue);font-size:12px;cursor:pointer;text-align:center;transition:var(--tr);width:100%}
+.btn:hover{background:var(--blue-light);border-color:var(--blue)}
+.btn.danger{color:var(--red);border-color:#fecaca}
+.btn.danger:hover{background:#fef2f2}
+
+/* chat */
+.chat{flex:1;display:flex;flex-direction:column;min-width:0}
+.msgs{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.msgs::-webkit-scrollbar{width:5px}
+.msgs::-webkit-scrollbar-thumb{background:#d0d8e4;border-radius:3px}
+
+.msg{display:flex;gap:10px;max-width:85%;animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.msg.bot{align-self:flex-start}
+.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.av{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:#f0f4fa}
+.msg.user .av{background:var(--blue);font-size:14px}
+.bub{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.6;word-break:break-word}
+.msg.bot .bub{background:#f8fbff;border:1px solid var(--border-light);border-radius:4px 14px 14px 14px}
+.msg.bot .bub b{color:var(--blue)}
+.msg.user .bub{background:var(--blue);color:#fff;border-radius:14px 4px 14px 14px}
+.tm{font-size:11px;color:var(--t3);margin-top:2px;padding:0 4px}
+.msg.user .tm{text-align:right}
+.msg.load .bub{border-style:dashed;color:var(--t3)}
+.msg.err .bub{background:#fef2f2;border-color:#fecaca;color:var(--red)}
+.spk{display:inline-block;margin-left:6px;cursor:pointer;font-size:14px;opacity:.6;transition:var(--tr);user-select:none;vertical-align:middle}
+.spk:hover{opacity:1;transform:scale(1.15)}
+.dots{display:inline-flex;gap:3px;margin-left:4px}
+.dots i{width:5px;height:5px;border-radius:50%;background:#bbb;animation:dot 1.4s infinite ease-in-out}
+.dots i:nth-child(2){animation-delay:.2s}
+.dots i:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+
+/* input */
+.inp{border-top:1px solid var(--border-light);padding:12px 18px 14px;display:flex;gap:10px;align-items:flex-end}
+.inp textarea{flex:1;border:2px solid var(--border);border-radius:18px;padding:9px 15px;font-size:13px;outline:none;resize:none;font-family:inherit;background:#f8fbff;line-height:1.5;max-height:100px}
+.inp textarea:focus{border-color:var(--blue)}
+.inp button{width:40px;height:40px;min-width:40px;background:var(--blue);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:18px;transition:var(--tr)}
+.inp button:hover{background:var(--blue-dark);transform:scale(1.05)}
+.inp button:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.ft{text-align:center;font-size:11px;color:var(--t3);padding:0 18px 8px}
+
+@media(max-width:700px){.side{display:none}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+    <a href="/">← 返回大屏</a>
+    <h1>💬 健康科普问答</h1>
+    <span class="tag" id="tag">加载中...</span>
+</header>
+
+<div class="main">
+
+    <!-- 侧边栏 -->
+    <aside class="side">
+        <div class="card">
+            <h3>💡 推荐问题</h3>
+            <div class="sugs" id="sugs"><span>加载中...</span></div>
+        </div>
+        <div class="card">
+            <h3>📊 引擎状态</h3>
+            <div id="stats">
+                <div class="stat"><span class="l">后端</span><span class="v" id="sBackend">--</span></div>
+                <div class="stat"><span class="l">LoRA</span><span class="v" id="sLora">--</span></div>
+                <div class="stat"><span class="l">知识库</span><span class="v" id="sKB">--</span></div>
+            </div>
+        </div>
+        <button class="btn" id="btnHistory">📜 加载历史</button>
+        <button class="btn danger" id="btnClear">🗑 清空对话</button>
+    </aside>
+
+    <!-- 聊天区 -->
+    <section class="chat">
+        <div class="msgs" id="msgs">
+            <div class="msg bot">
+                <div class="av">🤖</div>
+                <div>
+                    <div class="bub">
+                        您好！我是基于<b> Qwen2.5-1.5B + LoRA 医疗微调 </b>+<b> RAG 知识库</b>的健康科普助手。<br>可询问药品用法、注意事项和常见疾病护理知识。<br>⚠️ 回答仅供参考，不能替代医生诊断。
+                    </div>
+                    <div class="tm">现在</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inp">
+            <textarea id="input" rows="1" placeholder="输入问题，如：布洛芬的用法用量..." autofocus></textarea>
+            <button id="sendBtn">➤</button>
+        </div>
+        <div class="ft">Enter 发送 · Shift+Enter 换行 · 支持多轮上下文</div>
+    </section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let sid=null,sending=false;
+
+async function get(url){try{const r=await fetch(url);return(await r.json()).data}catch(e){return null}}
+
+async function post(url,body){
+    // 模型在 CPU 上推理可能需要 30-90 秒，用 AbortController 设置 5 分钟超时
+    const ctrl=new AbortController();
+    const timer=setTimeout(()=>ctrl.abort(),300000);
+    try{
+        const r=await fetch(url,{method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(body),
+            signal:ctrl.signal});
+        clearTimeout(timer);
+        return await r.json();
+    }catch(e){
+        clearTimeout(timer);
+        return {code:500,message:'请求超时或网络错误，请重试'};
+    }
+}
+
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML.replace(/\n/g,'<br>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')}
+
+let _audio=null,_playingBtn=null;
+function stopAudio(){if(_audio){_audio.pause();_audio=null}if(_playingBtn){_playingBtn.textContent='🔊';_playingBtn=null}}
+
+async function speak(text,btn){
+    if(_playingBtn===btn){stopAudio();return}
+    stopAudio();
+    btn.textContent='⏳';_playingBtn=btn;
+    try{
+        const r=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+        if(!r.ok)throw new Error('TTS failed');
+        const blob=await r.blob();
+        _audio=new Audio(URL.createObjectURL(blob));
+        _audio.onended=()=>{btn.textContent='🔊';_audio=null;_playingBtn=null};
+        _audio.onerror=()=>{btn.textContent='🔊';_audio=null;_playingBtn=null};
+        _audio.play();
+    }catch(e){btn.textContent='🔊';_playingBtn=null;console.error('TTS error:',e)}
+}
+
+function spkClick(el){
+    const text=el.getAttribute('data-text');
+    if(text)speak(text,el);
+}
+
+function add(text,role,cls='',raw=false){
+    const m=$('msgs'),el=document.createElement('div');
+    const av=role==='user'?'👤':'🤖';
+    const tm=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
+    el.className=`msg ${role} ${cls}`;
+    const content=raw?text:esc(text);
+    const speaker=role==='bot'&&!raw?` <span class="spk" data-text="${text.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}" onclick="spkClick(this)" title="语音播报">🔊</span>`:'';
+    el.innerHTML=`<div class="av">${av}</div><div><div class="bub">${content}${speaker}</div><div class="tm">${tm}</div></div>`;
+    m.appendChild(el);m.scrollTop=m.scrollHeight;return el;
+}
+
+async function send(text){
+    if(sending)return;
+    const inp=$('input'),btn=$('sendBtn'),q=text||inp.value.trim();
+    if(!q)return;
+    sending=true;add(q,'user');
+    inp.value='';inp.style.height='auto';btn.disabled=true;
+    const load=add('正在检索知识库并生成回答，请耐心等待... <span class="dots"><i></i><i></i><i></i></span>','bot','load',true);
+
+    try{
+        const r=await post('/api/chat',{question:q,session_id:sid});
+        load.remove();
+        if(r.code===200&&r.data){sid=r.data.session_id;add(r.data.answer,'bot')}
+        else{
+            const msg=r.message||'抱歉，暂时无法回答，请稍后重试';
+            console.error('Chat error:',r);
+            add(msg,'bot','err');
+        }
+    }catch(e){
+        load.remove();
+        console.error('Chat exception:',e);
+        add('请求失败：'+e.message,'bot','err');
+    }
+    sending=false;btn.disabled=false;inp.focus();
+}
+
+$('sendBtn').onclick=()=>send();
+$('input').onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}};
+$('input').oninput=function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'};
+
+$('btnClear').onclick=async()=>{
+    if(sid)await fetch(`/api/session/${sid}`,{method:'DELETE'});
+    sid=null;$('msgs').innerHTML='';
+    add('对话已清空，上下文已重置。','bot');
+    $('input').focus();
+};
+
+$('btnHistory').onclick=async()=>{
+    const data=await get('/api/chat/history');
+    if(!data||!data.length){add('暂无历史记录。','bot');return}
+    data.forEach(i=>{add(i.question,'user');add(i.answer,'bot')});
+};
+
+let engineReady=false;
+
+function updateStatus(info){
+    if(!info)return;
+    $('tag').textContent=info.backend||'未知';
+    $('sBackend').textContent=info.backend||'--';
+    $('sLora').textContent=info.lora_ok?'✅ 就绪':'❌ 未加载';
+    $('sLora').className='v '+(info.lora_ok?'g':'r');
+    $('sKB').textContent=info.kb_sentences?info.kb_sentences+' 条':'未加载';
+    if(!info.ready){
+        $('tag').className='tag off';$('tag').textContent='引擎加载中...';
+    }else{
+        $('tag').className='tag';
+    }
+}
+
+function setInputEnabled(on){
+    $('input').disabled=!on;$('sendBtn').disabled=!on;
+    $('input').placeholder=on?'输入问题，如：布洛芬的用法用量...':'引擎正在加载，请稍候...';
+}
+
+async function pollStatus(){
+    const info=await get('/api/kb/info');
+    if(!info)return setTimeout(pollStatus,5000);
+    updateStatus(info);
+    if(info.ready&&!engineReady){
+        engineReady=true;setInputEnabled(true);
+        $('input').focus();
+        // 加载推荐问题
+        const sugs=await get('/api/chat/suggestions');
+        if(sugs&&sugs.length)$('sugs').innerHTML=sugs.map(s=>`<span onclick="send('${s.replace(/'/g,"\\'")}')">${s}</span>`).join('');
+    }else if(!info.ready){
+        setTimeout(pollStatus,5000);
+    }
+}
+
+(async function init(){
+    setInputEnabled(false);
+    const info=await get('/api/kb/info');
+    updateStatus(info);
+    if(info&&info.ready){
+        engineReady=true;setInputEnabled(true);
+        const sugs=await get('/api/chat/suggestions');
+        if(sugs&&sugs.length)$('sugs').innerHTML=sugs.map(s=>`<span onclick="send('${s.replace(/'/g,"\\'")}')">${s}</span>`).join('');
+        $('input').focus();
+    }else{
+        setTimeout(pollStatus,5000);
+    }
+})();
+</script>
+</body>
+</html>

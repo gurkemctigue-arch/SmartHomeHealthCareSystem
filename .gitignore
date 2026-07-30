@@ -30,10 +30,12 @@ models/*/.cache/
 
 # 大型模型权重文件（通过其他方式分发）
 models/Qwen2.5-0.5B-Instruct/
+models/Qwen2.5-1.5B-Instruct/
 models/bge-small-zh-v1.5/
 models/rag/
 models/emotion/
 models/lora/
+models/lora_adapter/
 models/yolo/
 
 # OCR output
@@ -41,6 +43,8 @@ dashboard/ocr_output/*.json
 
 # 训练数据和图片
 training/yolo/data/
+HuatuoGPT_sft_data_v1.jsonl
+train_encyclopedia.json
 
 # Environment
 .env

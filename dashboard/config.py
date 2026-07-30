@@ -48,11 +48,11 @@ class Config:
     # Qwen + LoRA (本地，优先)
     LLM_BASE_MODEL = os.environ.get(
         "LLM_BASE_MODEL",
-        str(PROJECT_ROOT / "models" / "Qwen2.5-0.5B-Instruct")
+        str(PROJECT_ROOT / "models" / "Qwen2.5-1.5B-Instruct")
     )
     LLM_LORA_ADAPTER = os.environ.get(
         "LLM_LORA_ADAPTER",
-        str(PROJECT_ROOT / "models" / "lora")
+        str(PROJECT_ROOT / "models" / "lora_adapter")
     )
     # RAG 知识库
     RAG_CHROMA_DIR = os.environ.get(
